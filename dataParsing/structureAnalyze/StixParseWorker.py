@@ -1,7 +1,9 @@
 from stix.core import STIXPackage,STIXHeader
 from stix.extensions.marking.tlp import TLPMarkingStructure
+from dataParsing.Logger import Logger
 
 class StixParseWorker:
+
     # stix_list=[]
     # indicator_list=[]
     stix_fields_list_of_list=[]
@@ -24,6 +26,9 @@ class StixParseWorker:
     indicator_description_list = []
     indicator_type_list = []
 
+    def __init__(self):
+        self.logger = Logger(self)
+
     def __mergeKillChainPhase(self, kill_chain):
         pass
 
@@ -38,6 +43,9 @@ class StixParseWorker:
         self.stix_description_list.append(stix_package.stix_header.description.__str__())
         # self.stix_marking_color_list.append('|'.join(ms.color for ms in stix_package.stix_header.handling.marking[0].marking_structures))
         tmpstr=''
+        self.logger.log('handling type:',type(stix_package.stix_header.handling))
+        self.logger.log('handling type:',type(stix_package.stix_header.handling.marking))
+        self.logger.log('handling type:',type(stix_package.stix_header.handling.marking[0]))
         for ms in stix_package.stix_header.handling.marking[0].marking_structures:
             if isinstance(ms, TLPMarkingStructure):
                 tmpstr += ms.color
@@ -45,7 +53,10 @@ class StixParseWorker:
         self.stix_produced_time_list.append(stix_package.stix_header.information_source.time.produced_time.to_dict())
 
         indicator_id_list = []
+        self.logger.log('indicators type:', type(stix_package.indicators))
+        self.logger.log('indicator[0] type:',type(stix_package.indicators[0]))
         for indicator in stix_package.indicators:
+            self.logger.log('indicator type:',type(indicator))
             if not indicator.composite_indicator_expression:
                 indicator_id_list.append(indicator.id_)
                 self.__processIndicatorFieldsList(indicator)

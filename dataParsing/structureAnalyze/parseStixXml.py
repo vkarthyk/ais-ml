@@ -1,6 +1,7 @@
 from stix.core import STIXPackage
 # import xml.etree.ElementTree as ET
 # from xml.dom import minidom
+from stix.extensions.marking.ais import AISMarkingStructure, AISConsentType
 
 from lxml import etree
 
