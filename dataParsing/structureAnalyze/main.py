@@ -29,9 +29,10 @@ Example:
         factory.goFindSomeoneDoThisJob( JobType.PrintFieldTreeToConsole)
         factory.goFindSomeoneDoThisJob( JobType.PrintFieldTreeToCsvFile, csvfilename=CSV_FILE_NAME)
 '''
-factory.goFindSomeoneDoThisJob( JobType.AnalyzeStixFromXmlAndBuildFieldTree, xmlfilename=XML_FILE_NAME)
+# factory.goFindSomeoneDoThisJob( JobType.AnalyzeStixFromXmlAndBuildFieldTree, xmlfilename=XML_FILE_NAME)
 # factory.goFindSomeoneDoThisJob( JobType.ParseStixFromXmlAndPrintValuesToConsole, xmlfilename=XML_FILE_NAME, stopafter=2)
-factory.goFindSomeoneDoThisJob( JobType.SaveFieldTree)
+# factory.goFindSomeoneDoThisJob( JobType.SaveFieldTree)
 # factory.goFindSomeoneDoThisJob( JobType.LoadFieldTree)
 # factory.goFindSomeoneDoThisJob( JobType.PrintFieldTreeToConsole)
 # factory.goFindSomeoneDoThisJob( JobType.PrintFieldTreeToCsvFile, csvfilename=CSV_FILE_NAME)
+factory.goFindSomeoneDoThisJob( JobType.AnalyzeStixFromXmlAndDrawAGraph, xmlfilename=XML_FILE_NAME, stopafter=2)

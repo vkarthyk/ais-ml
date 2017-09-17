@@ -9,3 +9,7 @@ class JobType(Enum):
     AnalyzeStixFromXmlAndBuildFieldTree=5
     PrintFieldTreeToConsole=6
     PrintFieldTreeToCsvFile=7
+    GrabAStixFromXmlAndSaveToTmpStix=8
+    LoadAStixFromFile=9
+    SaveAStixToFile=10
+    AnalyzeStixFromXmlAndDrawAGraph=11

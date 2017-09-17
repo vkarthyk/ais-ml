@@ -5,6 +5,7 @@ from parseStixXml import *
 from printUtils import pprintDict
 from dataParsing.Logger import Logger
 from settings import DATA_DIR, os
+from GraphicWorker import GraphicWorker
 
 DEFAULT_TREE_PICKLE_FILE_NAME = os.path.join(DATA_DIR, 'fieldTree.pkl')
 
@@ -105,7 +106,31 @@ class DataParsingFactory:
                 csvfilename = requirements['csvfilename']
                 worker = FieldsDocumentaryWorker()
                 worker.printTree2Csv(self.fieldTree, csvfilename)
+
+            if job is JobType.AnalyzeStixFromXmlAndDrawAGraph:
+                if not requirements.has_key('xmlfilename'):
+                    self.logger.log('err', '{',job, '}','at least give me a xml file name to parse, please :)')
+                    return -1
+                xmlfilename = requirements['xmlfilename']
+                stopAfterFinishRound = requirements['stopafter'] if requirements.has_key('stopafter') else -1
+                justDoThisRound = requirements['justdo'] if requirements.has_key('justdo') else -1
+
+                # worker = FieldsDocumentaryWorker()
+                worker = GraphicWorker()
+                for ind, stix_fn in enumerate(xmlFileName2EnumStixFileName(xmlfilename)):
+                    if stopAfterFinishRound > -1:
+                        if ind > stopAfterFinishRound:
+                            break
+                    if justDoThisRound > -1:
+                        if ind is not justDoThisRound:
+                            continue
+                    self.logger.log('info','I\'m working on stix_package #'+str(ind))
+                    stix_package = stixFileName2StixPackageObj(stix_fn)
+                    worker.doYourWork(stix_package)
+                worker.draw()
+
             self.logger.log('info', 'Job', job, 'has done!')
+
         self.logger.log('info', 'All the jobs have done! Enjoy your data!')
 
 # # worker = StixParseWorker()
