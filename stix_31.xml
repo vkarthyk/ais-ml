@@ -1,0 +1,590 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:DomainNameObj="http://cybox.mitre.org/objects#DomainNameObject-1" xmlns:NCCIC="http://www.us-cert.gov" xmlns:TOUMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:edh2="urn:edm:edh:cyber:v3" xmlns:edh2cyberMarking="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:edh2cyberMarkingAssert="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:isa="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:simpleMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1" xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xal="urn:oasis:names:tc:ciq:xal:3" xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="NCCIC:STIX_Package-b89a4f16-36a7-46cf-bd66-69ef175dfe36" timestamp="2016-10-22T03:20:55Z" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://us-cert.gov/ciscp http://www.us-cert.gov/sites/default/files/STIX_Namespace/ciscp_vocab_v1.1.1.xsd http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsAssertionsType.v2.xsd urn:edm:edh:cyber:v3 http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_SD-EDH_Profile_Cyber.v3.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd">
+  <stix:STIX_Header>
+    <stix:Title>Identified Mirai C2</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+    <stix:Description>None</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+        <marking:Marking_Structure xsi:type="AIS:AISMarkingStructure">
+          <AIS:Not_Proprietary CISA_Proprietary="false">
+            <AIS:AISConsent consent="EVERYONE"/>
+            <AIS:TLPMarking color="GREEN"/>
+          </AIS:Not_Proprietary>
+        </marking:Marking_Structure>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Contributing_Sources>
+        <stixCommon:Source>
+          <stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType">
+            <stix-ciq:Specification>
+              <xpil:PartyName>
+                <xnl:OrganisationName>
+                  <xnl:NameElement>NCCIC</xnl:NameElement>
+                </xnl:OrganisationName>
+              </xpil:PartyName>
+              <xpil:Addresses>
+                <xpil:Address>
+                  <xal:Country>
+                    <xal:NameElement xal:NameCode="US" xal:NameCodeType="ISO_3166-1_alpha-2"/>
+                  </xal:Country>
+                  <xal:AdministrativeArea>
+                    <xal:NameElement xal:NameCode="US-DC" xal:NameCodeType="ISO_3166-2"/>
+                  </xal:AdministrativeArea>
+                </xpil:Address>
+              </xpil:Addresses>
+              <xpil:OrganisationInfo xpil:IndustryType="Government Facilities Sector"/>
+            </stix-ciq:Specification>
+          </stixCommon:Identity>
+          <stixCommon:Tools>
+            <cyboxCommon:Tool>
+              <cyboxCommon:Metadata>
+                <cyboxCommon:Value>AIS</cyboxCommon:Value>
+              </cyboxCommon:Metadata>
+            </cyboxCommon:Tool>
+          </stixCommon:Tools>
+        </stixCommon:Source>
+      </stixCommon:Contributing_Sources>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2016-10-22T03:13:35Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:Indicators>
+    <stix:Indicator id="NCCIC:indicator-1fb8ec0f-9805-11e6-b682-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb9131f-9805-11e6-a78a-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb9131e-9805-11e6-9a65-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">report.laatmaarzittenjoh.cf</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb91320-9805-11e6-a1be-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb91322-9805-11e6-bf9f-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb91321-9805-11e6-9b2a-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">netwxrk.org</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb91323-9805-11e6-9ca0-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb91325-9805-11e6-baaf-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb91324-9805-11e6-8551-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">laatmaarzittenjoh.cf</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb91326-9805-11e6-9fdb-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb91328-9805-11e6-b56b-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb91327-9805-11e6-a213-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">im.lateto.work</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb91329-9805-11e6-949f-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb9132b-9805-11e6-b4e6-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb9132a-9805-11e6-ab88-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">youre.lateto.work</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb9132c-9805-11e6-9e46-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb93a2f-9805-11e6-b0ff-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb93a2e-9805-11e6-84d6-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">network.santasbigcandycane.cx</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb93a30-9805-11e6-82ba-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb93a32-9805-11e6-9906-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb93a31-9805-11e6-92e1-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">report.santasbigcandycane.cx</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb93a33-9805-11e6-b9b3-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb93a35-9805-11e6-8ae3-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb93a34-9805-11e6-b398-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">new.swinginwithme.ru</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb93a36-9805-11e6-9ba0-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb93a38-9805-11e6-a2c9-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb93a37-9805-11e6-9927-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">fucklua.fbisupport.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb93a39-9805-11e6-9eb8-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb93a3b-9805-11e6-8851-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb93a3a-9805-11e6-9ad0-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">cnc.disabled.racing</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb93a3c-9805-11e6-b0be-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb93a3e-9805-11e6-83fe-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb93a3d-9805-11e6-9742-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">gay.disabled.racing</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb93a3f-9805-11e6-81f2-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb96141-9805-11e6-9083-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb96140-9805-11e6-a107-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">report.disabled.racing</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb96142-9805-11e6-a3cf-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb96144-9805-11e6-a5dc-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb96143-9805-11e6-b001-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">lol.disabled.racing</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb96145-9805-11e6-a1ef-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb96147-9805-11e6-a9d4-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb96146-9805-11e6-857f-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">dongs.disabled.racing</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb96148-9805-11e6-8a89-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb9614a-9805-11e6-858b-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb96149-9805-11e6-93c0-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">penis.disabled.racing</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb9614b-9805-11e6-a1a9-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb9614d-9805-11e6-9c6f-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb9614c-9805-11e6-b77b-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">report.xf0.pw</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb9614e-9805-11e6-82cc-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb96150-9805-11e6-af27-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb9614f-9805-11e6-9f74-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">swinginwithme.ru</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb96151-9805-11e6-a488-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb96153-9805-11e6-b886-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb96152-9805-11e6-93a8-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">imscaredaf.xyz</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb96154-9805-11e6-a6f7-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb98850-9805-11e6-9114-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb9884f-9805-11e6-b92a-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">kankerc.queryhost.xyz</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:indicator-1fb98851-9805-11e6-9480-eccd6dca1560" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Mirai botnet C2</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1fb98853-9805-11e6-ac81-eccd6dca1560">
+        <cybox:Object id="NCCIC:Object-1fb98852-9805-11e6-a087-eccd6dca1560">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">report.queryhost.xyz</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/>
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/>
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+</stix:STIX_Package>
+

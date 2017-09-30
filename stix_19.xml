@@ -1,0 +1,144 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CISCP:IB-15-10082" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd   http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd   http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd   http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.1/Win_Registry_Key_Object.xsd   http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd   http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd   http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd   http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd   http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd   http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd   http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd   http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd   http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd   http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd   http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd   http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd   http://cybox.mitre.org/objects#MutexObject-2 http://cybox.mitre.org/XMLSchema/objects/Mutex/2.1/Mutex_Object.xsd   http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd      http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd   http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd">
+  <stix:STIX_Header>
+    <stix:Title>Micro Targeted Advertising Exploits Flash and Serves Malware</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators</stix:Package_Intent>
+    <stix:Description>On 6 February 2015 it was reported that legitimate sites were serving real-time bidding malicious ads. Initially, a .swf file was downloaded to exploit Flash which led the host to download second stage malware.  
+
+Some of the legitimate sites include:
+
+photogallery.indiatimes.com
+timesofindia.indiatimes.com
+www.wordfind.com
+www.wowhead.com
+www.answers.com
+www.blackpeoplemeet.com
+ads.us.e-planning.net
+www.answers.com
+www.stltoday.com
+peru.com
+
+The malicious RTB TTP was reported on in IB-14-10645</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+        <marking:Marking_Structure color="GREEN" xsi:type="tlpMarking:TLPMarkingStructureType"/>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2015-03-09T15:33:44Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:Indicators>
+    <stix:Indicator id="CISCP:indicator-a22a5d5c-5b07-4000-b08a-9811c12bd5a4" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Composite_Indicator_Expression operator="OR">
+        <indicator:Indicator idref="CISCP:indicator-580a54b7-fdd8-4863-9a67-7f3db6b27abb"/>
+        <indicator:Indicator idref="CISCP:indicator-f095a662-8e2e-4046-9434-b3d2df1b4c2f"/>
+        <indicator:Indicator idref="CISCP:indicator-7b1e4a7c-e734-4080-91f1-e545c50f5101"/>
+        <indicator:Indicator idref="CISCP:indicator-176d31fc-9983-41c2-8cec-059fa13d3812"/>
+      </indicator:Composite_Indicator_Expression>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-580a54b7-fdd8-4863-9a67-7f3db6b27abb" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>This is the URL for the .swf file that exploits Flash. The .swf file automatically downloads once the legitimate site was visited.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-ea31460a-8f7c-416c-95b0-c95a6c436683">
+        <cybox:Object id="CISCP:Object-d4804755-ba66-4e21-9197-f453e3840ad2">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://0683f75aacab1fd008e9-c68beaf8dcca0cd5f77493a027ad6d0c.r84.cf2.rackcdn.com/user_6290_camp_3709_e4205a6204a67af089ee2c41a6fe6ab6.swf</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-02-06T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-f095a662-8e2e-4046-9434-b3d2df1b4c2f" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>An executable file is downloaded after visiting this URL. The executable file was reported as an image/jpeg in the header field of the HTTP response.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-1be26913-0b5e-4695-b6d2-6bd36eced0c3">
+        <cybox:Object id="CISCP:Object-fe50e2c3-7d08-4aa0-be04-0818feaf99c3">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://198.55.119.126/jag200p15co/ee2un066aepv4.php</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-02-06T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-7b1e4a7c-e734-4080-91f1-e545c50f5101" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type>
+      <indicator:Description>An executable file is downloaded after visiting this URL. The executable file was reported as an image/jpeg in the header field of the HTTP response.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-2d9e02b6-1696-46c7-8e83-8f53996f6bc3">
+        <cybox:Object id="CISCP:Object-32d74004-61be-45a5-b002-1f1d35cd840b">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://66.55.129.199/jag200115ab/ee2un066aepv4.php </URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-02-06T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-176d31fc-9983-41c2-8cec-059fa13d3812" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malware Artifacts</indicator:Type>
+      <indicator:Description>This is the file from visiting either of the two URLs. It was reported as icqsmiley type malware.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-20edf11b-0e6f-493b-9561-01d85a3a2841">
+        <cybox:Object id="CISCP:Object-75d9ccca-a9a9-43c3-b1cb-650d24f7509b">
+          <cybox:Properties xsi:type="FileObj:FileObjectType">
+            <FileObj:File_Name condition="Equals">xzhian.exe</FileObj:File_Name>
+            <FileObj:Size_In_Bytes condition="Equals">28672</FileObj:Size_In_Bytes>
+            <FileObj:Hashes>
+              <cyboxCommon:Hash>
+                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                <cyboxCommon:Simple_Hash_Value condition="Equals">3ac9a0c8a8a5ec6d3aba629bf66f9fb1</cyboxCommon:Simple_Hash_Value>
+              </cyboxCommon:Hash>
+              <cyboxCommon:Hash>
+                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                <cyboxCommon:Simple_Hash_Value condition="Equals">5b8d4280ff6fc9c8e1b9593cbaeb04a29e64a81e</cyboxCommon:Simple_Hash_Value>
+              </cyboxCommon:Hash>
+              <cyboxCommon:Hash>
+                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                <cyboxCommon:Simple_Hash_Value condition="Equals">17c809a3b8f5d97045b2536d2a6cfea0e47c79930ad434bb789de2f348fbc73f</cyboxCommon:Simple_Hash_Value>
+              </cyboxCommon:Hash>
+              <cyboxCommon:Hash>
+                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                <cyboxCommon:Fuzzy_Hash_Value condition="Equals">384:qTFKSysjbNl9fsfYCYvOmlFdocCym/w5FkarEsrlTPR69v:4FKoR3CYrKdhw5mdUlTPR69</cyboxCommon:Fuzzy_Hash_Value>
+              </cyboxCommon:Hash>
+            </FileObj:Hashes>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2015-02-06T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/>
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/>
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+</stix:STIX_Package>
+

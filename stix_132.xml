@@ -1,0 +1,1066 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:CustomObj="http://cybox.mitre.org/objects#CustomObject-1" xmlns:DNSQueryObj="http://cybox.mitre.org/objects#DNSQueryObject-2" xmlns:DNSRecordObj="http://cybox.mitre.org/objects#DNSRecordObject-2" xmlns:DomainNameObj="http://cybox.mitre.org/objects#DomainNameObject-1" xmlns:EmailMessageObj="http://cybox.mitre.org/objects#EmailMessageObject-2" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:HTTPSessionObj="http://cybox.mitre.org/objects#HTTPSessionObject-2" xmlns:HostnameObj="http://cybox.mitre.org/objects#HostnameObject-1" xmlns:LinkObj="http://cybox.mitre.org/objects#LinkObject-1" xmlns:MutexObj="http://cybox.mitre.org/objects#MutexObject-2" xmlns:NCCIC="http://www.us-cert.gov" xmlns:NetworkConnectionObj="http://cybox.mitre.org/objects#NetworkConnectionObject-2" xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2" xmlns:SocketAddressObj="http://cybox.mitre.org/objects#SocketAddressObject-1" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:WinRegistryKeyObj="http://cybox.mitre.org/objects#WinRegistryKeyObject-2" xmlns:coa="http://stix.mitre.org/CourseOfAction-1" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:edh2="urn:edm:edh:cyber:v3" xmlns:edh2cyberMarking="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:edh2cyberMarkingAssert="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd" xmlns:et="http://stix.mitre.org/ExploitTarget-1" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:isa="urn:isa" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:simpleMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1" xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:ttp="http://stix.mitre.org/TTP-1" xmlns:xal="urn:oasis:names:tc:ciq:xal:3" xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="NCCIC:Package-aa14b6bd-2892-4466-b25f-237181ac0e8d" timestamp="2016-12-20T18:40:48Z" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.1/Win_Registry_Key_Object.xsd http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsAssertionsType.v2.xsd http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd http://cybox.mitre.org/objects#CustomObject-1 http://cybox.mitre.org/XMLSchema/objects/Custom/1.1/Custom_Object.xsd http://cybox.mitre.org/objects#DNSQueryObject-2 http://cybox.mitre.org/XMLSchema/objects/DNS_Query/2.1/DNS_Query_Object.xsd http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd http://stix.mitre.org/ExploitTarget-1 http://stix.mitre.org/XMLSchema/exploit_target/1.1.1/exploit_target.xsd http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd http://cybox.mitre.org/objects#HostnameObject-1 http://cybox.mitre.org/XMLSchema/objects/Hostname/1.0/Hostname_Object.xsd http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsType.v2.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd http://cybox.mitre.org/objects#MutexObject-2 http://cybox.mitre.org/XMLSchema/objects/Mutex/2.1/Mutex_Object.xsd http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd urn:edm:edh:cyber:v3 http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_SD-EDH_Profile_Cyber.v3.xsd http://stix.mitre.org/CourseOfAction-1 http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd http://cybox.mitre.org/objects#DNSRecordObject-2 http://cybox.mitre.org/XMLSchema/objects/DNS_Record/2.1/DNS_Record_Object.xsd">
+  <stix:STIX_Header>
+    <stix:Title>CSEC 2016 10 5</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators</stix:Package_Intent>
+    <stix:Description>CSEC 2016 10 5</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+        <marking:Marking_Structure xsi:type="AIS:AISMarkingStructure">
+          <AIS:Is_Proprietary CISA_Proprietary="true">
+            <AIS:AISConsent consent="EVERYONE"/>
+            <AIS:TLPMarking color="GREEN"/>
+          </AIS:Is_Proprietary>
+        </marking:Marking_Structure>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Contributing_Sources>
+        <stixCommon:Source>
+          <stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType">
+            <stix-ciq:Specification>
+              <xpil:PartyName>
+                <xnl:OrganisationName>
+                  <xnl:NameElement>CSEC</xnl:NameElement>
+                </xnl:OrganisationName>
+              </xpil:PartyName>
+              <xpil:Addresses>
+                <xpil:Address>
+                  <xal:Country>
+                    <xal:NameElement xal:NameCode="CA" xal:NameCodeType="ISO_3166-1_alpha-2"/>
+                  </xal:Country>
+                  <xal:AdministrativeArea>
+                    <xal:NameElement xal:NameCode="CA-ON" xal:NameCodeType="ISO_3166-2"/>
+                  </xal:AdministrativeArea>
+                </xpil:Address>
+              </xpil:Addresses>
+              <xpil:OrganisationInfo xpil:IndustryType="Information Technology Sector"/>
+            </stix-ciq:Specification>
+          </stixCommon:Identity>
+          <stixCommon:Tools>
+            <cyboxCommon:Tool>
+              <cyboxCommon:Metadata>
+                <cyboxCommon:Value>EMAIL</cyboxCommon:Value>
+              </cyboxCommon:Metadata>
+            </cyboxCommon:Tool>
+          </stixCommon:Tools>
+        </stixCommon:Source>
+      </stixCommon:Contributing_Sources>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2016-12-20T18:32:03Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:Indicators>
+    <stix:Indicator id="NCCIC:Indicator-84cfa498-f40a-4fbc-9730-6de7abdfc91c" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-dece38ad-9009-42af-88a9-1d6dd2dd48e0">
+        <cybox:Object id="NCCIC:Object-a31e15dc-71a9-4a7e-94cf-a84f2fa0fed3">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">zurueckgekaufter.prefabspecialists.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-841d5457-a66a-4318-b75d-c2c58f5bf5ce" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-c2c8ba74-1817-4c9c-89d5-ffbe6f80e3ba">
+        <cybox:Object id="NCCIC:Object-2e644a23-eed6-42ef-a1ca-b2be72e88733">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">acc.aviatorfinancecompany.net</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-90baa873-2500-47a2-a966-e7ac39f10d30" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-87be8940-a41e-4e99-b8b7-b765638d45c8">
+        <cybox:Object id="NCCIC:Object-6621ce63-7201-4c88-971a-d788f96c1509">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">add.arielcatering.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-3cacbfa8-3abf-4e4d-a2ad-7bb9df02942d" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-6abb7cdc-7ee4-45c9-8f99-aee503af1234">
+        <cybox:Object id="NCCIC:Object-2031d69f-d305-417b-a6ae-423b512fbad2">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">add.thedocumentarywebsite.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-58393a4a-45cd-44bd-84ea-751a15043e6f" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-46a17ff6-4ba5-43b2-97ab-36a8e47e29a6">
+        <cybox:Object id="NCCIC:Object-9c6bdb34-8bc0-46a7-977b-a677c3fe864f">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">add.youngsantafilm.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-873b85b3-a795-47d1-b33b-6c1270604eea" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-0ba21739-0a02-4a57-a070-599cea670ad8">
+        <cybox:Object id="NCCIC:Object-d7613628-46e2-4849-8d80-36209c84a28d">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">amkrdhzi.megaharold.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-65630341-9515-40a4-9608-973f49bd461b" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-8747a0c2-c7f7-4f7b-986c-f117d28a654a">
+        <cybox:Object id="NCCIC:Object-bb3e3f2c-c976-4e2c-b251-8f1e5620efa4">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">art.snc08.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-d68e1169-01a1-4c55-b160-959532006e4a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-14afa525-da4c-4d4f-86b8-c9e2c0ba88f8">
+        <cybox:Object id="NCCIC:Object-6251bf50-703f-44a1-b46a-25a0a1813333">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">asteittainen.thehomesteadconstruction.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-b52f93e2-f34a-4fa4-b4af-cc00ca894378" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-5b081d11-074d-487c-8957-2c89054d9d5a">
+        <cybox:Object id="NCCIC:Object-0c9ce10b-4139-44ac-9a50-4330130d8048">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">avth.afsn1.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-c4586d36-ef72-4381-bbbe-38563cabe267" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-d1766774-e5fd-488e-aa6b-40394c046190">
+        <cybox:Object id="NCCIC:Object-441b10d0-b0cc-46ae-bad8-48d8a740fe36">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">barkatullavbwait.ernestboaten.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-9b81ab56-1a8c-41ea-aa21-7b26a996f50d" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-522f5308-9519-445d-a8d1-4424db5e09c2">
+        <cybox:Object id="NCCIC:Object-28ac0ceb-7028-473a-a4b9-a377253e833b">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">bestellz.rabbiot.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-7d26c499-1e18-4e2b-853a-ca58b7e136de" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-aa7af5a4-fb82-4e79-8df4-7b602272ccf9">
+        <cybox:Object id="NCCIC:Object-2cdc53be-1137-4dc2-9fb7-a56e1a01cd7c">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">bkx3cu.hq8cvb.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-86f98e32-7424-4253-a415-7dc8a91f8a24" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-42e76338-0b70-43fc-8e91-19557ded0957">
+        <cybox:Object id="NCCIC:Object-88027953-a4bb-42a9-9234-56a507a923d1">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">brauchbarkeit.barriobreakthru.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-d64991ae-be2b-4754-a282-ce7ee9fd83a5" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-fb1486c2-6e3a-4578-9e6f-63724eea0a26">
+        <cybox:Object id="NCCIC:Object-71510f35-2175-48a8-b90b-3e1907858447">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">bucel.pl6yiez.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-1f186531-bd23-4822-9aae-9e40410fc3a7" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-e42d2267-26fd-43b1-985d-b79e901f59b8">
+        <cybox:Object id="NCCIC:Object-408afcb6-7091-4edd-b63c-f3967ec741a3">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">bureugut.ru</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-9f85fa31-fee0-4faa-a207-923c1ca2f979" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-136b4b9e-5a53-4dea-bb8e-2bfa227aecb5">
+        <cybox:Object id="NCCIC:Object-8688a858-5ea4-4489-b8a4-0d9865b6cb89">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">c253i.n0da3t0.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-e41f77e5-ab60-4494-9c7f-22b0850daf0b" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-5dbda224-f425-483b-9f30-c33c59fd25ab">
+        <cybox:Object id="NCCIC:Object-fd514ba3-c468-4aa9-9ee6-3cbe297dc6f7">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">cagopianbereholen.auroratiles.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-b584d002-ac27-4964-843f-fa0129bc4efd" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-4606a6cd-e7af-42f8-b179-b533e1b62a8c">
+        <cybox:Object id="NCCIC:Object-15b4f55b-b549-49c9-bf89-a77b50080051">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">consulavissem-descorderar.navyamateurradioclub.org</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-a6272072-886f-4350-a9b1-7ec75415897f" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-71c8dd9e-564a-4f04-b244-19cb0f5474c7">
+        <cybox:Object id="NCCIC:Object-173d0545-c27e-4a58-a88f-05fa8713ea5b">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">cx.aviatorschoolusa.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-c666a043-4930-48d0-8e7a-103c486fae16" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-ade756c3-beed-4f7f-a666-def157ecd5be">
+        <cybox:Object id="NCCIC:Object-c350d822-ecc8-4318-bc5f-e20add4b6387">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">d3gytt.opengaims.ml</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-a96c3774-e879-4190-99ef-fae560e444a3" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-b858f874-1005-49ed-94b3-7588bb74891f">
+        <cybox:Object id="NCCIC:Object-f8e0ce0c-7730-4517-a028-69a7a4edf7ef">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">dji2uja.opengaims.tk</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-1160ac6f-a651-428b-a201-ea8c5649049d" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-83af0b93-9797-4707-9cd5-5f02eb7460e9">
+        <cybox:Object id="NCCIC:Object-896baca5-e25f-41fa-a42f-7f2b882ad172">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">ds.authorityinrealestate.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-2ee5ac68-6a6a-4c05-ad4b-02884e5e9a84" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-a1bb0158-eefb-4e63-9802-bf78f98c32e2">
+        <cybox:Object id="NCCIC:Object-4c246790-b2dc-4ded-8491-0ba83f79589b">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">ds.beacfiindia.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-d9969692-b9b4-4353-9c57-706b556b8f2a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-4d301c26-f8cc-4d89-9e24-ce2d9c551c38">
+        <cybox:Object id="NCCIC:Object-bcf8784f-fbd0-445a-bc1e-f83287b70ff8">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">duncansmithcgkxgg.officeindustrialbroker.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-48a42987-2f7e-4dfe-8824-26f530481582" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-fc0c10b7-664b-4679-9721-3c4cfaf2a2a1">
+        <cybox:Object id="NCCIC:Object-aed7f8f4-866d-4c35-821d-860d0f3d3b3c">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">e6qf.w9dm15.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-1c7279f3-71e9-4446-ac69-acd694b77d3f" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-4550b5b5-5a5f-4b66-bcc3-dab38e0bc1d6">
+        <cybox:Object id="NCCIC:Object-5115896a-5fed-4c30-a152-ecc3d5f65f29">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">edgartonvattennet.prefabspecialists.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-7b31c337-cbfb-406a-bebc-721f96106fc3" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-bc816f40-8d53-4e1a-b0d4-78366068218c">
+        <cybox:Object id="NCCIC:Object-061e590e-61f6-444d-9d26-7689116277c3">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">edko2i.opengaims.cf</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-e37b4079-5e56-4c7e-bf83-9fa9fa7be56d" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-9b36a82e-1eb5-4119-aa5c-2a73b75472f3">
+        <cybox:Object id="NCCIC:Object-92cc7be0-29a6-4e0e-ae91-e5fd86e1de66">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">elckrvdsd.megaharold.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-96cc2b44-7c8a-440f-8476-b0f482c8dbff" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-b5fd9f71-3042-44ef-b53a-f2939e03c7dd">
+        <cybox:Object id="NCCIC:Object-fd6a5850-6ee2-4d86-91eb-6d3b28e506e7">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">endabschaltung-albipellucida.sunningdaletradingcompany.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-3400ea4e-af63-462e-b17e-0ee4ab5ede03" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-869b7827-8881-4745-ae6a-95963f271f00">
+        <cybox:Object id="NCCIC:Object-ae10a117-18b9-42e1-bb1b-a0e7f3903017">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">f48usj.opengaims.ga</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-f08a82af-1603-41e2-9fd5-71380f34f495" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-ca9cbeda-5ea0-4254-8242-fec488d00a4c">
+        <cybox:Object id="NCCIC:Object-98d38fb5-d223-400f-9fc5-e954ed319e81">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">f6qy9w5.fgsuyl3.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-19d9ad33-faca-4edb-a1f6-2698f8f1ef00" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-d3511478-f839-45a4-bb26-a63a3805a900">
+        <cybox:Object id="NCCIC:Object-1151b6e9-2af6-4fff-91b8-b084fd120ad2">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">fehisresro.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-16cd3d4d-8447-4fa9-832c-efae40d028c2" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-ca629718-a42d-4ce8-85a7-330b47f05285">
+        <cybox:Object id="NCCIC:Object-c938811f-a415-4a54-8f31-111d58f9f6a8">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">free.mailsnc.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-51e698b0-e8d7-4d4c-9be2-694aa8b15e7b" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-c5300aab-24e4-424b-8e6a-225df2104412">
+        <cybox:Object id="NCCIC:Object-dc3a9c9b-c961-4852-b217-bdc9e22aa701">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">ftpsoftware-compass0.theawesomestmusic.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-b02d789a-5c8f-4954-bd0b-d1a48d436d8e" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-8d815204-5dcf-4384-9991-c450bb17d005">
+        <cybox:Object id="NCCIC:Object-e8e5f62c-93ce-4872-997b-a2e11eab6111">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">gamefoheck.ru</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-760f5b14-3fc0-4f3d-8118-a4910c9c1d85" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-893b8f93-134e-44a0-b8c0-d94f1a858638">
+        <cybox:Object id="NCCIC:Object-ca8db548-9283-4088-bb07-d4234ff78ee1">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">genauer-airsupply.victorylifestyle.org</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-d0844bd0-f11d-4992-b213-32b8a282146d" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-bd1ed1c2-bf67-463c-8e4c-23e477718ba6">
+        <cybox:Object id="NCCIC:Object-923e15a0-687f-4f66-a7b0-46b2ece5af93">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">geschlichtetes.jacobeachquadplex.info</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-5b5be7c1-c85a-4c42-aef6-56ba28dbf974" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-8b85a260-06d5-46c5-a069-a7b17a774b95">
+        <cybox:Object id="NCCIC:Object-e7ca0d78-3cf4-4f13-81f1-e2cdde9d3e22">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">herpetologia-kannatusyhdistykseen.ktelecomunicacoes.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-bf44a08a-55ed-4c5e-a833-5bef41d9c9a6" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-9706a8d7-4728-45a8-9999-00330c04522b">
+        <cybox:Object id="NCCIC:Object-012f18c3-03ff-4b57-801a-d0341f5a0433">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">hqzj0za.x5972i.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-6e2a9637-7bb8-4373-848c-361255ab0a7a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-4ddf4835-0ef0-4a7c-80fc-b9aff7681936">
+        <cybox:Object id="NCCIC:Object-bb8a6347-5449-4035-805b-6a6ce9ab2233">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">internalsoftwareworkwhom.ru</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-45fd64ea-19b9-4bdc-af1f-f534b0c05072" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-8be9e346-4780-42b4-a022-09e0baa24d39">
+        <cybox:Object id="NCCIC:Object-fb35559b-0e8e-4c5f-b63e-22315ea1ca1f">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">ivyftngw.midnightwatch.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-c038148a-dd47-46d6-bcbe-93d7e6fc330c" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-650eefef-6ece-49ae-9a4a-5e96a77f142d">
+        <cybox:Object id="NCCIC:Object-8c13a36f-0c05-4eb7-8057-7a3f37eb496f">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">izmijenjen2ostajissa.freshstyleapparel.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-bc411841-5c71-46ba-b789-466111165823" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-c35a88a3-25ac-4b0b-931d-77a3dc572420">
+        <cybox:Object id="NCCIC:Object-aceacd2c-0ea0-4e70-bbdc-e2553ccaddfd">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">johnhowkette.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-bc5d8299-dd58-41f8-b2b1-6cdfb5451308" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-d4c21105-8bd9-40ca-a1bf-186a6c949d0e">
+        <cybox:Object id="NCCIC:Object-f11ceb1c-30b7-4acd-987a-109dbcfeaab3">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">jvep76.oa3ri8.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-53bf328e-0607-4683-ae33-54e7e9b97e08" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-796a92fb-c416-4cd4-91d3-001b92809f94">
+        <cybox:Object id="NCCIC:Object-f130ea20-b27b-49bd-87b7-0c2382a26ea7">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">l5b336.ulp3ied.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-d43ef8bc-e94b-4764-a5ae-45f6058f28c1" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-196a17ef-862d-47d2-8ec8-e66e9e078d94">
+        <cybox:Object id="NCCIC:Object-18171bf2-7189-491f-a972-6b739f4abfae">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">lpyfa.beforesuffer.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-72e4341a-19f0-405b-b809-a4883570679e" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-1a69a971-3810-48c4-83b1-a082b8b832e7">
+        <cybox:Object id="NCCIC:Object-fefd8aa7-1374-404f-ab98-db7a317690e6">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">lxajv.t4591or.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-3421950f-923d-4e7f-9067-b0e895102023" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-dd29a08f-05ce-4a12-8bea-e1992c7d84be">
+        <cybox:Object id="NCCIC:Object-0df83cba-d142-470d-91e5-44cb55db5fdd">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">mld0qmj.bitcljay.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-96bebd81-3656-4e7b-b631-a0c91f4aa5fd" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-9d655379-7358-4f3c-9964-6923feb7486a">
+        <cybox:Object id="NCCIC:Object-cd9f7b31-5a14-4533-8ef0-090cfc8eb838">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">muchidonhen.ru</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-4f90736f-bca7-4bb6-b56a-988fa04ac39a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-fc1e4568-8629-48d6-baf9-c297c8814e98">
+        <cybox:Object id="NCCIC:Object-7c7a5905-e2ee-44bf-a8f1-bd51e71db3c7">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">nqkmtpatc.taketend.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-d6c37e39-05ad-4555-aa7e-e8c91eeba35f" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-2d520ffc-2e80-4078-986b-89977bc9dc8f">
+        <cybox:Object id="NCCIC:Object-357e41b4-582b-4422-a6c1-d2802ea9319c">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">ochm.suhd2d.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-b29df6aa-09ff-4412-90c1-81098666aa31" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-60dad8a5-2276-4da3-b8a6-c6fda9d0cd3d">
+        <cybox:Object id="NCCIC:Object-22485c6b-699b-4fc8-897d-1d3917e2fd01">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">orosehineingehoert.prefabspecialists.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-1e3c6410-7e34-4577-beb5-9f7a211a7a1c" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-027ba432-3409-4254-9d53-d7ab7aa4f1dd">
+        <cybox:Object id="NCCIC:Object-07822aed-40bb-4276-8fda-ffa06075551a">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">oymd6.ndqo0ip.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-22efe22f-261f-4f23-9a84-2267be574851" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-5167c7d2-2e8e-4e5d-8d67-0544fcf1f83d">
+        <cybox:Object id="NCCIC:Object-da9967b3-5f88-4f3e-9849-855578467152">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">paeckchenstaalstudie.rabbiot.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-b83ec207-9033-43cd-b26e-8ee7c8161966" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-0dd60e31-da23-4077-95dc-a85f018268cc">
+        <cybox:Object id="NCCIC:Object-9e58a0cc-7367-4ac1-b67e-f282c4c8a414">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">pb9i.d19ldbyk9.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-cbe9c06e-f0bd-471b-8f29-4f2fcbe743ba" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-b27bf112-22ca-4866-a61f-0a82c11228da">
+        <cybox:Object id="NCCIC:Object-7c1edb12-7fce-4e70-a7a8-c37f78959c4c">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">q3a3rga.fgsuyl3.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-15997c7a-e314-4076-8c86-3ab1a51d0052" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-3ecc0c70-131b-40f4-b544-4bc04d0f8493">
+        <cybox:Object id="NCCIC:Object-24d904ad-c9b3-4caa-a702-e7f67b1cfc88">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">q57ic.tdot5it.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-f56833bd-fc00-487c-ae88-3e03a0659076" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-b7ca8861-f287-4a37-94e2-71e94f1e09b8">
+        <cybox:Object id="NCCIC:Object-aa91cd6f-f2b5-4057-bba4-32ecab308f1f">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">q92blt.kkcup2h6.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-f1665035-4555-4e95-9d6b-075ca6e6a57f" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-2fec5cea-2e10-488c-89fa-cf79315f89f0">
+        <cybox:Object id="NCCIC:Object-9079a908-7cca-41d6-b650-d601b647fd37">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">qvr0wmi.c8phruc.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-8e79fff0-91cf-426c-ad47-210199167b9e" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-4a389e2f-c3a1-4d9c-b797-2c6672bfcd85">
+        <cybox:Object id="NCCIC:Object-35820350-10ff-4840-9091-c1ce9dd139ef">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">qxr9.zckf2x.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-698601c4-b067-4b1a-9f71-fe1b11e1417c" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-a53d45ba-a581-42f4-86d6-768e766e3995">
+        <cybox:Object id="NCCIC:Object-8b217039-6fec-4953-a33b-7361a56e2c1f">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">reliquissembarbaren.khalilinsurance.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-3d8f6ac6-f259-49e6-9df3-9e20d82e7638" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-344da1ca-de95-4474-a0cf-f5c3632678b6">
+        <cybox:Object id="NCCIC:Object-94647951-4258-41b9-b931-a4313b59030d">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">remeckascolter.thecakemag.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-04f626dd-8281-4f23-8df6-69eaacc8a23a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-87c9adcb-09d9-42cf-a17e-e9ce258fe38c">
+        <cybox:Object id="NCCIC:Object-b7390fe9-9de7-46f8-a0ee-d98a68ea899c">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">respondstuasu-pyhhuhta.khalilinsurance.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-f883bc31-c19e-41b1-aa90-160fb25def64" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-f13136e0-6b4c-4235-9f5a-88e9b6eeac49">
+        <cybox:Object id="NCCIC:Object-7e117ef4-a33d-41fe-81b9-7b8c12f1f147">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">rusinhoun.ru</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-36cf14ea-92db-4c21-bbb7-3ed055d08a48" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-6ee391a9-a84a-4089-9b90-1e03c5af6009">
+        <cybox:Object id="NCCIC:Object-f942231c-072f-4467-bffd-c4e7119965f5">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">ryn7w.ndqo0ip.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-3ccd669d-e2a3-4313-bfd9-b17603697322" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-2fe6b9c5-12fc-4658-a7c5-1e6b3d2514eb">
+        <cybox:Object id="NCCIC:Object-b57cd69b-9e3e-4287-a0f8-86b879776215">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">sa.gosnc.info</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-e35c2be4-21de-4541-b85b-c6c3b49b6236" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-43f0a38a-9efd-4836-b80a-29a6edb2688f">
+        <cybox:Object id="NCCIC:Object-4e23460a-1aed-41ec-aa9e-e15a41ce8b78">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">sandrikedot.ru</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-70c66b9c-bd30-495b-8ecb-76f6b95e41a1" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-6e6348db-51bd-45d2-ab5c-bfd14e20208a">
+        <cybox:Object id="NCCIC:Object-303f7a4f-fa2e-46a0-9df9-8077204ae4fc">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">szbasixqt.middaychange.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-90571acf-faf0-4e8e-a0ba-52d1b3177299" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-e7ff4b9b-8d27-46a9-ae51-7563989202d4">
+        <cybox:Object id="NCCIC:Object-980325f4-ead5-468f-a589-a7330d9b8c67">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">three.jetregpingthree.xyz</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-0a473e21-95e7-4809-9316-ecbfa4c26917" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-218845b4-611d-4ece-b277-4f16db8f4e56">
+        <cybox:Object id="NCCIC:Object-6a295e88-eb8f-486d-af58-47a5b754667c">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">tietokonevirhelichvarcik.georgiaofficeagent.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-3afcc9cc-6e8c-4a5d-a10a-8d0225af4059" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-0fd41186-cbbb-4a06-9de1-dfca2e91249f">
+        <cybox:Object id="NCCIC:Object-26bbb4e1-108a-4077-86dc-52d2f828ee10">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">tmltyhgmd.somehide.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-0c855a03-e5c4-42a0-8343-ad124a9b96ce" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-d5d99ee5-6fa5-4f6e-b020-051a5ea452a8">
+        <cybox:Object id="NCCIC:Object-bc83c936-73b6-436f-9d06-03b3b5fd163e">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">tphahn.thereanna.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-28b8f886-d2e0-40f3-9e22-be327105fd0a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-eec7cb9d-883a-495f-b280-bc1ac61dccb8">
+        <cybox:Object id="NCCIC:Object-fb296fcc-0c6b-4c46-bfef-aa7ab5e76336">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">tvgbc.ylyvvhr.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-51d4cd04-2c25-462c-bd7e-5b431e58f82a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-e732eb09-39d5-43f0-9622-db5128d899ad">
+        <cybox:Object id="NCCIC:Object-c3f41ec8-935a-47a0-99bb-efd3233fb305">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">ughtontrofhe.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-a0dacb17-15fb-4f58-a1cf-fd70e325ce1a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-2aad4a96-013e-45cf-8f9b-8eb223fad1d9">
+        <cybox:Object id="NCCIC:Object-19fcd02c-db75-4867-86b7-a9b42b39c2ae">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">usage.toolbar.conduit-services.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-370f3460-defb-411b-bf5e-f260caedde18" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-f4c37fd7-abcf-4134-83f2-46fe441dd6aa">
+        <cybox:Object id="NCCIC:Object-8b62a887-5d77-46fb-b287-008481fd724e">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">v4yw02i.c0ekkjjz.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-0981c55e-8ff4-4ea8-8e83-5991c836fbc2" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-c6fff4c9-8b51-4761-8573-b4eb9907a433">
+        <cybox:Object id="NCCIC:Object-74c06088-1d7c-4cad-8e18-a2c5bf40c39b">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">verafschuwdovafor.therollingserbs.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-e10c4d84-4fed-414b-9285-d148bf20ff0b" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-96407db3-7f03-4bab-930a-a42baca9ae4b">
+        <cybox:Object id="NCCIC:Object-74d39829-621d-483c-8a9f-fbc172955552">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">vkmtv.monthsit.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-f5c798e6-7d69-4e28-9fe7-d39fd626033e" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-7f6413af-2eee-405f-901c-b74e2d1d2998">
+        <cybox:Object id="NCCIC:Object-939b09d2-ef08-4215-941f-4487d26b6bb0">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">vzklur.midnightwatch.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-9bfe3495-acdb-444c-8c03-e274627ac61f" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-2f5685d8-45e3-4ef8-ac97-75a9d9b02e92">
+        <cybox:Object id="NCCIC:Object-32ebade6-6203-47e7-a8a3-892c9eb43f8e">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">wer.cfitrainingcenter.com</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-c8ae6c04-4e0e-4202-a755-2110c7b0545d" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-eb12bb0a-ba03-4377-ba86-4f1d7455101b">
+        <cybox:Object id="NCCIC:Object-7b817d8a-5b85-436d-9711-1dc8e0aa78de">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">whth.ijbthwz72.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-562650a3-59de-4ae9-84ea-ecef6ebfb04a" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-aa9ef345-91d5-4e79-8392-29e139bb0297">
+        <cybox:Object id="NCCIC:Object-0e9b41f8-ccd7-4652-9f3b-d94c543294cb">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">y7con.hdcm63k.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-8eebf570-76e8-4abc-9146-96b2c4aea645" timestamp="2016-12-20T18:40:48Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>CSEC 2016 10 5</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>CSEC 2016 10 5</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-32362c6d-e299-42ff-bedb-751abb2ecc80">
+        <cybox:Object id="NCCIC:Object-b504860a-0bc1-49fe-9e7e-04d7fca55233">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">zr8q.zckf2x.top</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="NCCIC:Kill_Chain-126d7b95-ee27-4757-af0a-a17a90ace297" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/>
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/>
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+</stix:STIX_Package>
+

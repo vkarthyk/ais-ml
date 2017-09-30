@@ -1,0 +1,645 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:EmailMessageObj="http://cybox.mitre.org/objects#EmailMessageObject-2" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CISCP:IB-14-10461" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd   http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd   http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd   http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.1/Win_Registry_Key_Object.xsd   http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd   http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd   http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd   http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd   http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd   http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd   http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd   http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd   http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd   http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd   http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd   http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd   http://cybox.mitre.org/objects#MutexObject-2 http://cybox.mitre.org/XMLSchema/objects/Mutex/2.1/Mutex_Object.xsd   http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd      http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd   http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd">
+  <stix:STIX_Header>
+    <stix:Title>Emails with Various Email Subjects Contain Malicious Links</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Phishing</stix:Package_Intent>
+    <stix:Description>On 17 September 2014, malicious emails were sent from many senders with various subject lines to 239 recipients of a defense industrial base (DIB) organization. The emails contained a malicious link to www.southernexhibits.com. The message displays an html page with a reference to www.bankofamerica.com.
+
+The source tracks this activity under the name Clandestine Fox. This is related to previous activity described in IB-14-10446.</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+        <marking:Marking_Structure color="GREEN" xsi:type="tlpMarking:TLPMarkingStructureType"/>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2014-10-09T12:31:36Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:Indicators>
+    <stix:Indicator id="CISCP:indicator-005cdb42-ec0b-479a-b929-f677ce0dea4a" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Composite_Indicator_Expression operator="OR">
+        <indicator:Indicator idref="CISCP:indicator-2e7c9f2e-5db7-4b3e-b979-a9f4b8586486"/>
+        <indicator:Indicator idref="CISCP:indicator-afc7add6-2b60-4589-b4e4-76ff661b7466"/>
+        <indicator:Indicator idref="CISCP:indicator-11e53aa8-a773-421a-9aed-08156769efaf"/>
+        <indicator:Indicator idref="CISCP:indicator-04960b26-b0dc-4d60-9936-6b9c9cff6265"/>
+        <indicator:Indicator idref="CISCP:indicator-6660a626-20dc-4170-800d-2167f3a6d65c"/>
+        <indicator:Indicator idref="CISCP:indicator-32562b04-8ecb-44a6-8deb-918989985fb4"/>
+        <indicator:Indicator idref="CISCP:indicator-a3df069d-5737-4a1d-8871-a8a14f5a9cf8"/>
+      </indicator:Composite_Indicator_Expression>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-2e7c9f2e-5db7-4b3e-b979-a9f4b8586486" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>---- BEGIN EMAIL HEADER ----
+Return-Path: &lt;pninan@netvision.net.il&gt;
+Subject: Your mailbox is about to exceed its limit.
+X-SENDER-IP: 61.9.189.152
+X-SENDER-REPUTATION: 5.6
+Received: from nschwmtas06p.mx.bigpond.com ([61.9.189.152])
+    with ESMTP; 17 Sep 2014 14:34:20 +0000
+Received: from nschwcmgw05p ([61.9.190.165]) by nschwmtas06p.mx.bigpond.com
+    with ESMTP
+    id &lt;20140917143418.UBWT3884.nschwmtas06p.mx.bigpond.com@nschwcmgw05p&gt;
+    ; Wed, 17 Sep 2014 14:34:18 +0000
+Received: from alpenp.lnk.telstra.net ([120.151.133.2])
+    by nschwcmgw05p with BigPond Outbound
+    id sEaJ1o00K03FseG01EaJ5e; Wed, 17 Sep 2014 14:34:18 +0000
+X-Authority-Analysis: v=2.0 cv=XNWyuHdE c=1 sm=1
+    a=XRB9iyZ/S12L20RQXICtew==:17 a=0RfyZYn_m8QA:10 a=mEJmtIE8jD8A:10
+    a=wPDyFdB5xvgA:10 a=fuwOx5l51P0A:10 a=8CAVyC_uAAAA:8 a=-Cs5O_6tAAAA:8
+    a=mn7zDNm8XjmabioXzOQA:9 a=QEXdDO2ut3YA:10 a=kbZzaWr64uYA:10
+    a=M5ShD7n8Km0A:10 a=XcfL6qUyq1sA:10 a=oAn5Up9ta1AA:10 a=_W_S_7VecoQA:10
+    a=JL3i5sRr1VQA:10 a=W0v8j6zjiZIA:10 a=NpOfH3mKLEoA:10
+    a=XRB9iyZ/S12L20RQXICtew==:117
+Received: from localhost (localhost.alpen.com.au [127.0.0.1])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 6D1AA84C006
+    ; Thu, 18 Sep 2014 00:34:18 +1000 (EST)
+X-Virus-Scanned: by Endian Firewall
+X-Spam-CTCH-RefID: 
+Received: from zvvxze (unknown [10.0.0.100])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 39C6584C008
+    ; Thu, 18 Sep 2014 00:34:12 +1000 (EST)
+Message-ID: &lt;A17C84AA3602D7DD174125F6EAE3B50C@zvvxze&gt;
+From: [REDACTED] &lt;pninan@netvision.net.il&gt;
+Date: Wed, 17 Sep 2014 22:33:53 +0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+    boundary="----=_NextPart_000_0A73_013BB5CC.1FBA9D50"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.5589
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5589
+---- END EMAIL HEADER ----
+
+---- BEGIN EMAIL BODY ----
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content="text/html; charset=utf-8" http-equiv=Content-Type&gt;
+&lt;META name=GENERATOR content="MSHTML 8.00.6001.23619"&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;P&gt;&lt;/P&gt;
+&lt;P&gt;This automatic message was sent to inform you that your mailbox is about to exceed its limit.&lt;br/&gt;For details in Hebrew please&lt;a href="http://www.southernexhibits.com/privacy/[REDACTED].html"&gt; click here. &lt;/a&gt;&lt;/P&gt;
+&lt;P&gt; &lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+---- END EMAIL BODY ----
+
+The senders included the following email addresses:
+
+rada1@013.net
+jmallard@sasktel.net
+miz30@013.net.il
+soad1@netvision.net.il
+tal5898@013net.net
+deerpark@sasktel.net
+pninan@netvision.net.il
+ami-c@013.net
+poltro@libero.it</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-6b5362c7-fc88-4eac-ba8c-a4ca1c5cd8e7">
+        <cybox:Object id="CISCP:Object-21f3206f-aee7-42b4-8a19-e076c873e13b">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail">
+                <AddressObj:Address_Value condition="Equals">pninan@netvision.net.il</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+              <EmailMessageObj:Subject condition="Equals">Your mailbox is about to exceed its limit.</EmailMessageObj:Subject>
+              <EmailMessageObj:Message_ID condition="Equals">A17C84AA3602D7DD174125F6EAE3B50C@zvvxze</EmailMessageObj:Message_ID>
+              <EmailMessageObj:X_Mailer condition="Equals">Microsoft Outlook Express 6.00.2900.5589</EmailMessageObj:X_Mailer>
+            </EmailMessageObj:Header>
+            <EmailMessageObj:Links>
+              <EmailMessageObj:Link object_reference="CISCP:Object-9a34a809-86b5-42bb-9a77-066e273cc057"/>
+            </EmailMessageObj:Links>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2014-09-17T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-afc7add6-2b60-4589-b4e4-76ff661b7466" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>---- BEGIN EMAIL HEADER ----
+Return-Path: &lt;miz30@013.net.il&gt;
+Subject: New Connections program
+X-SENDER-IP: 61.9.189.149
+X-SENDER-REPUTATION: 5.6
+Received: from nschwmtas05p.mx.bigpond.com ([61.9.189.149])
+    ; 17 Sep 2014 14:34:42 +0000
+Received: from nschwcmgw06p ([61.9.190.166]) by nschwmtas05p.mx.bigpond.com
+    with ESMTP
+    id &lt;20140917143441.XACQ17863.nschwmtas05p.mx.bigpond.com@nschwcmgw06p&gt;
+    ;
+    Wed, 17 Sep 2014 14:34:41 +0000
+Received: from alpenp.lnk.telstra.net ([120.151.133.2])
+    by nschwcmgw06p with BigPond Outbound
+    id sEah1o00k03FseG01Eahwt; Wed, 17 Sep 2014 14:34:41 +0000
+X-Authority-Analysis: v=2.0 cv=Pdd9d1dd c=1 sm=1
+    a=XRB9iyZ/S12L20RQXICtew==:17 a=XcNGOfJOewwA:10 a=wPDyFdB5xvgA:10
+    a=KxTnamRwi4UA:10 a=80W9QA7tAAAA:8 a=-Cs5O_6tAAAA:8 a=dU7FLZB7VyTUSqvr3GIA:9
+    a=QEXdDO2ut3YA:10 a=ekCrEcNKM3YA:10 a=rtZyNJ3v5mkA:10 a=_W_S_7VecoQA:10
+    a=XRB9iyZ/S12L20RQXICtew==:117
+Received: from localhost (localhost.alpen.com.au [127.0.0.1])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id BE15584C013
+    ; Thu, 18 Sep 2014 00:34:41 +1000 (EST)
+X-Virus-Scanned: by Endian Firewall
+X-Spam-CTCH-RefID: 
+Received: from uyandga (unknown [10.0.0.100])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 487F384C014
+    ; Thu, 18 Sep 2014 00:34:36 +1000 (EST)
+Message-ID: &lt;0C39315ED3EC9CB8DF2E90F2A2325EC4@uyandga&gt;
+From: [REDACTED] &lt;miz30@013.net.il&gt;
+Date: Wed, 17 Sep 2014 22:34:17 +0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+    boundary="----=_NextPart_000_0508_010A1A9E.143D6CA0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.5589
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5589
+---- END EMAIL HEADER ----
+
+---- BEGIN EMAIL BODY ----
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content="text/html; charset=utf-8" http-equiv=Content-Type&gt;
+&lt;META name=GENERATOR content="MSHTML 8.00.6001.23619"&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;P&gt;Hi Everyone!&lt;/P&gt;
+&lt;P&gt;I hope you have all had a great summer and that you are ready to work again on our New Connections program.  I&#65533;??ve just been in touch with Adrian at Wynyard Carres and she&#65533;??s planning to host a New Connections event in early October.  As soon as she has the date and program of events ready, she&#65533;??ll be sending that out to us all.  check here for&lt;a href="http://www.southernexhibits.com/privacy/[REDACTED]"&gt; more detail. &lt;/a&gt;Thanks&lt;/P&gt;
+&lt;P&gt;Sincerely,&lt;br/&gt;[REDACTED]&lt;br/&gt;Administrative Assistant&lt;br/&gt;Mallard Diversified Services Inc.&lt;br/&gt;Wadena, SK &lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+---- END EMAIL BODY ----
+
+The senders included the following email addresses:
+
+tal5898@013net.net
+ami-c@013.net
+meravar@smile.net.il
+soad1@netvision.net.il
+hani1872@netvision.net.il
+jhonsn@013.net
+chern@sasktel.net
+deerpark@sasktel.net
+poltro@libero.it
+rada1@013.net
+jmallard@sasktel.net
+miz30@013.net.il
+pninan@netvision.net.il
+ramikk@netvision.net.il</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-7ff063da-7a04-48c3-800c-96b663243fd1">
+        <cybox:Object id="CISCP:Object-9d965452-3ad2-4df5-bf8a-ae9f848539e0">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail">
+                <AddressObj:Address_Value condition="Equals">miz30@013.net.il</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+              <EmailMessageObj:Subject condition="Equals">New Connections program</EmailMessageObj:Subject>
+              <EmailMessageObj:Message_ID condition="Equals">0C39315ED3EC9CB8DF2E90F2A2325EC4@uyandga</EmailMessageObj:Message_ID>
+              <EmailMessageObj:X_Mailer condition="Equals">Microsoft Outlook Express 6.00.2900.5589</EmailMessageObj:X_Mailer>
+            </EmailMessageObj:Header>
+            <EmailMessageObj:Links>
+              <EmailMessageObj:Link object_reference="CISCP:Object-9a34a809-86b5-42bb-9a77-066e273cc057"/>
+            </EmailMessageObj:Links>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2014-09-17T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-11e53aa8-a773-421a-9aed-08156769efaf" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>---- BEGIN EMAIL HEADER ----
+Return-Path: &lt;poltro@libero.it&gt;
+Subject: Have yourselves a wonderful September
+X-SENDER-IP: 61.9.189.149
+X-SENDER-REPUTATION: 5.6
+Received: from nschwmtas05p.mx.bigpond.com ([61.9.189.149])
+    ; 17 Sep 2014 14:36:23 +0000
+Received: from nschwcmgw08p ([61.9.190.168]) by nschwmtas05p.mx.bigpond.com
+    with ESMTP
+    id &lt;20140917143622.XDSH17863.nschwmtas05p.mx.bigpond.com@nschwcmgw08p&gt;
+    Wed, 17 Sep 2014 14:36:22 +0000
+Received: from alpenp.lnk.telstra.net ([120.151.133.2])
+    by nschwcmgw08p with BigPond Outbound
+    id sEcN1o00E03FseG01EcNlC; Wed, 17 Sep 2014 14:36:22 +0000
+X-Authority-Analysis: v=2.0 cv=F6HVh9dN c=1 sm=1
+    a=XRB9iyZ/S12L20RQXICtew==:17 a=gbQAeb0U7mcA:10 a=aI_SBv1WZnYA:10
+    a=WQZwKzEP9coA:10 a=wPDyFdB5xvgA:10 a=jxAVeHM3RB0A:10 a=-Cs5O_6tAAAA:8
+    a=_Njy0_ElT8H58DxIOhoA:9 a=QEXdDO2ut3YA:10 a=vPVEiOkVcGAA:10
+    a=_W_S_7VecoQA:10 a=XRB9iyZ/S12L20RQXICtew==:117
+Received: from localhost (localhost.alpen.com.au [127.0.0.1])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 4F66284C029
+    ; Thu, 18 Sep 2014 00:36:22 +1000 (EST)
+X-Virus-Scanned: by Endian Firewall
+X-Spam-CTCH-RefID: 
+Received: from qai (unknown [10.0.0.100])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 4C23A84C02D
+    ; Thu, 18 Sep 2014 00:36:18 +1000 (EST)
+Message-ID: &lt;AA62DE70A0099B72A93071640BF792FF@qai&gt;
+From: [REDACTED] &lt;poltro@libero.it&gt;
+Date: Wed, 17 Sep 2014 22:36:00 +0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+    boundary="----=_NextPart_000_0132_01D75B94.15CDA0C0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.5589
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5589
+---- END EMAIL HEADER ----
+
+---- BEGIN EMAIL BODY ----
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content="text/html; charset=utf-8" http-equiv=Content-Type&gt;
+&lt;META name=GENERATOR content="MSHTML 8.00.6001.23619"&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;P&gt;Hello Everyone,&lt;/P&gt;
+&lt;P&gt;I am sending out to you all, our calendars for September.  I know ... I am saying the exact same thing .. what already?  but yes indeed the autumn season is truly upon our doorsteps.  We can still hope for lots of mild warm weather though.&lt;br/&gt;As usual, if you have any questions, concerns or suggestions, please don't hesitate to call us.  Also if you find a typo of sorts I would appreciate a quick email back letting me know. Want more information? check&lt;a href="http://www.southernexhibits.com/privacy/[REDACTED]"&gt; here.. &lt;/a&gt;&lt;br/&gt;Thanks once again &amp; have yourselves a wonderful September !&lt;/P&gt;
+&lt;P&gt;Kind Regards,&lt;br/&gt;[REDACTED]&lt;br/&gt;Executive Director&lt;br/&gt;Mental Health Drop-In Centre &lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+---- END EMAIL BODY ----
+
+The senders included the following email addresses:
+
+tal5898@013net.net
+manihana@013.net
+soad1@netvision.net.il
+poltro@libero.it
+miz30@013.net.il
+meravar@smile.net.il
+ami-c@013.net
+deerpark@sasktel.net
+hani1872@netvision.net.il
+rada1@013.net</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-d990f1bc-cdb2-47b0-bc06-f361eac3b12e">
+        <cybox:Object id="CISCP:Object-2458b717-832e-466b-8378-8d045b6b0e8e">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail">
+                <AddressObj:Address_Value condition="Equals">poltro@libero.it</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+              <EmailMessageObj:Subject condition="Equals">Have yourselves a wonderful September</EmailMessageObj:Subject>
+              <EmailMessageObj:Message_ID condition="Equals">AA62DE70A0099B72A93071640BF792FF@qai</EmailMessageObj:Message_ID>
+              <EmailMessageObj:X_Mailer condition="Equals">Microsoft Outlook Express 6.00.2900.5589</EmailMessageObj:X_Mailer>
+            </EmailMessageObj:Header>
+            <EmailMessageObj:Links>
+              <EmailMessageObj:Link object_reference="CISCP:Object-9a34a809-86b5-42bb-9a77-066e273cc057"/>
+            </EmailMessageObj:Links>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2014-09-17T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-04960b26-b0dc-4d60-9936-6b9c9cff6265" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>---- BEGIN EMAIL HEADER ----
+Return-Path: &lt;jmallard@sasktel.net&gt;
+Subject: First Draft of New Connections Proposal
+X-SENDER-IP: 61.9.168.143
+X-SENDER-REPUTATION: 5.6
+Received: from nskntmtas03p.mx.bigpond.com ([61.9.168.143])
+  ; 17 Sep 2014 14:36:22 +0000
+Received: from nskntcmgw08p ([61.9.169.168]) by nskntmtas03p.mx.bigpond.com
+    with ESMTP
+    id &lt;20140917143621.WSZV7575.nskntmtas03p.mx.bigpond.com@nskntcmgw08p&gt;
+    ; Wed, 17 Sep 2014 14:36:21 +0000
+Received: from alpenp.lnk.telstra.net ([120.151.133.2])
+    by nskntcmgw08p with BigPond Outbound
+    id sEcM1o00P03FseG01EcM1U; Wed, 17 Sep 2014 14:36:21 +0000
+X-Authority-Analysis: v=2.0 cv=D6DF24tj c=1 sm=1
+    a=XRB9iyZ/S12L20RQXICtew==:17 a=hp-cC3X1x9UA:10 a=H7m4xrR53TEA:10
+    a=YxfxW3ofkq8A:10 a=wPDyFdB5xvgA:10 a=bEwqw0nFsNsA:10 a=uhPMnebkAAAA:8
+    a=-Cs5O_6tAAAA:8 a=CdUhPlwcdX5PFWs8r-MA:9 a=QEXdDO2ut3YA:10 a=WhlFXhHKFqgA:10
+    a=sHZ5fuWo2O0A:10 a=moUjaOEE7-gA:10 a=Gksp18g_ixkA:10 a=_W_S_7VecoQA:10
+    a=XRB9iyZ/S12L20RQXICtew==:117
+Received: from localhost (localhost.alpen.com.au [127.0.0.1])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id BD4D784C031
+    ; Thu, 18 Sep 2014 00:36:21 +1000 (EST)
+X-Virus-Scanned: by Endian Firewall
+X-Spam-CTCH-RefID: 
+Received: from vn (unknown [10.0.0.100])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 5D5B984C028
+    ; Thu, 18 Sep 2014 00:36:18 +1000 (EST)
+Message-ID: &lt;79D2CCC6099FF4DF43A1245FDF58F67E@vn&gt;
+From: [REDACTED] &lt;jmallard@sasktel.net&gt;
+Date: Wed, 17 Sep 2014 22:36:03 +0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+    boundary="----=_NextPart_000_0F4F_0157CFC6.19454230"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.5589
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5589
+---- END EMAIl HEADER ----
+
+---- BEGIN EMAIL BODY ----
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content="text/html; charset=utf-8" http-equiv=Content-Type&gt;
+&lt;META name=GENERATOR content="MSHTML 8.00.6001.23619"&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;P&gt;Hi Everyone!&lt;/P&gt;
+&lt;P&gt;As promised,&lt;a href="http://www.southernexhibits.com/privacy/[REDACTED].html"&gt; here &lt;/a&gt;is the first draft of the New Connections proposal.  Please make whatever changes to the document, additions, etc. and send it back to me by next Friday.  I will then assemble the second draft from your suggestions and send it back out again!&lt;/P&gt;
+&lt;P&gt;Thanks so much!&lt;br/&gt;[REDACTED] &lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+---- END EMAIL BODY ----
+
+The senders included the following email addresses:
+
+poltro@libero.it
+ramikk@netvision.net.il
+miz30@013.net.il
+meravar@smile.net.il
+tal5898@013net.net
+soad1@netvision.net.il
+jmallard@sasktel.net
+pninan@netvision.net.il
+hani1872@netvision.net.il
+jhonsn@013.net
+manihana@013.net
+rada1@013.net
+deerpark@sasktel.net</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-be1016d2-0755-4eec-b266-f36f64fddf07">
+        <cybox:Object id="CISCP:Object-0ada9401-46b2-41d0-bf11-0392d3104c6a">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail">
+                <AddressObj:Address_Value condition="Equals">jmallard@sasktel.net</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+              <EmailMessageObj:Subject condition="Equals">First Draft of New Connections Proposal</EmailMessageObj:Subject>
+              <EmailMessageObj:Message_ID condition="Equals">79D2CCC6099FF4DF43A1245FDF58F67E@vn</EmailMessageObj:Message_ID>
+              <EmailMessageObj:X_Mailer condition="Equals">Microsoft Outlook Express 6.00.2900.5589</EmailMessageObj:X_Mailer>
+            </EmailMessageObj:Header>
+            <EmailMessageObj:Links>
+              <EmailMessageObj:Link object_reference="CISCP:Object-9a34a809-86b5-42bb-9a77-066e273cc057"/>
+            </EmailMessageObj:Links>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2014-09-17T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-6660a626-20dc-4170-800d-2167f3a6d65c" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>---- BEGIN EMAIL HEADER ----
+Return-Path: &lt;deerpark@sasktel.net&gt;
+Subject: Jared
+X-SENDER-IP: 61.9.189.137
+X-SENDER-REPUTATION: 5.6
+Received: from nschwmtas01p.mx.bigpond.com ([61.9.189.137])
+   ; 17 Sep 2014 14:35:13 +0000
+Received: from nschwcmgw08p ([61.9.190.168]) by nschwmtas01p.mx.bigpond.com
+    with ESMTP
+    id &lt;20140917143512.BAIT17954.nschwmtas01p.mx.bigpond.com@nschwcmgw08p&gt;
+    ; Wed, 17 Sep 2014 14:35:12 +0000
+Received: from alpenp.lnk.telstra.net ([120.151.133.2])
+    by nschwcmgw08p with BigPond Outbound
+    id sEbC1o00W03FseG01EbCbY; Wed, 17 Sep 2014 14:35:12 +0000
+X-Authority-Analysis: v=2.0 cv=F6HVh9dN c=1 sm=1
+    a=XRB9iyZ/S12L20RQXICtew==:17 a=YxfxW3ofkq8A:10 a=wPDyFdB5xvgA:10
+    a=m_lX-NV_FREA:10 a=uhPMnebkAAAA:8 a=-Cs5O_6tAAAA:8 a=7E8vFZds7ry--UCRYgEA:9
+    a=QEXdDO2ut3YA:10 a=SU1Uj9lPWK8A:10 a=0U5uEFli2uUA:10 a=Mah_tkVCvIcA:10
+    a=C698kgKq_OwA:10 a=_W_S_7VecoQA:10 a=XRB9iyZ/S12L20RQXICtew==:117
+Received: from localhost (localhost.alpen.com.au [127.0.0.1])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 87B7A84C00D
+    ; Thu, 18 Sep 2014 00:35:12 +1000 (EST)
+X-Virus-Scanned: by Endian Firewall
+X-Spam-CTCH-RefID: 
+Received: from nafqti (unknown [10.0.0.100])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id EF13884C00E
+    ; Thu, 18 Sep 2014 00:35:09 +1000 (EST)
+Message-ID: &lt;811C2FDAD76C2F0B422F2131789C39A6@nafqti&gt;
+From: [REDACTED] &lt;deerpark@sasktel.net&gt;
+Date: Wed, 17 Sep 2014 22:34:59 +0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+    boundary="----=_NextPart_000_0540_017D753A.1BCA5A50"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.5589
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5589
+---- END EMAIL HEADER ----
+
+---- BEGIN EMAIL BODY ----
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content="text/html; charset=utf-8" http-equiv=Content-Type&gt;
+&lt;META name=GENERATOR content="MSHTML 8.00.6001.23619"&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;P&gt;Hi&lt;/P&gt;
+&lt;P&gt;I will be picking up Jared on Thursday sometime at day program to take to the lake with me for a week or so .&lt;br/&gt;I will probably just need a few clothes and his razor from the house which I will get myself if you could have his meds at the day program .And&lt;a href="http://www.southernexhibits.com/privacy/[REDACTED].html"&gt; here is the airline information. &lt;/a&gt;&lt;br/&gt;Thanks&lt;br/&gt;Pat&lt;/P&gt;
+&lt;P&gt;Sent from my iPhone6 &lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+---- END EMAIL BODY ----
+
+The senders included the following email addresses:
+
+hani1872@netvision.net.il
+jmallard@sasktel.net
+tal5898@013net.net
+poltro@libero.it
+ramikk@netvision.net.il
+jhonsn@013.net
+manihana@013.net
+meravar@smile.net.il
+rada1@013.net
+ami-c@013.net
+deerpark@sasktel.net
+soad1@netvision.net.il
+bounce-40538_HTML-419797870-64568812-93792-44@bounce.email.globalspec.com</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-cd94829d-4801-46b7-8564-07611fab563b">
+        <cybox:Object id="CISCP:Object-d39475cd-5998-411e-89f7-818da0688c9e">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail">
+                <AddressObj:Address_Value condition="Equals">deerpark@sasktel.net</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+              <EmailMessageObj:Subject condition="Equals">Jared</EmailMessageObj:Subject>
+              <EmailMessageObj:Message_ID condition="Equals">811C2FDAD76C2F0B422F2131789C39A6@nafqti</EmailMessageObj:Message_ID>
+              <EmailMessageObj:X_Mailer condition="Equals">Microsoft Outlook Express 6.00.2900.5589</EmailMessageObj:X_Mailer>
+            </EmailMessageObj:Header>
+            <EmailMessageObj:Links>
+              <EmailMessageObj:Link object_reference="CISCP:Object-9a34a809-86b5-42bb-9a77-066e273cc057"/>
+            </EmailMessageObj:Links>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2014-09-17T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-32562b04-8ecb-44a6-8deb-918989985fb4" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>---- BEGIN EMAIL HEADER ----
+Return-Path: &lt;manihana@013.net&gt;
+Subject: You have exceeded your email limit quota!!
+X-SENDER-IP: 61.9.168.149
+X-SENDER-REPUTATION: 4.9
+Received: from nskntmtas05p.mx.bigpond.com ([61.9.168.149])
+    ; 17 Sep 2014 14:35:37 +0000
+Received: from nskntcmgw08p ([61.9.169.168]) by nskntmtas05p.mx.bigpond.com
+    with ESMTP
+    id &lt;20140917143536.PETL19653.nskntmtas05p.mx.bigpond.com@nskntcmgw08p&gt;
+   ; Wed, 17 Sep 2014 14:35:36 +0000
+Received: from alpenp.lnk.telstra.net ([120.151.133.2])
+    by nskntcmgw08p with BigPond Outbound
+    id sEbc1o00C03FseG01Ebcuh; Wed, 17 Sep 2014 14:35:36 +0000
+X-Authority-Analysis: v=2.0 cv=D6DF24tj c=1 sm=1
+    a=XRB9iyZ/S12L20RQXICtew==:17 a=fO2wM6dScCsA:10 a=Dh8h0Gud7bUA:10
+    a=art11dgIU3EA:10 a=wPDyFdB5xvgA:10 a=DV2slSbPY1wA:10 a=7j0qn0qHAAAA:8
+    a=-Cs5O_6tAAAA:8 a=PIa6nYdrVVSrqCE8wE8A:9 a=QEXdDO2ut3YA:10 a=q4MudPLXQiwA:10
+    a=aGqQgsGTx7UA:10 a=b2zf0aC_a84A:10 a=VkzAvRGLDUMA:10 a=_W_S_7VecoQA:10
+    a=XRB9iyZ/S12L20RQXICtew==:117
+Received: from localhost (localhost.alpen.com.au [127.0.0.1])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 7ADEA84C00D
+    ; Thu, 18 Sep 2014 00:35:36 +1000 (EST)
+X-Virus-Scanned: by Endian Firewall
+X-Spam-CTCH-RefID: 
+Received: from xstpg (unknown [10.0.0.100])
+    by alpenp.lnk.telstra.net (Postfix) with ESMTP id 9243584C00E
+    ; Thu, 18 Sep 2014 00:35:32 +1000 (EST)
+Message-ID: &lt;732C9C6CC2390B72698CED3B8D4A1B63@xstpg&gt;
+From: [REDACTED] &lt;manihana@013.net&gt;
+Date: Wed, 17 Sep 2014 22:35:12 +0800
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+    boundary="----=_NextPart_000_0444_0195D9B7.12D33360"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.5589
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5589
+---- END EMAIL HEADER ----
+
+---- BEGIN EMAIL BODY ----
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content="text/html; charset=utf-8" http-equiv=Content-Type&gt;
+&lt;META name=GENERATOR content="MSHTML 8.00.6001.23619"&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;P&gt;&lt;/P&gt;
+&lt;P&gt;You have exceeded your email limit quota of 450MB. You need to upgrade your email limit quota to 3GB within the next 48 hours. To update your email account Please click&lt;a href="http://www.southernexhibits.com/privacy/[REDACTED].html"&gt; here! &lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Thank you for using our webmail. Copyright 2014 Email Helpdesk Centre&lt;/P&gt;
+&lt;P&gt; &lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+---- END EMAIL BODY ----
+
+The senders included the following email addresses:
+
+soad1@netvision.net.il
+poltro@libero.it
+rada1@013.net
+miz30@013.net.il
+ami-c@013.net
+hani1872@netvision.net.il
+deerpark@sasktel.net
+meravar@smile.net.il
+pninan@netvision.net.il
+jhonsn@013.net
+chern@sasktel.net
+manihana@013.net
+tal5898@013net.net</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-7674f475-7299-4414-ab7f-12b98382b4fe">
+        <cybox:Object id="CISCP:Object-ea133f0c-39d5-4836-89b7-6fd751ce9424">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail">
+                <AddressObj:Address_Value condition="Equals">manihana@013.net</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+              <EmailMessageObj:Subject condition="Equals">You have exceeded your email limit quota!!</EmailMessageObj:Subject>
+              <EmailMessageObj:Message_ID condition="Equals">732C9C6CC2390B72698CED3B8D4A1B63@xstpg</EmailMessageObj:Message_ID>
+              <EmailMessageObj:X_Mailer condition="Equals">Microsoft Outlook Express 6.00.2900.5589</EmailMessageObj:X_Mailer>
+            </EmailMessageObj:Header>
+            <EmailMessageObj:Links>
+              <EmailMessageObj:Link object_reference="CISCP:Object-9a34a809-86b5-42bb-9a77-066e273cc057"/>
+            </EmailMessageObj:Links>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2014-09-17T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+    <stix:Indicator id="CISCP:indicator-a3df069d-5737-4a1d-8871-a8a14f5a9cf8" version="2.1.1" xsi:type="indicator:IndicatorType">
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type>
+      <indicator:Description>The following traffic was observed from the malicious link:
+
+GET /privacy/[REDACTED].html HTTP/1.1
+Accept: image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-ms-application, application/x-ms-xbap, application/vnd.ms-xpsdocument, application/xaml+xml, */*
+Accept-Language: en-us
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022; .NET4.0C; IT)
+Accept-Encoding: gzip, deflate
+Host: www.southernexhibits.com
+Connection: Keep-Alive
+
+HTTP/1.1 200 OK
+Content-Type: text/html
+Last-Modified: Mon, 25 Aug 2014 03:22:47 GMT
+Accept-Ranges: bytes
+ETag: "5e33d7d713c0cf1:0"
+Server: Microsoft-IIS/7.0
+X-Powered-By: ASP.NET
+Date: Wed, 17 Sep 2014 15:39:12 GMT
+Content-Length: 575
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Loading...&lt;/TITLE&gt;
+&lt;META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252"&gt;
+&lt;STYLE type="text/css"&gt;
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+&lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;script language="javascript" type="text/javascript"&gt;
+  window.location.href="https://www.bankofamerica.com/privacy/overview.go";
+&lt;/script&gt;=&lt;/BODY&gt;&lt;/HTML&gt;
+
+The URL http://www.southernexhibits.com/privacy/ was previously used in a similar campaign described in IB-14-10446.</indicator:Description>
+      <indicator:Observable id="CISCP:Observable-2d5c98f8-779a-41ee-b957-00acecd9623c">
+        <cybox:Object id="CISCP:Object-9a34a809-86b5-42bb-9a77-066e273cc057">
+          <cybox:Properties type="URL" xsi:type="URIObj:URIObjectType">
+            <URIObj:Value condition="Equals">http://www.southernexhibits.com/privacy/</URIObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+      </indicator:Kill_Chain_Phases>
+      <indicator:Sightings sightings_count="1">
+        <indicator:Sighting timestamp="2014-09-17T00:00:00"/>
+      </indicator:Sightings>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/>
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/>
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+</stix:STIX_Package>
+

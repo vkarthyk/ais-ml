@@ -1,0 +1,125 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2" xmlns:NCCIC="http://www.us-cert.gov/nccic" xmlns:coa="http://stix.mitre.org/CourseOfAction-1" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:edh2="urn:edm:edh:cyber:v3" xmlns:edh2cyberMarking="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:edh2cyberMarkingAssert="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:isa="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xal="urn:oasis:names:tc:ciq:xal:3" xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="NCCIC:Package-317f9d22-b2b7-4cc3-aec0-6ab80eb8dfde" timestamp="2016-07-07T04:00:00.000Z" version="1.1.1" xsi:schemaLocation="http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd http://stix.mitre.org/CourseOfAction-1 http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsAssertionsType.v2.xsd urn:edm:edh:cyber:v3 http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_SD-EDH_Profile_Cyber.v3.xsd">
+  <stix:STIX_Header>
+    <stix:Title>CISA Webform Submission for indicator: 2016-INDICATOR2B3MEN</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+    <stix:Description>Malicious IP Scans from Colorado Secretary of State</stix:Description>
+    <stix:Profiles>
+      <stixCommon:Profile>AIS Profile v1.1</stixCommon:Profile>
+    </stix:Profiles>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+        <marking:Marking_Structure xsi:type="AIS:AISMarkingStructure">
+          <AIS:Not_Proprietary CISA_Proprietary="false">
+            <AIS:AISConsent consent="EVERYONE"/>
+            <AIS:TLPMarking color="GREEN"/>
+          </AIS:Not_Proprietary>
+        </marking:Marking_Structure>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Contributing_Sources>
+        <stixCommon:Source>
+          <stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType">
+            <stix-ciq:Specification>
+              <xpil:PartyName>
+                <xnl:OrganisationName>
+                  <xnl:NameElement>NCCIC</xnl:NameElement>
+                </xnl:OrganisationName>
+              </xpil:PartyName>
+              <xpil:Addresses>
+                <xpil:Address>
+                  <xal:Country>
+                    <xal:NameElement xal:NameCode="US" xal:NameCodeType="ISO_3166-1_alpha-2"/>
+                  </xal:Country>
+                  <xal:AdministrativeArea>
+                    <xal:NameElement xal:NameCode="US-DC" xal:NameCodeType="ISO_3166-2"/>
+                  </xal:AdministrativeArea>
+                </xpil:Address>
+              </xpil:Addresses>
+              <xpil:OrganisationInfo xpil:IndustryType="Information Technology Sector"/>
+            </stix-ciq:Specification>
+          </stixCommon:Identity>
+          <stixCommon:Tools>
+            <cyboxCommon:Tool>
+              <cyboxCommon:Metadata>
+                <cyboxCommon:Value>WEBFORM</cyboxCommon:Value>
+              </cyboxCommon:Metadata>
+            </cyboxCommon:Tool>
+          </stixCommon:Tools>
+        </stixCommon:Source>
+      </stixCommon:Contributing_Sources>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2016-07-13T14:41:14Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:Indicators>
+    <stix:Indicator id="NCCIC:Indicator-c11d39e9-26ef-49cc-a8a0-8b2a71019a27" timestamp="2016-07-13T14:30:08.922Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious IP Scans</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description>This information was derived from the Webform related to CISA of 2015.</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-42a87e36-98e5-4144-a652-804507f11fbb">
+        <cybox:Object id="NCCIC:Object-e1c26261-6ca0-43e8-90f5-fa1004d41067">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">91.217.244.214</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+      </indicator:Kill_Chain_Phases>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-72518664-e051-4299-b262-22e9a39923ea" timestamp="2016-07-13T14:30:08.922Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious IP Scans</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description>This information was derived from the Webform related to CISA of 2015.</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-a27e0019-43c2-4393-bdba-fa09fef625d4">
+        <cybox:Object id="NCCIC:Object-a7e3fb58-603a-485b-8fc4-ea669ab4b87c">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">213.109.238.72</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+      </indicator:Kill_Chain_Phases>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-af31a849-3377-4c45-9a0d-96684617460c" timestamp="2016-07-13T14:30:08.922Z" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious IP Scans</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description>This information was derived from the Webform related to CISA of 2015.</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-2d5ecff3-a33b-4c21-9a9f-25c8ef05a3e7">
+        <cybox:Object id="NCCIC:Object-307eeca1-06ff-4c4d-b50f-1b939ed32dc0">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value apply_condition="ANY" condition="Equals" is_case_sensitive="false">144.94.32.4</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Kill_Chain_Phases>
+        <stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+      </indicator:Kill_Chain_Phases>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="NCCIC:Kill_Chain-126d7b95-ee27-4757-af0a-a17a90ace297" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/>
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/>
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+  <stix:Courses_Of_Action>
+    <stix:Course_Of_Action id="NCCIC:Course_Of_Action-7858e46f-db5d-4101-a48c-0fe42e5b2a82" timestamp="2016-07-13T14:33:14.085Z" xsi:type="coa:CourseOfActionType">
+      <coa:Title>IP activity observed by Colorado Dept of State.  These IPs were blocked.</coa:Title>
+      <coa:Stage xsi:type="stixVocabs:COAStageVocab-1.0">Response</coa:Stage>
+      <coa:Description>IP activity observed by Colorado Dept of State.  These IPs were blocked.</coa:Description>
+    </stix:Course_Of_Action>
+  </stix:Courses_Of_Action>
+</stix:STIX_Package>
+

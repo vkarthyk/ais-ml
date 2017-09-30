@@ -1,0 +1,363 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:DomainNameObj="http://cybox.mitre.org/objects#DomainNameObject-1" xmlns:EmailMessageObj="http://cybox.mitre.org/objects#EmailMessageObject-2" xmlns:NCCIC="http://www.us-cert.gov" xmlns:TOUMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:edh2="urn:edm:edh:cyber:v3" xmlns:edh2cyberMarking="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:edh2cyberMarkingAssert="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:isa="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:simpleMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1" xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xal="urn:oasis:names:tc:ciq:xal:3" xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="NCCIC:STIX_Package-3f24b12b-3b8a-4e84-9e63-061341623a15" timestamp="2016-09-22T03:40:45Z" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://us-cert.gov/ciscp http://www.us-cert.gov/sites/default/files/STIX_Namespace/ciscp_vocab_v1.1.1.xsd http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsAssertionsType.v2.xsd urn:edm:edh:cyber:v3 http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_SD-EDH_Profile_Cyber.v3.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd">
+  <stix:STIX_Header>
+    <stix:Title>Threat Connect 16 Sept 2016-Ukrainian Users Identified Among Spear Phishing Targets</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+    <stix:Description>None</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+        <marking:Marking_Structure xsi:type="AIS:AISMarkingStructure">
+          <AIS:Not_Proprietary CISA_Proprietary="false">
+            <AIS:AISConsent consent="EVERYONE"/>
+            <AIS:TLPMarking color="GREEN"/>
+          </AIS:Not_Proprietary>
+        </marking:Marking_Structure>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Contributing_Sources>
+        <stixCommon:Source>
+          <stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType">
+            <stix-ciq:Specification>
+              <xpil:PartyName>
+                <xnl:OrganisationName>
+                  <xnl:NameElement>NCCIC</xnl:NameElement>
+                </xnl:OrganisationName>
+              </xpil:PartyName>
+              <xpil:Addresses>
+                <xpil:Address>
+                  <xal:Country>
+                    <xal:NameElement xal:NameCode="US" xal:NameCodeType="ISO_3166-1_alpha-2"/>
+                  </xal:Country>
+                  <xal:AdministrativeArea>
+                    <xal:NameElement xal:NameCode="US-DC" xal:NameCodeType="ISO_3166-2"/>
+                  </xal:AdministrativeArea>
+                </xpil:Address>
+              </xpil:Addresses>
+              <xpil:OrganisationInfo xpil:IndustryType="Government Facilities Sector"/>
+            </stix-ciq:Specification>
+          </stixCommon:Identity>
+          <stixCommon:Tools>
+            <cyboxCommon:Tool>
+              <cyboxCommon:Metadata>
+                <cyboxCommon:Value>AIS</cyboxCommon:Value>
+              </cyboxCommon:Metadata>
+            </cyboxCommon:Tool>
+          </stixCommon:Tools>
+        </stixCommon:Source>
+      </stixCommon:Contributing_Sources>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2016-09-22T03:33:33Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:Indicators>
+    <stix:Indicator id="NCCIC:Indicator-acb6c1d2-4919-4c33-affc-4480c463eab2" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious FQDN Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+      <indicator:Description>Malicious FQDN Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-b9193393-785a-4a89-946f-ce6a05e5ab92">
+        <cybox:Object id="NCCIC:Object-3ffc68cc-fcc0-4ec5-b5fe-bad4c47cfd24">
+          <cybox:Properties type="FQDN" xsi:type="DomainNameObj:DomainNameObjectType">
+            <DomainNameObj:Value condition="Equals">compet.kh.gov.ua</DomainNameObj:Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-37fec496-43c4-44d1-ab5f-80fe357338d4" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-2a806fa5-0c7f-4fe0-97b3-471591123522">
+        <cybox:Object id="NCCIC:Object-41cf7014-575f-4f8c-9aa1-903c39105972">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">ali.ikiz@tepebasimuftulugu.gov.tr</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-4611b410-d4b6-40c9-9e33-873cad04d1d9" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-08c2b9cc-826d-4c61-ba43-6d279a06d943">
+        <cybox:Object id="NCCIC:Object-ef5324b4-9126-449d-a7fb-0ffd6302a8c7">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">contacts.servise@gmail.com</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-b12a844d-cc4c-4948-862e-e1541ce20356" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-0189266b-1135-44e4-8fd9-ff21400200ae">
+        <cybox:Object id="NCCIC:Object-a52d34df-4f6b-437b-88bc-5e0f2dcf444d">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">mustafaaydin@akpartl.info.tr</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-edc7757b-51ec-4225-939e-1c58b855ad94" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-911e9542-ca53-4ee9-afd8-adcb211d77df">
+        <cybox:Object id="NCCIC:Object-2b817bef-66a8-463f-8cf0-976823ece5d2">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">z.tarabanova@compet.kh.gov.ua</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-ee382740-1b06-4626-8e32-4885568e4229" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-ef06cfd4-802e-4520-a3a2-eb11fe1760db">
+        <cybox:Object id="NCCIC:Object-5a0e7458-b61e-4fae-ae79-0ac042507a23">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">akp.development@akpartl.info.tr</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-1f421047-7223-43c1-896e-a0b1592d07fe" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-7935a2c3-a8bc-41a1-aee7-958d130c0089">
+        <cybox:Object id="NCCIC:Object-8f9cf97a-24f1-47ff-9b17-acd517e724f5">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">thereseolofsson24@gmail.com</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-8d8d67ac-0d8a-4df2-8d3d-642e6349ea3e" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-9cef22be-48d4-4e28-95d3-97eb7747c153">
+        <cybox:Object id="NCCIC:Object-f21c612e-6b39-4df4-8ff6-136d606e21db">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">krissolkin@gmail.com</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-ac3da5cc-2a01-43c9-8d11-90454293f87b" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-19b0f041-655a-41da-ba77-ecf5f8ed2b54">
+        <cybox:Object id="NCCIC:Object-454581b2-b04d-4d85-a715-27ab1dd9e844">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">akp.istanbul@akpartl.info.tr</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-c58bea0d-9dcd-4a18-a5e7-6c5ae1c72f47" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-c8994cae-f6f3-414b-bea3-3fb79a4d1fbb">
+        <cybox:Object id="NCCIC:Object-7ab9bd90-37d6-48f4-9e23-fa75bb9cbd4c">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">tarabanova.zhanna@compet.kh.gov.ua</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-0a64f720-eecc-47ca-b189-a4fad43ecfb7" xsi:type="indicator:IndicatorType">
+      <indicator:Title>Malicious E-mail Indicator</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Description>Malicious E-mail Indicator</indicator:Description>
+      <indicator:Observable id="NCCIC:Observable-ca1b9e4a-11b5-4828-b443-7a1cd993d46f">
+        <cybox:Object id="NCCIC:Object-8bbfa40b-a690-4bff-a7d5-117afd1c5fba">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail" xsi:type="AddressObj:AddressObjectType">
+                <AddressObj:Address_Value condition="Equals">zan.tarabanov@compet.kh.gov.ua</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Handling>
+        <marking:Marking>
+          <marking:Controlled_Structure>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</marking:Controlled_Structure>
+          <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
+            <simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement>
+          </marking:Marking_Structure>
+          <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+            <TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use>
+          </marking:Marking_Structure>
+        </marking:Marking>
+      </indicator:Handling>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/>
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/>
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/>
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/>
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+</stix:STIX_Package>
+

@@ -1,0 +1,325 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:CustomObj="http://cybox.mitre.org/objects#CustomObject-1" xmlns:DNSQueryObj="http://cybox.mitre.org/objects#DNSQueryObject-2" xmlns:DNSRecordObj="http://cybox.mitre.org/objects#DNSRecordObject-2" xmlns:DomainNameObj="http://cybox.mitre.org/objects#DomainNameObject-1" xmlns:EmailMessageObj="http://cybox.mitre.org/objects#EmailMessageObject-2" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:HTTPSessionObj="http://cybox.mitre.org/objects#HTTPSessionObject-2" xmlns:HostnameObj="http://cybox.mitre.org/objects#HostnameObject-1" xmlns:LinkObj="http://cybox.mitre.org/objects#LinkObject-1" xmlns:MutexObj="http://cybox.mitre.org/objects#MutexObject-2" xmlns:NCCIC="http://www.us-cert.gov" xmlns:NetworkConnectionObj="http://cybox.mitre.org/objects#NetworkConnectionObject-2" xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2" xmlns:SocketAddressObj="http://cybox.mitre.org/objects#SocketAddressObject-1" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:WinRegistryKeyObj="http://cybox.mitre.org/objects#WinRegistryKeyObject-2" xmlns:coa="http://stix.mitre.org/CourseOfAction-1" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:edh2="urn:edm:edh:cyber:v3" xmlns:edh2cyberMarking="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:edh2cyberMarkingAssert="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd" xmlns:et="http://stix.mitre.org/ExploitTarget-1" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:isa="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:simpleMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1" xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:ttp="http://stix.mitre.org/TTP-1" xmlns:xal="urn:oasis:names:tc:ciq:xal:3" xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="NCCIC:STIX_Package-2da62530-5c37-4607-820b-d3e8aea094ed" timestamp="2017-02-15T00:20:38Z" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.1/Win_Registry_Key_Object.xsd http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsAssertionsType.v2.xsd http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd http://cybox.mitre.org/objects#CustomObject-1 http://cybox.mitre.org/XMLSchema/objects/Custom/1.1/Custom_Object.xsd http://cybox.mitre.org/objects#DNSQueryObject-2 http://cybox.mitre.org/XMLSchema/objects/DNS_Query/2.1/DNS_Query_Object.xsd http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd http://stix.mitre.org/ExploitTarget-1 http://stix.mitre.org/XMLSchema/exploit_target/1.1.1/exploit_target.xsd http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd http://cybox.mitre.org/objects#HostnameObject-1 http://cybox.mitre.org/XMLSchema/objects/Hostname/1.0/Hostname_Object.xsd http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsType.v2.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd http://cybox.mitre.org/objects#MutexObject-2 http://cybox.mitre.org/XMLSchema/objects/Mutex/2.1/Mutex_Object.xsd http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd urn:edm:edh:cyber:v3 http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_SD-EDH_Profile_Cyber.v3.xsd http://stix.mitre.org/CourseOfAction-1 http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd http://cybox.mitre.org/objects#DNSRecordObject-2 http://cybox.mitre.org/XMLSchema/objects/DNS_Record/2.1/DNS_Record_Object.xsd">
+  <stix:STIX_Header>
+    <stix:Title>Anomali STIX Export: custom_snapshot_140380_part_000000</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators</stix:Package_Intent>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+        <marking:Marking_Structure xsi:type="AIS:AISMarkingStructure">
+          <AIS:Not_Proprietary CISA_Proprietary="false">
+            <AIS:AISConsent consent="EVERYONE"/>
+            <AIS:TLPMarking color="GREEN"/>
+          </AIS:Not_Proprietary>
+        </marking:Marking_Structure>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Contributing_Sources>
+        <stixCommon:Source>
+          <stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType">
+            <stix-ciq:Specification>
+              <xpil:PartyName>
+                <xnl:OrganisationName>
+                  <xnl:NameElement>Anomali, Inc.</xnl:NameElement>
+                </xnl:OrganisationName>
+              </xpil:PartyName>
+              <xpil:Addresses>
+                <xpil:Address>
+                  <xal:Country>
+                    <xal:NameElement xal:NameCode="US" xal:NameCodeType="ISO_3166-1_alpha-2"/>
+                  </xal:Country>
+                  <xal:AdministrativeArea>
+                    <xal:NameElement xal:NameCode="US-CA" xal:NameCodeType="ISO_3166-2"/>
+                  </xal:AdministrativeArea>
+                </xpil:Address>
+              </xpil:Addresses>
+              <xpil:OrganisationInfo xpil:IndustryType="Information Technology Sector"/>
+            </stix-ciq:Specification>
+          </stixCommon:Identity>
+          <stixCommon:Tools>
+            <cyboxCommon:Tool>
+              <cyboxCommon:Metadata>
+                <cyboxCommon:Value>AIS</cyboxCommon:Value>
+              </cyboxCommon:Metadata>
+            </cyboxCommon:Tool>
+          </stixCommon:Tools>
+        </stixCommon:Source>
+      </stixCommon:Contributing_Sources>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2017-02-15T00:17:45Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:Indicators>
+    <stix:Indicator id="NCCIC:Indicator-2d780f2e-ba7b-4359-aae6-8f3d30ba3f78" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.603000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.589000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-4abdb3d2-72de-44b2-bd36-354fdfb61798">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-6073ec2a-4460-4dc9-ad08-29259ebc7939">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-7eee9f0f-bd19-4fbd-a8e5-3d25ade3390d">188.161.244.239</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-5d8a80ea-e074-4d7b-87f9-d510da64cc8e" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-01-19T15:59:11.213000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:49.917000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-6e3bc790-4a94-4ead-9d5f-10c9f64dc088">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-95050bea-e7b1-4d3a-9c7b-3e1496d87ecf">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-08e78d1f-c582-4555-a063-6162a8f91b99">134.119.219.122</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-7cfa2c15-0425-4b18-8f5a-fdd275f48985" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-01T13:46:15.879000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.986000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-ff69b11c-9a49-4c3e-97ab-df0ed6ce2e79">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-1d49eb5a-bedb-4ae3-a5d7-6ce8d7e2fa79">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-099c0696-c92f-4844-b631-7f46af8e76c2">89.38.10.139</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-665e1ae2-88ad-494b-ba15-4900a77fd46c" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.665000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.651000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-0fedd9e5-d4ce-4fe3-9a0a-88800b525259">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-264ad880-8d69-4219-83e1-df297858236d">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-d82a5c66-18ce-42be-8712-2162059894d8">46.101.97.181</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-53e18cfe-8d27-4396-9ef9-8bd55603d4cd" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.736000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.721000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-3d108ef9-9257-4dcf-b15a-7095af33d735">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-0a58e6f2-c5b9-4f4b-a0e1-773d1adc831b">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-9b8dda40-3a3e-4fdf-aa80-7e05e6a5d072">122.114.246.248</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-19247556-bfe9-4037-a88c-a85bc953d420" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.773000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.758000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-1c5f3041-983b-4a05-b783-89caa765f1a0">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-6ea4256c-02e9-4d8b-abd2-08a89e6846de">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-1b4ddd13-7bfa-48e7-a332-a44580e926c3">118.161.242.78</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-a32b588a-cff7-4977-bf98-aae7a39a00b7" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.811000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.796000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-93060934-41bd-41f3-862b-c145ce3cc3b6">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-a1a71752-7620-43d4-8d2a-bae3619645ac">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-0e5b4c28-d24a-47b3-80f3-030618df3575">190.74.94.232</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-31d55517-506e-4681-bad4-ef0b3e716b19" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">ID: 34620829
+iType: bot_ip
+State: active
+Date First: 2015-09-01 22:59:25.963Z
+Org: 19.6814
+Source: Anomali Labs MHN Tagged
+Detail: dionaea,smbd,port-445,Windows-NT-kernel,Ethernet-or-modem
+MoreDetail: bifocals_deactivated_on_2016-03-22_07:20:00.118587
+Tags: dionaea, smbd, port-445, Windows-NT-kernel, Ethernet-or-modem</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2015-09-01T22:59:25.963000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.832000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-f01dc286-b73d-406a-8682-bb89507bc321">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-90b6bf05-c720-443d-8c3d-765cae956f2d">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-948c0db5-c631-4868-961f-f805a2932262">201.144.47.34</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-f69a3044-fe8d-4b8d-9788-4588da5dbe75" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2016-11-04T13:54:00.637000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.878000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-15c54796-4649-45a4-ab57-d9804d92c8a7">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-c93b9a01-0a67-4977-b691-dbe0078f701c">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-dae35eef-aa11-466a-a3b0-9cad02a41ca1">100.3.129.59</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-8b998309-3965-46a8-adae-763481f9963f" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.968000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.954000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-38f5eafa-7f1c-43bc-a22c-421da2eb6fc1">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-8c557196-a1aa-4936-af89-f5836b0d5c1e">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-b44dcf0d-0cc5-47c9-b6a2-08aed2398bc5">49.4.143.103</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-3b30e4eb-d456-4bfa-94a4-715f147af80a" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.636000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.623000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-e9547735-4e2e-4a24-9637-6e6209a93da0">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-c60f7808-2128-4653-b2b6-cc8b30a86279">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-07cc0fe7-21b7-45d1-bb0a-e74148681027">89.232.118.13</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-1f53c01d-d0ae-4c8c-81da-b2a527c012df" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.699000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.685000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-b4f8b00f-cf32-4bac-8454-aeda18853e9b">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-9b7990a4-cd55-43b2-a05c-506b0711ee1c">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-c546ac38-da75-4ca4-908c-dbcc19c138e0">128.199.138.242</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-905e2beb-d8b9-46b5-a70f-0acd1fc4da69" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:58.935000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:58.920000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-6d1b7325-da45-4f3b-9c61-bb870eaf8aeb">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-7feaf5ff-7a94-4238-80fa-7c44f839b955">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-1025546d-f7ce-4389-91e3-914f75895cc9">13.78.60.243</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+    <stix:Indicator id="NCCIC:Indicator-349d3b3c-9b4f-4243-89d8-9cdf9323b69d" timestamp="2017-02-15T00:20:38Z" xsi:type="indicator:IndicatorType">
+      <indicator:Type xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+      <indicator:Description xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">UNDER NCCIC REVIEW</indicator:Description>
+      <indicator:Valid_Time_Position xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <indicator:Start_Time precision="second">2017-02-14T16:42:59.062000+00:00</indicator:Start_Time>
+        <indicator:End_Time precision="second">2017-02-21T16:42:59.048000+00:00</indicator:End_Time>
+      </indicator:Valid_Time_Position>
+      <indicator:Observable id="NCCIC:Observable-9932d4ca-9bed-4968-b46f-7db268f2b966">
+        <cybox:Object xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2" id="NCCIC:Object-2ec59989-0a9b-42b0-8d8a-6a889c7df2c1">
+          <cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType">
+            <AddressObj:Address_Value condition="Equals" id="NCCIC:Address_Value-28fe0bfe-c9cf-4b9d-bfd6-44f73201e356">188.52.216.85</AddressObj:Address_Value>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP xmlns:NCCIC="http://us-cert.gov" xmlns:SystemObj="http://cybox.mitre.org/objects#SystemObject-2">
+        <stixCommon:TTP idref="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z"/>
+      </indicator:Indicated_TTP>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:TTP id="NCCIC:TTP-57ebb830-957e-4307-a321-dabb7b6b285c" timestamp="2017-02-15T00:20:38Z" xsi:type="ttp:TTPType">
+      <ttp:Behavior>
+        <ttp:Attack_Patterns>
+          <ttp:Attack_Pattern capec_id="CAPEC-212"/>
+        </ttp:Attack_Patterns>
+      </ttp:Behavior>
+    </stix:TTP>
+  </stix:TTPs>
+</stix:STIX_Package>
+
