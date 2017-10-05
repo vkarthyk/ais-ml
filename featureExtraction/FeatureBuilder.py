@@ -27,7 +27,11 @@ class FeatureBuilder:
         return True
 
     def build_new_features(self):
+        mod = None
         for filename in glob.glob(FEATURE_MODULE_DIR+"/*.py"):
+            if mod is not None:
+                del mod
+                mod = None
             module_name = os.path.splitext(os.path.basename(filename))[0]
 
             if module_name.startswith('__'):
@@ -71,7 +75,7 @@ class FeatureBuilder:
                 self.logger.log('warn', 'module [', module_name, '] has incorrect columns define, skip.')
                 continue
 
-            self.new_df = self.new_df.append(tmp_df)
+            self.new_df = pd.concat([self.new_df,tmp_df], axis=1)
 
     def run(self):
         self.build_new_features()

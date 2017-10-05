@@ -19,9 +19,9 @@ class GraphicWorker:
             prefix: use in case that want to pprint the layers, don't care about it otherwise
     '''
     def initG(self):
-        self.G=nx.DiGraph()
+        # self.G=nx.DiGraph()
         # self.G = nx.balanced_tree()
-        # self.G=nx.Graph()
+        self.G=nx.Graph()
         # self.leafNode=[]
         self.logger = Logger(self)
 
@@ -31,8 +31,8 @@ class GraphicWorker:
             label: the label of the node
     '''
     def __getTreeID(self, node, label):
-        return str(type(node))+'@@'+str(label)
-        # return str(label)
+        # return str(type(node))+'@@'+str(label)
+        return str(label)
 
     def __dumpObjFields(self, obj):
         return obj.__dict__['_fields']
@@ -120,10 +120,24 @@ class GraphicWorker:
 
         # nx.nx_agraph.write_dot(self.G, 'test.dot')
         # nx.draw(self.G, pos=graphviz_layout(self.G))
-        # self.G = minimum_spanning_tree(self.G)
+        self.G = nx.minimum_spanning_tree(self.G)
+        self.DiG = self.G.to_directed()
+
+        plt.figure(1)
+        # plt.title("stix structure tree")
+        mng = plt.get_current_fig_manager()
+        mng.resize(*mng.window.maxsize())
         pos = graphviz_layout(self.G, prog='dot', args='-Grankdir=LR')
         nx.draw(self.G, node_size=40, pos=pos, edge_color='y')
         nx.draw_networkx_labels(self.G, pos=pos, font_color='b')
+
+        plt.figure(2)
+        # plt.title("minimum spinning tree")
+        mng = plt.get_current_fig_manager()
+        mng.resize(*mng.window.maxsize())
+        pos = graphviz_layout(self.DiG, prog='dot', args='-Grankdir=LR')
+        nx.draw(self.DiG, node_size=40, pos=pos, edge_color='y')
+        nx.draw_networkx_labels(self.DiG, pos=pos, font_color='b')
         # nx.draw_networkx_nodes(self.G, nodelist=self.leafNode, node_color='b')
 
         # nx.draw_graphviz(self.G,'dot')

@@ -6,8 +6,11 @@ black_white_list_use_mode:
 - 'both' - use both lists, use modules only listed in white but not in black;
 '''
 black_white_list_use_mode = 'disabled'
-black_list = ['IpAdressScore']
-white_list = ['IpAdressScore']
+# black_white_list_use_mode = 'white'
+# black_white_list_use_mode = 'black'
+# black_white_list_use_mode = 'both'
+black_list = ['IpAdressScoreDemo']
+white_list = ['IpAdressScoreDemo']
 
 '''
 run_level:
