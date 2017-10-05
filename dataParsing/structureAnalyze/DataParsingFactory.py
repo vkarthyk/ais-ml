@@ -1,11 +1,11 @@
+from FieldsDocumentaryWorker import FieldsDocumentaryWorker
+from GraphicWorker import GraphicWorker
 from JobType import *
 from StixParseWorker import StixParseWorker
-from FieldsDocumentaryWorker import FieldsDocumentaryWorker
+from common.Logger import Logger
 from parseStixXml import *
 from printUtils import pprintDict
-from dataParsing.Logger import Logger
 from settings import DATA_DIR, os
-from GraphicWorker import GraphicWorker
 
 DEFAULT_TREE_PICKLE_FILE_NAME = os.path.join(DATA_DIR, 'fieldTree.pkl')
 
@@ -114,6 +114,7 @@ class DataParsingFactory:
                 xmlfilename = requirements['xmlfilename']
                 stopAfterFinishRound = requirements['stopafter'] if requirements.has_key('stopafter') else -1
                 justDoThisRound = requirements['justdo'] if requirements.has_key('justdo') else -1
+                degreeCsvFileName = requirements['csvfilename'] if requirements.has_key('csvfilename') else -1
 
                 # worker = FieldsDocumentaryWorker()
                 worker = GraphicWorker()
@@ -127,6 +128,7 @@ class DataParsingFactory:
                     self.logger.log('info','I\'m working on stix_package #'+str(ind))
                     stix_package = stixFileName2StixPackageObj(stix_fn)
                     worker.doYourWork(stix_package)
+                worker.outputDegree(degreeCsvFileName)
                 worker.draw()
 
             self.logger.log('info', 'Job', job, 'has done!')

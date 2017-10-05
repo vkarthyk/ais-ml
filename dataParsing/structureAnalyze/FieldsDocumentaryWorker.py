@@ -1,10 +1,10 @@
-from stix.core.stix_package import STIXPackage
-from stix.core import Indicators
-from stix.indicator.indicator import Indicator
-from stix import EntityList,TypedList
 from collections import MutableSequence
+
+from stix.core.stix_package import STIXPackage
+
+from common.Logger import Logger
 from printUtils import saveObjToFile, loadObjFrFile
-from dataParsing.Logger import Logger
+
 
 class FieldsDocumentaryWorker():
     # stix_fields_list = []

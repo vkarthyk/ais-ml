@@ -72,6 +72,8 @@ class Logger():
     def log(self, type, *log):
         if type == 'err':
             logstr = self.UseStyle('{err}', *log, mode='underline', fore='red')
+        elif type == 'warn':
+            logstr = self.UseStyle('{warning}', *log, fore='red')
         elif type == 'rst':  # result
             logstr = self.UseStyle(*log, mode='bold', fore='blue')
         elif type == 'info':

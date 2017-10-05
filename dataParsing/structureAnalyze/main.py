@@ -8,6 +8,7 @@ from settings import os, DATA_DIR
 
 XML_FILE_NAME = os.path.join(DATA_DIR,'ais_disclosable.xml')
 CSV_FILE_NAME = os.path.join(DATA_DIR,'structureForGrephi.csv')
+DEGREE_CSV_FILE_NAME = os.path.join(DATA_DIR,'degreeForStixStructure.csv')
 
 factory = DataParsingFactory()
 
@@ -35,4 +36,4 @@ Example:
 # factory.goFindSomeoneDoThisJob( JobType.LoadFieldTree)
 # factory.goFindSomeoneDoThisJob( JobType.PrintFieldTreeToConsole)
 # factory.goFindSomeoneDoThisJob( JobType.PrintFieldTreeToCsvFile, csvfilename=CSV_FILE_NAME)
-factory.goFindSomeoneDoThisJob( JobType.AnalyzeStixFromXmlAndDrawAGraph, xmlfilename=XML_FILE_NAME, stopafter=2)
+factory.goFindSomeoneDoThisJob( JobType.AnalyzeStixFromXmlAndDrawAGraph, xmlfilename=XML_FILE_NAME, stopafter=2, csvfilename=DEGREE_CSV_FILE_NAME)

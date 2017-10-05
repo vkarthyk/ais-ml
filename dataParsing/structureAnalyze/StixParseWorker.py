@@ -1,6 +1,8 @@
-from stix.core import STIXPackage,STIXHeader
+from stix.core import STIXPackage
 from stix.extensions.marking.tlp import TLPMarkingStructure
-from dataParsing.Logger import Logger
+
+from common.Logger import Logger
+
 
 class StixParseWorker:
 

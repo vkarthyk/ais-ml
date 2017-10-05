@@ -1,6 +1,8 @@
-import yaml
 import pickle
-from dataParsing.Logger import logger
+
+import yaml
+
+from common.Logger import logger
 
 
 def pprintDict(dictionary):
