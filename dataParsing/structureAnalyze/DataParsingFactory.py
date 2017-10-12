@@ -1,5 +1,6 @@
 from FieldsDocumentaryWorker import FieldsDocumentaryWorker
 from GraphicWorker import GraphicWorker
+from GraphicWithDataWorker import GraphicWithDataWorker
 from JobType import *
 from StixParseWorker import StixParseWorker
 from common.Logger import Logger
@@ -14,6 +15,16 @@ class DataParsingFactory:
 
     def __init__(self):
         self.logger = Logger(self)
+
+    def stix_packages_fn_iterater(self, fn_or_dir, stopafter, onlyuse=None):
+        if fn_or_dir[-1] == '/':
+            self.is_dir = True
+            for i in stixFileNameInDirectory(fn_or_dir, stopafter=stopafter, onlyuse=onlyuse):
+                yield i
+        else:
+            self.is_dir = False
+            for i in xmlFileName2EnumStixFileName(fn_or_dir, stopafter=stopafter):
+                yield i
 
     def __getParam(self, requirements, argname):
         if argname is 'xmlfilename':
@@ -39,10 +50,10 @@ class DataParsingFactory:
                 justDoThisRound = requirements['justdo'] if requirements.has_key('justdo') else -1
 
                 worker = StixParseWorker()
-                for ind, stix_fn in enumerate(xmlFileName2EnumStixFileName(xmlfilename)):
-                    if stopAfterFinishRound > -1:
-                        if ind > stopAfterFinishRound:
-                            break
+                for ind, stix_fn in enumerate(self.stix_packages_fn_iterater(xmlfilename,stopafter=stopAfterFinishRound)):
+                    # if stopAfterFinishRound > -1:
+                    #     if ind > stopAfterFinishRound:
+                    #         break
                     if justDoThisRound > -1:
                         if ind is not justDoThisRound:
                             continue
@@ -63,10 +74,10 @@ class DataParsingFactory:
                 justDoThisRound = requirements['justdo'] if requirements.has_key('justdo') else -1
 
                 worker = FieldsDocumentaryWorker()
-                for ind, stix_fn in enumerate(xmlFileName2EnumStixFileName(xmlfilename)):
-                    if stopAfterFinishRound > -1:
-                        if ind > stopAfterFinishRound:
-                            break
+                for ind, stix_fn in enumerate(self.stix_packages_fn_iterater(xmlfilename, stopafter=stopAfterFinishRound)):
+                    # if stopAfterFinishRound > -1:
+                    #     if ind > stopAfterFinishRound:
+                    #         break
                     if justDoThisRound > -1:
                         if ind is not justDoThisRound:
                             continue
@@ -107,29 +118,53 @@ class DataParsingFactory:
                 worker = FieldsDocumentaryWorker()
                 worker.printTree2Csv(self.fieldTree, csvfilename)
 
-            if job is JobType.AnalyzeStixFromXmlAndDrawAGraph:
+            if job in [JobType.AnalyzeStixFromXmlAndDrawAGraph, JobType.FeedDataAndDrawWeightedGraph]:
                 if not requirements.has_key('xmlfilename'):
                     self.logger.log('err', '{',job, '}','at least give me a xml file name to parse, please :)')
                     return -1
                 xmlfilename = requirements['xmlfilename']
                 stopAfterFinishRound = requirements['stopafter'] if requirements.has_key('stopafter') else -1
                 justDoThisRound = requirements['justdo'] if requirements.has_key('justdo') else -1
-                degreeCsvFileName = requirements['csvfilename'] if requirements.has_key('csvfilename') else -1
+                weightCsvFileName = requirements['csvfilename'] if requirements.has_key('csvfilename') else -1
+                isdrawgraph = requirements['isdrawgraph'] if requirements.has_key('isdrawgraph') else False
+                isforeachpackage = requirements['isforeachpackage'] if requirements.has_key('isforeachpackage') else False
+                isdrawminspintree = requirements['isdrawminspintree'] if requirements.has_key('isdrawminspintree') else False
+                iswidthasweight = requirements['iswidthasweight'] if requirements.has_key('iswidthasweight') else False
 
                 # worker = FieldsDocumentaryWorker()
-                worker = GraphicWorker()
-                for ind, stix_fn in enumerate(xmlFileName2EnumStixFileName(xmlfilename)):
-                    if stopAfterFinishRound > -1:
-                        if ind > stopAfterFinishRound:
-                            break
+                worker = GraphicWorker() if job is JobType.AnalyzeStixFromXmlAndDrawAGraph else GraphicWithDataWorker()
+                # for ind, stix_fn in enumerate(xmlFileName2EnumStixFileName(xmlfilename,stopafter=stopAfterFinishRound)):
+                for ind, stix_fn in enumerate(self.stix_packages_fn_iterater(xmlfilename,stopafter=stopAfterFinishRound)):
+                    # if stopAfterFinishRound > -1:
+                    #     if ind > stopAfterFinishRound:
+                    #         break
                     if justDoThisRound > -1:
                         if ind is not justDoThisRound:
                             continue
                     self.logger.log('info','I\'m working on stix_package #'+str(ind))
                     stix_package = stixFileName2StixPackageObj(stix_fn)
+
+                    if isforeachpackage:
+                        worker.clear_graph()
+
                     worker.doYourWork(stix_package)
-                worker.outputDegree(degreeCsvFileName)
-                worker.draw()
+
+                    if isforeachpackage:
+                        worker.ava_degree_conn()
+                        if isdrawgraph:
+                            stix_name = stix_fn.split('/')[-1] if self.is_dir else ind
+                            worker.draw(stix_name, is_width_as_weight=iswidthasweight, is_draw_min_spin_tree=isdrawminspintree)
+                if weightCsvFileName is not -1:
+                    worker.outputWeight(weightCsvFileName)
+                if not isforeachpackage:
+                    worker.ava_degree_conn()
+                    if isdrawgraph:
+                        worker.draw("All Stix Packages", is_width_as_weight=iswidthasweight, is_draw_min_spin_tree=isdrawminspintree)
+                if isdrawgraph:
+                    worker.draw_show()
+
+
+
 
             self.logger.log('info', 'Job', job, 'has done!')
 

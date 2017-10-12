@@ -79,7 +79,12 @@ class Logger():
         elif type == 'info':
             logstr = self.UseStyle('{info}', *log, fore='yellow')
         else:
+            type = 'debug'
             logstr = self.UseStyle('{debug}', *log)
+
+        # if type in ['debug', 'info']:
+        if type in ['debug']:
+            return
 
         if type in ['rst']:
             print logstr

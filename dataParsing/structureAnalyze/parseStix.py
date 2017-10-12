@@ -2,8 +2,9 @@ import parseStixXml as parserUtils
 from stix.core import STIXPackage,STIXHeader
 import yaml
 from stix.indicator.indicator import *
+from settings import os, DATA_DIR
 
-XML_FILE_NAME = '/root/ais/ais/ais_disclosable.xml'
+XML_FILE_NAME = os.path.join(DATA_DIR,'ais_disclosable.xml')
 
 def printStixPackageDetailsWithWalk(stix_package):
     assert isinstance(stix_package, STIXPackage)
@@ -47,6 +48,7 @@ def extractHeaderFeatures(stix_package):
     hfeatures['Title']=stix_header.title
     hfeatures['Package Intents']= stix_header.package_intents[0].__str__()
     hfeatures['Description']=stix_header.description.__str__()
+    print 'Marking Color Type', ';'.join(str(type(ms)) for ms in stix_header.handling.marking[0].marking_structures)
     hfeatures['Marking Color']=';'.join(ms.color for ms in stix_header.handling.marking[0].marking_structures)
     hfeatures['Information Source Time']=stix_header.information_source.time.produced_time.to_dict()
     return hfeatures
@@ -60,11 +62,15 @@ def extractIndicatorsFeatures(stix_package):
     assert isinstance(stix_package, STIXPackage)
     for i in stix_package.indicators:
         if not i.composite_indicator_expression:
+            assert isinstance(i, Indicator)
             indicator_feature={}
             indicator_feature['----TYPE----']='----INDICATOR----'
             indicator_feature['ID'] = i.id_
-            indicator_feature['Description'] = i.description.__str__()
-            indicator_feature['Type'] = i.indicator_types[0].__str__()
+            # indicator_feature['Description'] = i.description.__str__()
+            # indicator_feature['Type'] = i.indicator_types[0].__str__()
+            obs = i.observables[0]
+            assert isinstance(obs, Observable)
+            indicator_feature['Observable'] = obs.object_.id_
             indicator_features_list.append(indicator_feature)
     return indicator_features_list
 
@@ -74,10 +80,13 @@ def extractIndicatorsFeatures(stix_package):
 def getIndicatorFieldsList(indicator_list):
     pass
 
-stix_list=parserUtils.xmlFileName2StixPackageObjList(XML_FILE_NAME)
+# stix_list=parserUtils.xmlFileName2StixPackageObjList(XML_FILE_NAME)
+
 # parseOneStix('/tmp/stix1.xml')
 # printStixPackageDetails(stix_list[0])
 # printStixPackageDetailsWithWalk(stix_list[0])
+
+'''
 for ind,stix_package in enumerate(stix_list):
     print '========== the #',ind,'stix package ==========='
     head_features = extractHeaderFeatures(stix_package)
@@ -85,3 +94,6 @@ for ind,stix_package in enumerate(stix_list):
     indicator_features_list = extractIndicatorsFeatures(stix_package)
     for indicator_feature in indicator_features_list:
         pprintDict(indicator_feature)
+'''
+stix_package = parserUtils.stixFileName2StixPackageObj('/tmp/stixtmp.xml')
+print stix_package.stix_header.information_source is None

@@ -13,3 +13,4 @@ class JobType(Enum):
     LoadAStixFromFile=9
     SaveAStixToFile=10
     AnalyzeStixFromXmlAndDrawAGraph=11
+    FeedDataAndDrawWeightedGraph=12

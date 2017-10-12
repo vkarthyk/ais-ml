@@ -6,7 +6,6 @@ from networkx.drawing.nx_agraph import graphviz_layout
 from stix.core.stix_package import STIXPackage
 
 from common.Logger import Logger
-from mixbox.typedlist import TypedList
 
 
 class GraphicWorker:
@@ -33,19 +32,7 @@ class GraphicWorker:
     '''
     def __getTreeID(self, node, label):
         # return str(type(node))+'@@'+str(label)
-        typename=str(type(node))
-        typename = typename.split('\'')[1]
-        typename = typename.split('.')[-1]
-        # return str(label)+'@'+typename
         return str(label)
-
-    def __getListObjTreeID(self, node, listname, i):
-        typename=str(type(node))
-        typename = typename.split('\'')[1]
-        typename = typename.split('.')[-1]
-        # return listname+'['+str(i)+']@'+typename
-        # return listname+'['+str(i)+']'
-        return listname+'[i]'
 
     def __dumpObjFields(self, obj):
         return obj.__dict__['_fields']
@@ -72,22 +59,18 @@ class GraphicWorker:
         if not self.G.has_edge(father_id, my_id) and not self.dontDraw(my_id):
             self.G.add_edge(father_id, my_id)
 
+        # if cur_node is a list or EntityList or TypedList or else, enum them
+        if isinstance(cur_node, list) or isinstance(cur_node, MutableSequence):
+            for ind, item in enumerate(cur_node):
+                # self.iterField(item, cur_label + '[i]', self.__getTreeID(cur_node, cur_label), prefix + '--')
+                self.iterField(item, cur_label, self.__getTreeID(cur_node, cur_label), prefix + '--')
+
         # if cur_node has listable fields, enum them
         if hasattr(cur_node, '_fields'):
             fdict = self.__dumpObjFields(cur_node)
             for f in fdict:
-                # if cur_node is a list or EntityList or TypedList or else, enum them
-                if (isinstance(cur_node, MutableSequence) and isinstance(fdict[f], MutableSequence)) or isinstance(fdict[f], TypedList):
-                    for ind, item in enumerate(fdict[f]):
-                        # i_label = cur_label + '['+str(ind)+']'
-                        # i_label = cur_label + '[i]'
-                        # i_label = self.__getListObjTreeID(cur_label, ind)
-                        # self.iterField(item, i_label, self.__getTreeID(cur_node, i_label), prefix + '--')
-                        i_label = self.__getListObjTreeID(item, str(f), ind)
-                        self.iterField(item, i_label, my_id, prefix + '--')
-                        # self.iterField(item, cur_label, self.__getTreeID(cur_node, cur_label), prefix + '--')
-                else:
-                    self.iterField(fdict[f], str(f), my_id, prefix + '--')
+                # print prefix,f,'<<',fdict[f]#str(father)
+                self.iterField(fdict[f], str(f), self.__getTreeID(cur_node, cur_label), prefix + '--')
 
     def iterField_diff_color(self, cur_node, cur_label, father_id, prefix=''):
 
