@@ -11,22 +11,37 @@ from stix.core.ttps import TTPs
 from common.Logger import Logger
 
 class GraphicWithDataWorker():
-    def initG(self):
+    def __init__(self):
+        self.logger = Logger(self)
+        self.is_clustering_node_by_name=False
+        self.is_full_structure=False
+        self.is_display_list_node_index=False
+        self.clear_graph()
+
+    # def initG(self):
         # self.G=nx.DiGraph()
         # self.G = nx.balanced_tree()
         # self.G=nx.Graph()
         # self.leafNode=[]
-        self.clear_graph()
-        self.logger = Logger(self)
-        self.node_index=0
-        self.nodelabel_to_displaylabel_dict={}
+        # self.node_index=0
+        # self.nodelabel_to_displaylabel_dict={}
+
+    def set_is_clustering_node_by_name(self):
         self.is_clustering_node_by_name=True
+
+    def set_is_full_structure(self):
+        self.is_full_structure = True
+
+    def set_is_display_list_node_index(self):
+        self.is_display_list_node_index=True
 
     def clear_graph(self):
         self.G=nx.DiGraph()
         self.edge_weight_dict={}
         self.is_first_node=True
         self.first_node_label='root_start_123123123123123'
+        self.node_index=0
+        self.nodelabel_to_displaylabel_dict={}
 
     def __getTreeID(self, node, label):
         # return str(type(node))+'@@'+str(label)
@@ -50,13 +65,19 @@ class GraphicWithDataWorker():
         typename = typename.split('.')[-1]
         # return listname+'['+str(i)+']@'+typename
         if not self.is_clustering_node_by_name:
-            displaylabel=listname.split('|')[-1]+'['+str(i)+']'
+            if self.is_display_list_node_index:
+                displaylabel=listname.split('|')[-1]+'['+str(i)+']'
+            else:
+                displaylabel=listname.split('|')[-1]+'[i]'
             nodelabel=str(self.node_index)+'|'+displaylabel
             self.node_index+=1
             self.nodelabel_to_displaylabel_dict[nodelabel]=displaylabel
             return nodelabel
         else:
-            return listname+'['+str(i)+']'
+            if self.is_display_list_node_index:
+                return listname+'['+str(i)+']'
+            else:
+                return listname+'[i]'
         # return listname + '[i]'
 
     def __dumpObjFields(self, obj):
@@ -79,8 +100,8 @@ class GraphicWithDataWorker():
         # if not self.fieldTree.has_key(father_id):
         #     self.fieldTree[father_id] = []
         if not self.G.has_node(father_id) and not self.dontDraw(father_id):
-            if father_id== self.first_node_label:
-                self.logger.log('info', 'WTF')
+            if father_id == self.first_node_label:
+                self.logger.log('WTF')
             self.G.add_node(father_id)
 
         # combine node name and label and get an id used in the tree
@@ -134,18 +155,9 @@ class GraphicWithDataWorker():
                         self.iterField(item, i_label, my_id, prefix + '--')
                         # self.iterField(item, cur_label, self.__getTreeID(cur_node, cur_label), prefix + '--')
 
-                elif fdict[f] is not None:
+                elif self.is_full_structure or fdict[f] is not None:
                     self.iterField(fdict[f], str(f), my_id, prefix + '--')
 
-
-    def outputWeight(self, filename):
-        degreelist = self.G.degree()
-        self.logger.log('info', 'output degree list to:', filename)
-        with open(filename, 'wb') as f:
-            f.write('NODE NAME' + ',' + 'DEGREE\n')
-            for k in degreelist:
-                f.write(str(k) + ',' + str(degreelist[k]) + '\n')
-        self.logger.log('info', 'output degree list done')
 
     def __get_display_labels(self, G):
         labels={}
@@ -162,6 +174,24 @@ class GraphicWithDataWorker():
 
     def ava_degree_conn(self):
         self.logger.log('rst', 'average_degree_connectivity',nx.average_degree_connectivity(self.G))
+
+    def get_edge_weight_dict(self):
+        return self.edge_weight_dict
+
+    def get_graph(self):
+        return self.G
+
+    # def get_child_parent_lists(self):
+    #     parent_list=[]
+    #     child_list=[]
+    #     for p in self.edge_weight_dict:
+    #         parent_list.append(p)
+    #         for c in self.edge_weight_dict[p]:
+    #             try:
+    #                 child_list.index(c)
+    #             except ValueError, err:
+    #                 child_list.append(c)
+    #     return child_list, parent_list
 
     def draw(self, stix_name=0, is_width_as_weight=False, is_draw_min_spin_tree=False, pic_num_minspintree=100000):
         # nx.draw(self.G, with_labels=True)
@@ -220,7 +250,7 @@ class GraphicWithDataWorker():
     def doYourWork(self, stix_package):
         assert isinstance(stix_package, STIXPackage)
 
-        self.initG()
+        # self.initG()
 
         # self.logger.log('info', 'working: stix id:',stix_package.id_)
         # self.logger.log('info', 'working: stix kill...:',type(stix_package.ttps.kill_chains[0].kill_chain_phases))

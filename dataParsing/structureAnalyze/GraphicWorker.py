@@ -10,6 +10,9 @@ from mixbox.typedlist import TypedList
 
 
 class GraphicWorker:
+    def __init__(self):
+        print 'I\'m RETIRED, please reach out to my colleague GraphicWithDataWorker'
+
     '''
     Describe: Walk through each node/attribute, and record the father-child
               relationship in self.fieldTree
@@ -165,6 +168,8 @@ class GraphicWorker:
         # nx.draw_networkx(self.G)
         # plt.show()
         # nx.draw_shell(self.G, with_labels=True)
+
+    def draw_show(self):
         plt.show()
 
     def doYourWork(self, stix_package):
