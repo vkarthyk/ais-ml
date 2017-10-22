@@ -1,0 +1,104 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CISCP:IB-14-10512" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd   http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd   http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd   http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.1/Win_Registry_Key_Object.xsd   http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd   http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd   http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd   http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd   http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd   http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd   http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd   http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd   http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd   http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd   http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd   http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd   http://cybox.mitre.org/objects#MutexObject-2 http://cybox.mitre.org/XMLSchema/objects/Mutex/2.1/Mutex_Object.xsd   http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd      http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd   http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd"><stix:STIX_Header><stix:Title>Payload Identified from a Bash Shellshock Attack</stix:Title><stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent><stix:Description>On 25 September 2014, the malicious file 73b0d95541c84965fa42c3e257bb349957b3be626dec9d55efcc6ebcba6fa489 (MD5: 5924bcc045bb7039f55c6ce29234e29a) was submitted for analysis. It was identified as the malicious payload of a Bash Shellshock attack. The malware called back to IP 89.238.150.154 and 108.162.197.26.
+
+This bulletin references US-CERT Malware Initial Findings Report MIFR-403299.</stix:Description><stix:Handling><marking:Marking><marking:Controlled_Structure>//node()</marking:Controlled_Structure><marking:Marking_Structure color="GREEN" xsi:type="tlpMarking:TLPMarkingStructureType"/></marking:Marking></stix:Handling><stix:Information_Source><stixCommon:Time><cyboxCommon:Produced_Time>2014-10-15T18:04:05Z</cyboxCommon:Produced_Time></stixCommon:Time></stix:Information_Source></stix:STIX_Header><stix:Indicators><stix:Indicator id="CISCP:indicator-236ac0bb-beca-467f-b49d-56a931f6a441" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Composite_Indicator_Expression operator="OR"><indicator:Indicator idref="CISCP:indicator-984d6822-bb3a-46a1-8fdf-031f07126b42"/><indicator:Indicator idref="CISCP:indicator-1bf71423-1afc-4f86-aaef-256a44b1414d"/><indicator:Indicator idref="CISCP:indicator-9b905d78-75c4-44b8-a581-3a01d7310f7a"/></indicator:Composite_Indicator_Expression></stix:Indicator><stix:Indicator id="CISCP:indicator-984d6822-bb3a-46a1-8fdf-031f07126b42" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malware Artifacts</indicator:Type><indicator:Description>Once the malware is executed on the victim system, the malware attempts a call back to the hard-coded IP 89.238.150.154 via TCP, and also via ICMP (Ping/Pong). If communication is successful, it attempts to connect to another command and control (C2) server via the hard-coded IP address 108.162.197.26. The malware will accept the following commands, all preceded with the ! symbol:
+!* PING; waits for a reply of "PONG!" and if received connects to second IP address for C2
+!* SH; Execute a shell command
+!* GETLOCALIP; Retrieves the local IP address of the victim system
+!* SCANNER ON | OFF; Scan networks
+!* LOLNOGTFO; Terminate backdoor.
+
+Additional commands used for DDoS:
+!* HOLD; Hold flooding
+!* JUNK; Perform junk flood
+!* UDP; Perform udp flood
+!* TC; Perform tcp flood
+!* KILLATTK; Kill all flood
+
+If the scanner detects that a device has telnet enabled, it will attempt a limited brute force login using vendor default passwords, to include: "root", "admin", "user", "login", "guest", "toor", "guest", "changeme", "1234", "12345", "123456", "default", "pass" and "password".
+
+A variation of the following yara signature can be used to detect this malware:
+rule Bash_nginx_backdoor {
+
+strings:
+$a1 = "JUNK Flooding %s:%d for %d seconds."
+$a2 = "UDP Flooding %s for %d seconds."
+$a3 = "UDP Flooding %s:%d for %d seconds."
+$a4 = "TCP Flooding %s for %d seconds."
+$a5 = "KILLATTK"
+$a6 = "REPORT %s:%s:"
+$a7 = "PING"
+$a8 = "PONG!"
+$a9 = "GETLOCALIP"
+$a10 = "SCANNER"
+condition:
+all of them
+}</indicator:Description><indicator:Observable id="CISCP:Observable-63aac1c2-bc2f-4564-8398-770077f27eaf"><cybox:Object id="CISCP:Object-40876074-7c92-4f69-b8c7-0208dbf433de"><cybox:Properties xsi:type="FileObj:FileObjectType"><FileObj:File_Name condition="Equals">73b0d95541c84965fa42c3e257bb349957b3be626dec9d55efcc6ebcba6fa489</FileObj:File_Name><FileObj:Size_In_Bytes condition="Equals">538444</FileObj:Size_In_Bytes><FileObj:Hashes><cyboxCommon:Hash><cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value condition="Equals">5924bcc045bb7039f55c6ce29234e29a</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value condition="Equals">0229e6fa359bce01954651df2cdbddcdf3e24776</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash><cyboxCommon:Hash><cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type><cyboxCommon:Fuzzy_Hash_Value condition="Equals">12288:79+DzT70zz3jj6Ml2xDsKO9qjCm7pQ2DP89HScvhQe/Q0FNc:7kXT70zztc15Dem7pQ2cSMhP</cyboxCommon:Fuzzy_Hash_Value></cyboxCommon:Hash></FileObj:Hashes></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2014-09-25T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="CISCP:indicator-1bf71423-1afc-4f86-aaef-256a44b1414d" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type><indicator:Description>Address lookup
+lookup failed
+89.238.150.154
+Could not find a domain name corresponding to this IP address.
+Domain Whois record
+Don't have a domain name for which to get a record
+Network Whois record
+Queried whois.ripe.net with "-B 89.238.150.154"...
+% Information related to '89.238.150.0 - 89.238.150.255'
+% Abuse contact for '89.238.150.0 - 89.238.150.255' is 'abuse@m247.com'
+inetnum: 89.238.150.0 - 89.238.150.255
+netname: OH-BLOCK
+descr: Open Hosting
+country: GB
+admin-c: OHT-RIPE
+tech-c: OHT-RIPE
+status: Assigned PA
+mnt-by: OHT-MAINT
+changed: as33970@as33970.net 20100906
+source: RIPE
+US-CERT MIFR-403299 3 of 6
+TLP: GREEN
+TLP: GREEN
+person: OHtele Hostmaster
+address: 1 Ball Green
+address: Cobra Court
+address: Stretford
+address: Manchester
+address: M32 0QT
+address: United Kingdom
+abuse-mailbox: abuse@openhosting.co.uk
+phone: +44 (0) 161 615 1270
+nic-hdl: OHT-RIPE
+changed: hostmaster@ohtele.com 20050929
+changed: as9009@as9009.net 20101022
+changed: as33970@as33970.net 20110503
+source: RIPE
+mnt-by: OHT-MAINT
+% Information related to '89.238.128.0/18AS9009'
+route: 89.238.128.0/18
+descr: M247 Ltd
+origin: AS9009
+mnt-by: GLOBALAXS-MNT
+changed: samer@m247.com 20130612
+source: RIPE
+% This query was served by the RIPE Database Query Service version 1.75 (DB-2)
+-- end --</indicator:Description><indicator:Observable id="CISCP:Observable-74f3f539-1a18-4447-b3d6-3d37625d3dd5"><cybox:Object id="CISCP:Object-54a36656-9143-4a3b-9587-5aaeb7249398"><cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType"><AddressObj:Address_Value condition="Equals">89.238.150.154</AddressObj:Address_Value></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2014-09-25T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="CISCP:indicator-9b905d78-75c4-44b8-a581-3a01d7310f7a" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type><indicator:Description>Address lookup
+lookup failed
+108.162.197.26
+Could not find a domain name corresponding to this IP address.
+Domain Whois record
+Don't have a domain name for which to get a record
+Network Whois record
+Queried whois.arin.net with "n 108.162.197.26"...
+NetRange: 108.162.192.0 - 108.162.255.255
+CIDR: 108.162.192.0/18
+OriginAS: AS13335
+NetName: CLOUDFLARENET
+NetHandle: NET-108-162-192-0-1
+Parent: NET-108-0-0-0-0
+NetType: Direct Assignment
+Comment: http[:]//www[.]cloudflare.com
+RegDate: 2011-10-28
+Updated: 2012-03-02
+Ref: http[:]//whois.arin.net/rest/net/NET-108-162-192-0-1
+OrgName: CloudFlare, Inc.
+OrgId: CLOUD14
+Address: 665 Third Street #207
+City: San Francisco
+StateProv: CA</indicator:Description><indicator:Observable id="CISCP:Observable-99bf783a-d15b-4d17-9a12-7e3a75b956bf"><cybox:Object id="CISCP:Object-8db2c26d-81e8-4ad5-b3b0-cde7e9740b38"><cybox:Properties category="ipv4-addr" xsi:type="AddressObj:AddressObjectType"><AddressObj:Address_Value condition="Equals">108.162.197.26</AddressObj:Address_Value></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2014-09-25T00:00:00"/></indicator:Sightings></stix:Indicator></stix:Indicators><stix:TTPs><stix:Kill_Chains><stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf"><stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/><stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/><stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/><stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/><stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/><stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/><stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/></stixCommon:Kill_Chain></stix:Kill_Chains></stix:TTPs></stix:STIX_Package>

