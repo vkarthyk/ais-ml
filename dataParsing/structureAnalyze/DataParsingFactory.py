@@ -147,6 +147,12 @@ class DataParsingFactory:
                 issavetablesforeachpackage = requirements['issavetablesforeachpackage'] if requirements.has_key('issavetablesforeachpackage') else False
                 issaverowforeachpackage = requirements['issaverowforeachpackage'] if requirements.has_key('issaverowforeachpackage') else False
                 rowsCsvFileName = requirements['rowscsvfilename'] if requirements.has_key('rowscsvfilename') else -1
+                hookOnNode = requirements['hookonnode'] if requirements.has_key('hookonnode') else None
+                hookOnStart = requirements['hookonstart'] if requirements.has_key('hookonstart') else None
+                hookOnEnd = requirements['hookonend'] if requirements.has_key('hookonend') else None
+
+                if hookOnStart is not None:
+                    hookOnStart()
 
                 # worker = FieldsDocumentaryWorker()
                 worker = GraphicWorker() if job is JobType.AnalyzeStixFromXmlAndDrawAGraph else GraphicWithDataWorker()
@@ -165,6 +171,8 @@ class DataParsingFactory:
                         if isuseexistedtablenames:
                             allstructure = self.tmp_dict
 
+                if hookOnNode is not None:
+                    worker.set_hook_on_node(hookOnNode)
 
                 # for ind, stix_fn in enumerate(xmlFileName2EnumStixFileName(xmlfilename,stopafter=stopAfterFinishRound)):
                 for ind, stix_fn in enumerate(self.stix_packages_fn_iterater(xmlfilename,stopafter=stopAfterFinishRound)):
@@ -192,7 +200,7 @@ class DataParsingFactory:
                     if isforeachpackage:
                         self.tmp_dict = worker.get_edge_weight_dict()
                         self.tmp_G = worker.get_graph()
-                        # worker.ava_degree_conn()
+                        #worker.ava_degree_conn()
                         if weightCsvFileName is not -1:
                             if issavetablesforeachpackage:
                                 twoparts = weightCsvFileName.split('%s')
@@ -215,10 +223,11 @@ class DataParsingFactory:
                                     ioworker.outputWeightTable(self.tmp_dict, thisCsvFileName)
                         if rowsCsvFileName != -1:
                             if issaverowforeachpackage:
+                                thisStixName=stix_fn.split('/')[-1]
                                 if isuseexistedtablenames:
-                                    ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, allstructure=allstructure)
+                                    ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname=thisStixName, allstructure=allstructure)
                                 else:
-                                    ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName)
+                                    ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname=thisStixName)
                         if isdrawgraph:
                             stix_name = stix_fn.split('/')[-1] if self.is_dir else ind
                             worker.draw(stix_name, is_width_as_weight=iswidthasweight, is_draw_min_spin_tree=isdrawminspintree)
@@ -246,13 +255,15 @@ class DataParsingFactory:
                     if rowsCsvFileName != -1:
                         if issaverowforeachpackage:
                             if isuseexistedtablenames:
-                                ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, allstructure=allstructure)
+                                ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname='all_stix', allstructure=allstructure)
                             else:
-                                ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName)
+                                ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname='all_stix')
 
                 if isdrawgraph:
                     time_end = time.time()
                     worker.draw_show()
+                if hookOnEnd is not None:
+                    hookOnEnd()
 
             if time_end == -1:
                 time_end = time.time()

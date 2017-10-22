@@ -43,7 +43,10 @@ class Logger():
     }
 
     def __init__(self, obj=False):
-        self.objname=obj.__class__ if obj else '<unknown>'
+        if type(obj) is str:
+            self.objname = obj
+        else:
+            self.objname=obj.__class__ if obj else '<unknown>'
 
 
     # def UseStyle(string, mode = '', fore = '', back = ''):
@@ -70,6 +73,11 @@ class Logger():
 
 
     def log(self, type, *log):
+
+        #black list for log
+        if str(self.objname) == "IOWorker.IOWorker":
+            return
+
         if type == 'err':
             logstr = self.UseStyle('{err}', *log, mode='underline', fore='red')
         elif type == 'warn':

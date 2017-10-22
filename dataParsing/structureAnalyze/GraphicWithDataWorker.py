@@ -17,6 +17,7 @@ class GraphicWithDataWorker():
         self.is_full_structure=False
         self.is_display_list_node_index=False
         self.clear_graph()
+        self.hook_on_node=None
 
     # def initG(self):
         # self.G=nx.DiGraph()
@@ -34,6 +35,9 @@ class GraphicWithDataWorker():
 
     def set_is_display_list_node_index(self):
         self.is_display_list_node_index=True
+
+    def set_hook_on_node(self, func_on_node):
+        self.hook_on_node = func_on_node
 
     def clear_graph(self):
         self.G=nx.DiGraph()
@@ -95,7 +99,9 @@ class GraphicWithDataWorker():
             self.edge_weight_dict[fr][to]=0
         self.edge_weight_dict[fr][to]+=1
 
-    def iterField(self, cur_node, cur_label, father_id, prefix=''):
+    def iterField(self, cur_node, cur_label, father_id, prefix='', func_on_field=None):
+        if self.hook_on_node is not None:
+            self.hook_on_node(cur_node)
         # init the row if this is the first this father show up.
         # if not self.fieldTree.has_key(father_id):
         #     self.fieldTree[father_id] = []

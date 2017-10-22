@@ -60,16 +60,16 @@ class IOWorker:
         else:
             self.logger.log('info', 'building row and col names by myself.')
             allstructure = weights
-        title_row = ''
+        title_row = 'Stix_Name'
         for p in allstructure:
             for c in allstructure[p]:
                 # title_row = title_row + p+'_to_'+c + ','
-                title_row = title_row + p+'->'+c + ','
+                title_row = title_row + ',' + p+'->'+c
         with open(filename, 'w') as f:
-                f.write(title_row[:-1] + '\n')
+                f.write(title_row + '\n')
         self.is_titles_wrote = True
 
-    def outputWeightRow(self, weights, filename, allstructure):
+    def outputWeightRow(self, weights, filename, stixname, allstructure):
         assert isinstance(weights, dict)
         assert isinstance(allstructure, dict) or allstructure is None
 
@@ -79,13 +79,13 @@ class IOWorker:
             # self.logger.log('err', 'please write title row first')
             self.writeWeightTitle(filename=filename, allstructure=allstructure, weights=weights)
 
-        this_row=''
+        this_row=stixname
         for p in allstructure:
             for c in allstructure[p]:
                 this_weight= weights[p][c] if weights.has_key(p) and weights[p].has_key(c) else 0
-                this_row = this_row + str(this_weight) + ','
+                this_row = this_row + ',' + str(this_weight)
         with open(filename, 'a+') as f:
-            f.write(this_row[:-1]+'\n')
+            f.write(this_row+'\n')
 
     def get_child_parent_lists(self, weight_dict):
         parent_list=[]
