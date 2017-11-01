@@ -13,6 +13,7 @@ CSV_FILE_NAME = os.path.join(DATA_DIR,'structureForGrephi.csv')
 DEGREE_CSV_FILE_NAME = os.path.join(DATA_DIR,'degreeForStixStructure.csv')
 FREQUENCY_CSV_FILE_NAME = os.path.join(DATA_DIR,'frequencyOfFieldInData.csv')
 FREQUENCY_ROWS_CSV_FILE_NAME = os.path.join(DATA_DIR,'frequencyOfEdgesInData.csv')
+ALL_AVG_DEGREE_CON_FILE_NAME = os.path.join(DATA_DIR,'all_avg_degree_con.pkl')
 
 # %s is where the stix filename while be put at
 FREQUENCY_CSV_FILE_NAMES = os.path.join(BIG_DATA_DIR,'weight_csv_files/frequencyOfFieldInData_%s.csv')
@@ -67,6 +68,8 @@ factory.goFindSomeoneDoThisJob(
     isfullstructure=False,
     issaverowforeachpackage=False,
     isuseexistedtablenames=False,
+    isavgdegreecon=True,
+    picklefilename=ALL_AVG_DEGREE_CON_FILE_NAME,
     hookonstart=indicator_type_desc_start,
     hookonnode=indicator_type_desc,
     hookonend=close_file

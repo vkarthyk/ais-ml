@@ -1,4 +1,5 @@
 from common.Logger import Logger
+import pickle
 
 
 class IOWorker:
@@ -99,3 +100,12 @@ class IOWorker:
                     child_list.append(c)
         return child_list, parent_list
 
+    def pickle_dump(self, obj, filename):
+        print obj
+        pickle.dump(obj, open(filename, 'wb'))
+        self.logger.log('info', 'dump obj as pickle to', filename)
+
+
+    def pickle_load(self, filename):
+        self.logger.log('info', 'load obj from pickle file', filename)
+        return pickle.load(open(filename, 'rb'))

@@ -147,6 +147,8 @@ class DataParsingFactory:
                 issavetablesforeachpackage = requirements['issavetablesforeachpackage'] if requirements.has_key('issavetablesforeachpackage') else False
                 issaverowforeachpackage = requirements['issaverowforeachpackage'] if requirements.has_key('issaverowforeachpackage') else False
                 rowsCsvFileName = requirements['rowscsvfilename'] if requirements.has_key('rowscsvfilename') else -1
+                pickleFileName = requirements['picklefilename'] if requirements.has_key('picklefilename') else -1
+                isavgdegreecon = requirements['isavgdegreecon'] if requirements.has_key('isavgdegreecon') else -1
                 hookOnNode = requirements['hookonnode'] if requirements.has_key('hookonnode') else None
                 hookOnStart = requirements['hookonstart'] if requirements.has_key('hookonstart') else None
                 hookOnEnd = requirements['hookonend'] if requirements.has_key('hookonend') else None
@@ -162,7 +164,7 @@ class DataParsingFactory:
                     worker.set_is_full_structure()
                 if islistnodeidx:
                     worker.set_is_display_list_node_index()
-                if weightCsvFileName is not -1 or rowsCsvFileName is not -1:
+                if weightCsvFileName is not -1 or rowsCsvFileName is not -1 or pickleFileName is not -1:
                     ioworker=IOWorker()
                     if issavetablesforeachpackage:
                         if isuseexistedtablenames:
@@ -198,9 +200,14 @@ class DataParsingFactory:
                     worker.doYourWork(stix_package)
 
                     if isforeachpackage:
+                        thisStixName=stix_fn.split('/')[-1]
                         self.tmp_dict = worker.get_edge_weight_dict()
                         self.tmp_G = worker.get_graph()
-                        #worker.ava_degree_conn()
+                        if isavgdegreecon:
+                            if pickleFileName == -1:
+                                worker.avg_degree_conn_to_console()
+                            else:
+                                worker.avg_degree_conn_save_to_dict(thisStixName)
                         if weightCsvFileName is not -1:
                             if issavetablesforeachpackage:
                                 twoparts = weightCsvFileName.split('%s')
@@ -223,7 +230,6 @@ class DataParsingFactory:
                                     ioworker.outputWeightTable(self.tmp_dict, thisCsvFileName)
                         if rowsCsvFileName != -1:
                             if issaverowforeachpackage:
-                                thisStixName=stix_fn.split('/')[-1]
                                 if isuseexistedtablenames:
                                     ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname=thisStixName, allstructure=allstructure)
                                 else:
@@ -235,7 +241,11 @@ class DataParsingFactory:
                 if job is JobType.FeedDataAndDrawWeightedGraph and not isforeachpackage:
                     self.tmp_dict = worker.get_edge_weight_dict()
                     self.tmp_G = worker.get_graph()
-                    worker.ava_degree_conn()
+                    if isavgdegreecon:
+                        if pickleFileName == -1:
+                            worker.avg_degree_conn_to_console()
+                        else:
+                            worker.avg_degree_conn_save_to_dict('all_stix')
                     if isdrawgraph:
                         worker.draw("All Stix Packages", is_width_as_weight=iswidthasweight, is_draw_min_spin_tree=isdrawminspintree)
 
@@ -258,6 +268,9 @@ class DataParsingFactory:
                                 ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname='all_stix', allstructure=allstructure)
                             else:
                                 ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname='all_stix')
+
+                if pickleFileName != -1:
+                    ioworker.pickle_dump(worker.get_all_avg_degree_con(), pickleFileName)
 
                 if isdrawgraph:
                     time_end = time.time()

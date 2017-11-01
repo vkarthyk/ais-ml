@@ -75,8 +75,8 @@ class Logger():
     def log(self, type, *log):
 
         #black list for log
-        if str(self.objname) == "IOWorker.IOWorker":
-            return
+        # if str(self.objname) == "IOWorker.IOWorker":
+        #     return
 
         if type == 'err':
             logstr = self.UseStyle('{err}', *log, mode='underline', fore='red')

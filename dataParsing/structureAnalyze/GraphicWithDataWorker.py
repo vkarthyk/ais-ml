@@ -16,8 +16,10 @@ class GraphicWithDataWorker():
         self.is_clustering_node_by_name=False
         self.is_full_structure=False
         self.is_display_list_node_index=False
+        self.is_save_avg_degree_connectivity=False
         self.clear_graph()
         self.hook_on_node=None
+        self.all_avg_degree_con = {}
 
     # def initG(self):
         # self.G=nx.DiGraph()
@@ -38,6 +40,9 @@ class GraphicWithDataWorker():
 
     def set_hook_on_node(self, func_on_node):
         self.hook_on_node = func_on_node
+
+    def set_is_save_avg_degree_connectivity(self):
+        self.is_save_avg_degree_connectivity = True
 
     def clear_graph(self):
         self.G=nx.DiGraph()
@@ -178,8 +183,11 @@ class GraphicWithDataWorker():
     def __get_edge_weights(self, G):
         return [G[u][v]['weight'] for u,v in G.edges()]
 
-    def ava_degree_conn(self):
+    def avg_degree_conn_to_console(self):
         self.logger.log('rst', 'average_degree_connectivity',nx.average_degree_connectivity(self.G))
+
+    def avg_degree_conn_save_to_dict(self, stixname):
+        self.all_avg_degree_con[stixname] = nx.average_degree_connectivity(self.G)
 
     def get_edge_weight_dict(self):
         return self.edge_weight_dict
@@ -187,6 +195,8 @@ class GraphicWithDataWorker():
     def get_graph(self):
         return self.G
 
+    def get_all_avg_degree_con(self):
+        return self.all_avg_degree_con
     # def get_child_parent_lists(self):
     #     parent_list=[]
     #     child_list=[]
