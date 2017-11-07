@@ -5,7 +5,8 @@ from printUtils import pprintDict
 from DataParsingFactory import DataParsingFactory
 from JobType import JobType
 from settings import os, DATA_DIR, BIG_DATA_DIR
-from hooks.HookFunctions import indicator_type_desc_start, close_file, indicator_type_desc
+from hooks.HookFunctions import indicator_type_desc_start, close_file, indicator_type_desc, test_field
+from hooks.IndicatorIterAllFieldHooks import indicator_all_fields, open_file, end_of_indicator_all_fields
 import warnings
 
 XML_FILE_NAME = os.path.join(BIG_DATA_DIR,'ais_disclosable.xml')
@@ -23,6 +24,9 @@ XML_FILE_DIR = os.path.join(BIG_DATA_DIR,'ais_201710/')
 factory = DataParsingFactory()
 
 '''
+THE FOLLOWING JOBS ARE OUTDATED, they might be still functional though
+For now, only JobType.FeedDataAndDrawWeightedGraph is using.
+
 Notice: notice that there are args like justdo and stopafter, please use them during test period otherwise our workers
         have to keep working until get all the stix packages done which might cause about 20 minutes
 
@@ -54,7 +58,7 @@ warnings.filterwarnings('ignore')
 # factory.goFindSomeoneDoThisJob( JobType.FeedDataAndDrawWeightedGraph, xmlfilename=XML_FILE_DIR, stopafter=20, isdrawgraph=True, isforeachpackage=False, iswidthasweight=True, isdrawminspintree=True)
 # factory.goFindSomeoneDoThisJob( JobType.FeedDataAndDrawWeightedGraph, xmlfilename=XML_FILE_NAME, stopafter=15, isdrawgraph=True, isforeachpackage=False, iswidthasweight=True, isdrawminspintree=False, csvfilename=FREQUENCY_CSV_FILE_NAME)
 
-
+'''
 factory.goFindSomeoneDoThisJob(
     JobType.FeedDataAndDrawWeightedGraph,
     xmlfilename=XML_FILE_DIR,
@@ -74,6 +78,7 @@ factory.goFindSomeoneDoThisJob(
     hookonnode=indicator_type_desc,
     hookonend=close_file
 )
+'''
 """
 Enable these two function call to print COMPACT version edge frequency table
 stopafter: stix number start from 0, -1 means use all
@@ -145,4 +150,28 @@ factory.goFindSomeoneDoThisJob(
     # csvfilename=FREQUENCY_CSV_FILE_NAME
 )
 '''
+factory.goFindSomeoneDoThisJob(
+    JobType.FeedDataAndDrawWeightedGraph,
+    xmlfilename=XML_FILE_DIR,
+    stopafter=2,
+    # justdo='poll_1479324463614_51.xml',  # ether filename or a number
+    # justdo=82,
+    # justdo='poll_1493055568331_1037.xml',
+    # justdo='poll_1493802041177_232.xml',
+    # justdo='poll_1462973936087_0.xml',
+    isdrawgraph=False,
+    isforeachpackage=True,
+    iswidthasweight=False,
+    isdrawminspintree=False,
+    isclusteringnodebyname=True,
+    islistnodeidx=False,
+    isfullstructure=False,
+    issaverowforeachpackage=False,
+    issavetablesforeachpackage=False,
+    isuseexistedtablenames=False,
+    hookonstart=open_file,
+    hookonnode=indicator_all_fields,
+    hookonend=end_of_indicator_all_fields,
+    isavgdegreecon=False
+)
 factory.print_time_per_job()

@@ -106,7 +106,9 @@ class GraphicWithDataWorker():
 
     def iterField(self, cur_node, cur_label, father_id, prefix='', func_on_field=None):
         if self.hook_on_node is not None:
-            self.hook_on_node(cur_node)
+            # if hook return False, then skip this node.
+            if not self.hook_on_node(cur_node):
+                return
         # init the row if this is the first this father show up.
         # if not self.fieldTree.has_key(father_id):
         #     self.fieldTree[father_id] = []
