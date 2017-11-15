@@ -34,6 +34,15 @@ class DataParsingFactory:
             for i in xmlFileName2EnumStixFileName(fn_or_dir, stopafter=stopafter):
                 yield i
 
+    def node_iterator(self, stix_package, iter_start):
+        if iter_start == 'indicator':
+            if stix_package.indicators is None:
+                return
+            for i in stix_package.indicators:
+                yield i
+        else: # use stix_package
+            yield stix_package
+
     def __getParam(self, argname, nonevalue=None, errmsg=None):
         if errmsg is not None and not self.requirements.has_key(argname):
             self.logger.log('err', errmsg)
@@ -152,6 +161,8 @@ class DataParsingFactory:
                 hookOnNode = requirements['hookonnode'] if requirements.has_key('hookonnode') else None
                 hookOnStart = requirements['hookonstart'] if requirements.has_key('hookonstart') else None
                 hookOnEnd = requirements['hookonend'] if requirements.has_key('hookonend') else None
+                hookOnBeforePackage = requirements['hookonafterpackage'] if requirements.has_key('hookonbeforepackage') else None
+                hookOnAfterPackage = requirements['hookonafterpackage'] if requirements.has_key('hookonafterpackage') else None
 
                 if hookOnStart is not None:
                     hookOnStart()
@@ -176,11 +187,20 @@ class DataParsingFactory:
                 if hookOnNode is not None:
                     worker.set_hook_on_node(hookOnNode)
 
+                # if isfullstructure:
+                #     worker.doYourWork(STIXPackage())
+
                 # for ind, stix_fn in enumerate(xmlFileName2EnumStixFileName(xmlfilename,stopafter=stopAfterFinishRound)):
                 for ind, stix_fn in enumerate(self.stix_packages_fn_iterater(xmlfilename,stopafter=stopAfterFinishRound)):
                     # if stopAfterFinishRound > -1:
                     #     if ind > stopAfterFinishRound:
                     #         break
+                    # if full, then try not to use specific package
+                    # if isfullstructure:
+                    #     break
+                    if hookOnBeforePackage is not None:
+                        hookOnBeforePackage()
+
                     if justDoThisRound != -1:
                         if justDoThisRound == -2:
                             break
@@ -194,49 +214,53 @@ class DataParsingFactory:
                     self.logger.log('info','I\'m working on stix_package #'+str(ind))
                     stix_package = stixFileName2StixPackageObj(stix_fn)
 
-                    if isforeachpackage:
-                        worker.clear_graph()
+                    for node_ind, node in enumerate(self.node_iterator(stix_package, 'indicator')):
+                        if isforeachpackage:
+                            worker.clear_graph()
 
-                    worker.doYourWork(stix_package)
+                        # worker.doYourWork(stix_package)
+                        worker.doYourWork(node)
 
-                    if isforeachpackage:
-                        thisStixName=stix_fn.split('/')[-1]
-                        self.tmp_dict = worker.get_edge_weight_dict()
-                        self.tmp_G = worker.get_graph()
-                        if isavgdegreecon:
-                            if pickleFileName == -1:
-                                worker.avg_degree_conn_to_console()
-                            else:
-                                worker.avg_degree_conn_save_to_dict(thisStixName)
-                        if weightCsvFileName is not -1:
-                            if issavetablesforeachpackage:
-                                twoparts = weightCsvFileName.split('%s')
-                                if len(twoparts) is not 2:
-                                    self.logger.log('err', 'please include %s (only once) inside the target csv filename, to decide where to write the corresponding stix file name')
-                                    exit(-1)
-                                if os.path.dirname(twoparts[1]) is not '':
-                                    self.logger.log('warn', '%s is in a directory name not a filename, will create many directories.')
-                                thisCsvFileName=twoparts[0] + stix_fn.split('/')[-1] + twoparts[1]
-                                try:
-                                    os.makedirs(os.path.dirname(thisCsvFileName))
-                                except OSError as e:
-                                    if not e.errno is errno.EEXIST:
-                                        self.logger.log('err', 'directory create fail')
-                                        raise
-
-                                if isuseexistedtablenames:
-                                    ioworker.outputWeightTable(self.tmp_dict, thisCsvFileName, rowlist, collist)
+                        if isforeachpackage:
+                            thisStixName=stix_fn.split('/')[-1]
+                            self.tmp_dict = worker.get_edge_weight_dict()
+                            self.tmp_G = worker.get_graph()
+                            if isavgdegreecon:
+                                if pickleFileName == -1:
+                                    worker.avg_degree_conn_to_console()
                                 else:
-                                    ioworker.outputWeightTable(self.tmp_dict, thisCsvFileName)
-                        if rowsCsvFileName != -1:
-                            if issaverowforeachpackage:
-                                if isuseexistedtablenames:
-                                    ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname=thisStixName, allstructure=allstructure)
-                                else:
-                                    ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname=thisStixName)
-                        if isdrawgraph:
-                            stix_name = stix_fn.split('/')[-1] if self.is_dir else ind
-                            worker.draw(stix_name, is_width_as_weight=iswidthasweight, is_draw_min_spin_tree=isdrawminspintree)
+                                    worker.avg_degree_conn_save_to_dict(thisStixName)
+                            if weightCsvFileName is not -1:
+                                if issavetablesforeachpackage:
+                                    twoparts = weightCsvFileName.split('%s')
+                                    if len(twoparts) is not 2:
+                                        self.logger.log('err', 'please include %s (only once) inside the target csv filename, to decide where to write the corresponding stix file name')
+                                        exit(-1)
+                                    if os.path.dirname(twoparts[1]) is not '':
+                                        self.logger.log('warn', '%s is in a directory name not a filename, will create many directories.')
+                                    thisCsvFileName=twoparts[0] + stix_fn.split('/')[-1] + twoparts[1]
+                                    try:
+                                        os.makedirs(os.path.dirname(thisCsvFileName))
+                                    except OSError as e:
+                                        if not e.errno is errno.EEXIST:
+                                            self.logger.log('err', 'directory create fail')
+                                            raise
+
+                                    if isuseexistedtablenames:
+                                        ioworker.outputWeightTable(self.tmp_dict, thisCsvFileName, rowlist, collist)
+                                    else:
+                                        ioworker.outputWeightTable(self.tmp_dict, thisCsvFileName)
+                            # if rowsCsvFileName != -1:
+                            #     if issaverowforeachpackage:
+                            #         if isuseexistedtablenames:
+                            #             ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname=thisStixName, allstructure=allstructure)
+                            #         else:
+                            #             ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname=thisStixName)
+                            if isdrawgraph:
+                                stix_name = stix_fn.split('/')[-1] if self.is_dir else ind
+                                worker.draw(stix_name+str(node_ind), is_width_as_weight=iswidthasweight, is_draw_min_spin_tree=isdrawminspintree)
+                        if hookOnAfterPackage is not None:
+                            hookOnAfterPackage(stixname=thisStixName, weights=self.tmp_dict)
 
                 if job is JobType.FeedDataAndDrawWeightedGraph and not isforeachpackage:
                     self.tmp_dict = worker.get_edge_weight_dict()
@@ -262,12 +286,12 @@ class DataParsingFactory:
                                 ioworker.outputWeightTable(self.tmp_dict, weightCsvFileName, rowlist, collist)
                             else:
                                 ioworker.outputWeightTable(self.tmp_dict, weightCsvFileName)
-                    if rowsCsvFileName != -1:
-                        if issaverowforeachpackage:
-                            if isuseexistedtablenames:
-                                ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname='all_stix', allstructure=allstructure)
-                            else:
-                                ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname='all_stix')
+                    # if rowsCsvFileName != -1:
+                    #     if issaverowforeachpackage:
+                    #         if isuseexistedtablenames:
+                    #             ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname='all_stix', allstructure=allstructure)
+                    #         else:
+                    #             ioworker.outputWeightRow(weights=self.tmp_dict, filename=rowsCsvFileName, stixname='all_stix')
 
                 if pickleFileName != -1:
                     ioworker.pickle_dump(worker.get_all_avg_degree_con(), pickleFileName)

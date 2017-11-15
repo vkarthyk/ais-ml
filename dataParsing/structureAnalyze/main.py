@@ -7,6 +7,8 @@ from JobType import JobType
 from settings import os, DATA_DIR, BIG_DATA_DIR
 from hooks.HookFunctions import indicator_type_desc_start, close_file, indicator_type_desc, test_field
 from hooks.IndicatorIterAllFieldHooks import indicator_all_fields, open_file, end_of_indicator_all_fields
+from hooks.CompactVTableHooks import compactVTableHooks
+from hooks.StructureTypeTableHooks import structure_type_table_hook
 import warnings
 
 XML_FILE_NAME = os.path.join(BIG_DATA_DIR,'ais_disclosable.xml')
@@ -80,38 +82,34 @@ factory.goFindSomeoneDoThisJob(
 )
 '''
 """
-Enable these two function call to print COMPACT version edge frequency table
+Enable this to print COMPACT version edge frequency table
 stopafter: stix number start from 0, -1 means use all
 """
-'''
-factory.goFindSomeoneDoThisJob(
-    JobType.FeedDataAndDrawWeightedGraph,
-    xmlfilename=XML_FILE_DIR,
-    stopafter=0,
-    isdrawgraph=False,
-    isforeachpackage=False,
-    iswidthasweight=False,
-    isdrawminspintree=False,
-    isclusteringnodebyname=True,
-    islistnodeidx=False,
-    isfullstructure=True,
-)
+#'''
 factory.goFindSomeoneDoThisJob(
     JobType.FeedDataAndDrawWeightedGraph,
     xmlfilename=XML_FILE_DIR,
     stopafter=-1,
+    # justdo='poll_1493055568331_1047.xml',
     isdrawgraph=False,
     isforeachpackage=True,
-    iswidthasweight=False,
+    iswidthasweight=True,
     isdrawminspintree=False,
     isclusteringnodebyname=True,
     islistnodeidx=False,
     isfullstructure=False,
-    issaverowforeachpackage=True,
-    isuseexistedtablenames=True,
-    rowscsvfilename=FREQUENCY_ROWS_CSV_FILE_NAME
+    issaverowforeachpackage=False,
+    issavetablesforeachpackage=False,
+    isuseexistedtablenames=False,
+    isavgdegreecon=False,
+    hookonstart=compactVTableHooks.before_all,
+    hookonafterpackage=compactVTableHooks.outputWeightRow,
+    hookonend=compactVTableHooks.end_of_compact_table,
+    # hookonstart=structure_type_table_hook.before_all,
+    # hookonafterpackage=structure_type_table_hook.outputWeightRow,
+    # hookonend=structure_type_table_hook.end_of_compact_table,
 )
-'''
+#'''
 
 """
 Enable these two function call to print MATRIX version edge frequency table
@@ -150,28 +148,32 @@ factory.goFindSomeoneDoThisJob(
     # csvfilename=FREQUENCY_CSV_FILE_NAME
 )
 '''
+'''
 factory.goFindSomeoneDoThisJob(
     JobType.FeedDataAndDrawWeightedGraph,
     xmlfilename=XML_FILE_DIR,
-    stopafter=2,
+    # stopafter=1522,
+    # stopafter=-1,
     # justdo='poll_1479324463614_51.xml',  # ether filename or a number
     # justdo=82,
     # justdo='poll_1493055568331_1037.xml',
     # justdo='poll_1493802041177_232.xml',
-    # justdo='poll_1462973936087_0.xml',
-    isdrawgraph=False,
-    isforeachpackage=True,
+    # justdo='poll_1462973936087_95.xml',
+    # justdo='poll_1479324463614_70.xml', # this is the one with incidents
+    isdrawgraph=True,
+    isforeachpackage=False,
     iswidthasweight=False,
     isdrawminspintree=False,
     isclusteringnodebyname=True,
     islistnodeidx=False,
-    isfullstructure=False,
+    isfullstructure=True,
     issaverowforeachpackage=False,
     issavetablesforeachpackage=False,
-    isuseexistedtablenames=False,
-    hookonstart=open_file,
-    hookonnode=indicator_all_fields,
-    hookonend=end_of_indicator_all_fields,
-    isavgdegreecon=False
+    # hookonstart=before_all,
+    # hookonnode=indicator_all_fields,
+    # hookonafterpackage=outputWeightRow,
+    # hookonend=end_of_compact_table,
+    # isavgdegreecon=False
 )
+'''
 factory.print_time_per_job()

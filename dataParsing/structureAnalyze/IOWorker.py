@@ -5,7 +5,7 @@ import pickle
 class IOWorker:
     def __init__(self):
         self.logger = Logger(self)
-        self.is_titles_wrote = False
+        # self.is_titles_wrote = False
 
     '''
         weights: ex.: {'parent1': {'child1': 5, 'child2': 4}, 'parent2': {'child2':3, 'child3': 1}}
@@ -55,6 +55,7 @@ class IOWorker:
         return
         # degreelist = self.G.
 
+    '''
     def writeWeightTitle(self, filename, allstructure=None, weights=None):
         if allstructure is not None:
             self.logger.log('info', 'using provided col names.')
@@ -68,25 +69,9 @@ class IOWorker:
                 title_row = title_row + ',' + p+'->'+c
         with open(filename, 'w') as f:
                 f.write(title_row + '\n')
-        self.is_titles_wrote = True
+        # self.is_titles_wrote = True
+    '''
 
-    def outputWeightRow(self, weights, filename, stixname, allstructure):
-        assert isinstance(weights, dict)
-        assert isinstance(allstructure, dict) or allstructure is None
-
-        self.logger.log('info', 'writing weight dict to:', filename)
-
-        if not self.is_titles_wrote:
-            # self.logger.log('err', 'please write title row first')
-            self.writeWeightTitle(filename=filename, allstructure=allstructure, weights=weights)
-
-        this_row=stixname
-        for p in allstructure:
-            for c in allstructure[p]:
-                this_weight= weights[p][c] if weights.has_key(p) and weights[p].has_key(c) else 0
-                this_row = this_row + ',' + str(this_weight)
-        with open(filename, 'a+') as f:
-            f.write(this_row+'\n')
 
     def get_child_parent_lists(self, weight_dict):
         parent_list=[]

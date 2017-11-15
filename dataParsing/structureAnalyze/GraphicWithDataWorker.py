@@ -5,6 +5,7 @@ import networkx as nx
 from networkx.drawing.nx_agraph import graphviz_layout
 from stix.core.stix_package import STIXPackage
 from mixbox.typedlist import TypedList
+from stix.indicator.indicator import Indicator
 from stix.common.kill_chains import KillChainPhase
 from stix.core.ttps import TTPs
 
@@ -157,7 +158,7 @@ class GraphicWithDataWorker():
                 # self.iterField(fdict[f], str(f), self.__getTreeID(cur_node, cur_label), prefix + '--')
                 # if isinstance(cur_node, MutableSequence) and isinstance(fdict[f], MutableSequence):
                 # if (isinstance(cur_node, MutableSequence) or isinstance(cur_node, TypedList)) and (isinstance(fdict[f], MutableSequence) or isinstance(fdict[f], TypedList)):
-                if (isinstance(cur_node, MutableSequence) and isinstance(fdict[f], MutableSequence)) or isinstance(fdict[f], TypedList):
+                if (isinstance(cur_node, MutableSequence) and isinstance(fdict[f], MutableSequence)) or isinstance(fdict[f], TypedList) or isinstance(fdict[f], list):
                 # if (isinstance(fdict[f], MutableSequence) or isinstance(fdict[f], TypedList)):
                     for ind, item in enumerate(fdict[f]):
                         # i_label = cur_label + '['+str(ind)+']'
@@ -266,7 +267,11 @@ class GraphicWithDataWorker():
         plt.show()
 
     def doYourWork(self, stix_package):
-        assert isinstance(stix_package, STIXPackage)
+        if isinstance(stix_package, STIXPackage):
+            start_label = 'stix_package'
+        elif isinstance(stix_package, Indicator):
+            start_label = 'Indicator'
+
 
         # self.initG()
 
@@ -276,4 +281,4 @@ class GraphicWithDataWorker():
         # self.logger.log('info', 'working: stix kill...:',stix_package.ttps.kill_chains[0].kill_chain_phases[1])
         # self.logger.log('info', 'working: stix ttp:',type(stix_package.ttps))
 
-        self.iterField(stix_package, 'stix_package', self.__getTreeID(STIXPackage, self.first_node_label), '-')
+        self.iterField(stix_package, start_label, self.__getTreeID(STIXPackage, self.first_node_label), '-')

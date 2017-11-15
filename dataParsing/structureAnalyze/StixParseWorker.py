@@ -1,5 +1,6 @@
 from stix.core import STIXPackage
 from stix.extensions.marking.tlp import TLPMarkingStructure
+from stix.indicator.indicator import Indicator
 
 from common.Logger import Logger
 

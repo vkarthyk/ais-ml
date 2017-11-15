@@ -10,7 +10,7 @@ import csv
 
 FREQUENCY_ROWS_CSV_FILE_NAME = os.path.join(DATA_DIR,'IndicatorTypeDesc.csv')
 # INDICATOR_ALL_FIELDS_FILE_NAME = os.path.join(BIG_DATA_DIR,'IndicatorAllFields.csv')
-INDICATOR_ALL_FIELDS_FILE_NAME = os.path.join(BIG_DATA_DIR,'IndicatorAllFields_2.0.csv')
+INDICATOR_ALL_FIELDS_FILE_NAME = os.path.join(BIG_DATA_DIR,'IndicatorAllFields_2.2.csv')
 
 tmpfilename = os.path.join(DATA_DIR,'test.csv')
 tmpf = None
