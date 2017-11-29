@@ -1,5 +1,7 @@
 #coding=utf-8
+import datetime
 
+has_set_time = False
 class Logger():
     STYLE = {
         'fore':
@@ -42,11 +44,15 @@ class Logger():
             },
     }
 
+
     def __init__(self, obj=False):
         if type(obj) is str:
             self.objname = obj
         else:
             self.objname=obj.__class__ if obj else '<unknown>'
+        if not globals()['has_set_time']:
+            globals()['logpath'] = datetime.datetime.today().isoformat() + '.log'
+            globals()['has_set_time'] = True
 
 
     # def UseStyle(string, mode = '', fore = '', back = ''):
@@ -70,7 +76,39 @@ class Logger():
         for s in stringList:
             string = string + ' ' + str(s)
         return '%s%s%s' % (style, string, end)
+    def __output(self, logstr):
+        print logstr
+        with open(globals()['logpath'], 'a+') as f:
+            f.write(logstr+'\n')
+    
+    def __combine_str(self, string, *stringList):
+        for s in stringList:
+            string = string + ' ' + str(s)
+        return string
 
+    def err(self, *log):
+        logstr = self.UseStyle('{err}', *log, mode='underline', fore='red')
+        logstr = self.__combine_str('[',self.objname,']:',logstr)
+        self.__output(*logstr)
+
+    def info(self, *log):
+        logstr = self.UseStyle('{info}', *log, fore='yellow')
+        logstr = self.__combine_str('[',self.objname,']:',logstr)
+        self.__output(logstr)
+
+    def rst(self, *log):
+        logstr = self.UseStyle('', *log, mode='bold', fore='blue')
+        self.__output(logstr)
+
+    def dbg(self, *log):
+        logstr = self.UseStyle('{debug}', *log, fore='red')
+        logstr = self.__combine_str('[',self.objname,']:',logstr)
+        self.__output(logstr)
+
+    def warn(self, *log):
+        logstr = self.UseStyle('{warning}', *log, fore='red')
+        logstr = self.__combine_str('[',self.objname,']:',logstr)
+        self.__output(logstr)
 
     def log(self, type, *log):
 
@@ -95,8 +133,9 @@ class Logger():
             return
 
         if type in ['rst']:
-            print logstr
+            self.__output(logstr)
         else:
-            print '[',self.objname,']:',logstr
+            logstr = self.__combine_str('[',self.objname,']:',logstr)
+            self.__output(logstr)
 
 logger=Logger()
