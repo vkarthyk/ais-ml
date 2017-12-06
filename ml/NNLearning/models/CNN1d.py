@@ -34,3 +34,6 @@ class CNN1d(nn.Module):
 
     def load(self, path):
         self.load_state_dict(torch.load(path))
+
+    def load_from_gpu(self, path):
+        self.load_state_dict(torch.load(path, map_location=lambda storage, loc: storage))

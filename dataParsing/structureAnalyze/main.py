@@ -5,7 +5,7 @@ from printUtils import pprintDict
 from DataParsingFactory import DataParsingFactory
 from JobType import JobType
 from settings import os, DATA_DIR, BIG_DATA_DIR
-from hooks.HookFunctions import indicator_type_desc_start, close_file, indicator_type_desc, test_field
+from hooks import IndicatorTypeDescHooks
 from hooks.IndicatorIterAllFieldHooks import indicator_all_fields, open_file, end_of_indicator_all_fields
 from hooks.CompactVTableHooks import compactVTableHooks
 from hooks.StructureTypeTableHooks import structure_type_table_hook
@@ -102,12 +102,15 @@ factory.goFindSomeoneDoThisJob(
     issavetablesforeachpackage=False,
     isuseexistedtablenames=False,
     isavgdegreecon=False,
-    hookonstart=compactVTableHooks.before_all,
-    hookonafterpackage=compactVTableHooks.outputWeightRow,
-    hookonend=compactVTableHooks.end_of_compact_table,
+    # hookonstart=compactVTableHooks.before_all,
+    # hookonafterpackage=compactVTableHooks.outputWeightRow,
+    # hookonend=compactVTableHooks.end_of_compact_table,
     # hookonstart=structure_type_table_hook.before_all,
     # hookonafterpackage=structure_type_table_hook.outputWeightRow,
     # hookonend=structure_type_table_hook.end_of_compact_table,
+    hookonstart=IndicatorTypeDescHooks.indicator_type_desc_start,
+    hookonnode=IndicatorTypeDescHooks.indicator_type_desc,
+    hookonend=IndicatorTypeDescHooks.indicator_type_desc_end,
 )
 #'''
 

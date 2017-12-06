@@ -146,7 +146,11 @@ class NNLearningBase:
     def _load_model(self, path, **kwargs):
         if not self.is_model_built:
             self.model_build(**kwargs)
-        self.model.load(path)
+
+        if kwargs.has_key('is_from_gpu') and kwargs['is_from_gpu']:
+            self.model.load_from_gpu(path)
+        else:
+            self.model.load(path)
         self.is_model_built = True
 
     def _pred(self, x_df, y_df=None, data='confusion_matrix', format='tensor'):

@@ -1,6 +1,6 @@
 #coding=utf-8
 import datetime
-
+from settings import os,PROJECT_ROOT
 has_set_time = False
 class Logger():
     STYLE = {
@@ -51,7 +51,7 @@ class Logger():
         else:
             self.objname=obj.__class__ if obj else '<unknown>'
         if not globals()['has_set_time']:
-            globals()['logpath'] = datetime.datetime.today().isoformat() + '.log'
+            globals()['logpath'] = os.path.join(PROJECT_ROOT, 'log', datetime.datetime.today().isoformat() + '.log')
             globals()['has_set_time'] = True
 
 
